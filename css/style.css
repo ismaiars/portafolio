@@ -1138,12 +1138,14 @@ footer p {
     .contact-links {
         flex-direction: column;
         gap: 1rem;
+        align-items: center; /* Centra los botones */
     }
 
     .contact-links a {
-        width: 100%;
+        width: 280px; /* Ancho fijo para todos los botones */
+        max-width: 100%; /* Asegura que no se desborde en pantallas muy pequeñas */
         text-align: center;
-        padding: 1.2rem 1rem; /* Padding horizontal reducido para evitar desbordamiento */
+        padding: 1.2rem 1rem;
     }
 
     .language-toggle {
