@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://*.lottiefiles.com; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net data:; connect-src 'self' https://*.lottiefiles.com;">
+
+    <!-- Preconnects para rendimiento -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- SEO Meta Tags -->
+    <title data-es="Portafolio de Ismael Salazar - Ingeniero de Sistemas" data-en="Ismael Salazar - Systems Engineer Portfolio">Portafolio de Ismael Salazar - Ingeniero de Sistemas</title>
+    <meta name="description" content="Ingeniero de Sistemas con 4+ años de experiencia en desarrollo web, aplicaciones móviles y administración de servidores. Especializado en PHP, JavaScript, React, Node.js y tecnologías modernas.">
+    <meta name="keywords" content="ingeniero sistemas, desarrollador web, PHP, JavaScript, React, Node.js, aplicaciones móviles, DevOps, MySQL, MongoDB, portfolio, programador">
+    <meta name="author" content="Ismael Salazar">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Ismael Salazar - Ingeniero de Sistemas">
+    <meta property="og:description" content="Portafolio profesional de Ismael Salazar, Ingeniero de Sistemas especializado en desarrollo web y aplicaciones móviles.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tu-dominio.com">
+    <meta property="og:site_name" content="Ismael Salazar Portfolio">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ismael Salazar - Ingeniero de Sistemas">
+    <meta name="twitter:description" content="Portafolio profesional de desarrollo web y aplicaciones móviles">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tu-dominio.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Enlace a Devicon para los logos de habilidades -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <!-- Enlace a JetBrains Mono para el estilo terminal -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Barra de progreso de scroll -->
+    <div id="scrollProgress"></div>
+
+    <!-- Enlace de accesibilidad: Saltar al contenido principal -->
+    <a href="#mainContent" class="skip-link" data-es="Saltar al contenido" data-en="Skip to content">Saltar al contenido</a>
+
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <h3 data-es="Cargando..." data-en="Loading...">Cargando...</h3>
+            <div class="loader-progress">
+                <div class="loader-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
+        <div class="container navbar-content">
+            <div class="navbar-brand">Ismael Salazar</div>
+            <div class="nav-links">
+                <!-- Language Toggle -->
+                <div class="language-toggle" id="languageToggle">
+                    <i class="fas fa-globe"></i>
+                    <span data-es="ES" data-en="EN">ES</span>
+                </div>
+                <a href="#inicio" data-i18n="nav.home" data-es="Inicio" data-en="Home">Inicio</a>
+                <a href="#sobre-mi" data-i18n="nav.about" data-es="Sobre Mí" data-en="About">Sobre Mí</a>
+                <a href="#timeline" data-i18n="nav.experience" data-es="Experiencia" data-en="Experience">Experiencia</a>
+                <a href="#proyectos" data-i18n="nav.projects" data-es="Proyectos" data-en="Projects">Proyectos</a>
+                <a href="#contacto" data-i18n="nav.contact" data-es="Contacto" data-en="Contact">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main id="mainContent" role="main">
+
+    <!-- Sección Hero (Inicio) -->
+    <section id="inicio">
+        <div class="hero-background"></div>
+
+        <!-- Capas Parallax -->
+        <div class="parallax-container">
+            <div class="parallax-layer slow layer-purple"></div>
+            <div class="parallax-layer medium layer-blue"></div>
+            <div class="parallax-layer fast layer-green"></div>
+        </div>
+        <div class="container hero-content">
+            <h1><span data-es="¡Hola! Soy" data-en="Hello! I'm">¡Hola! Soy</span> <span class="typewriter">Ismael Salazar</span></h1>
+            <p data-es="Ingeniero de Sistemas apasionado por la innovación y la creación de soluciones." data-en="Systems Engineer passionate about innovation and creating solutions.">Ingeniero de Sistemas apasionado por la innovación y la creación de soluciones.</p>
+            <div class="hero-buttons">
+                <a href="#proyectos" class="btn" data-i18n="button.viewProjects" data-es="Ver Mis Proyectos" data-en="View My Projects">Ver Mis Proyectos</a>
+                <a href="docs/cv_ismael_salazar.pdf" class="btn btn-secondary" id="exportCV" data-i18n="button.downloadCV" data-es="Descargar CV" data-en="Download CV" download target="_blank">Descargar CV</a>
+            </div>
+
+            <!-- Lottie Animation -->
+            <lottie-player class="lottie-hero" src="https://assets5.lottiefiles.com/packages/lf20_4kx2q32n.json" background="transparent" speed="1" loop autoplay></lottie-player>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Mí -->
+    <section id="sobre-mi" class="section-animate">
+        <div class="nebula-container">
+            <div class="nebula nebula1"></div>
+            <div class="nebula nebula2"></div>
+        </div>
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div class="container">
+            <h2 data-i18n="section.about" data-es="Sobre Mí" data-en="About Me">Sobre Mí</h2>
+            <div class="about-me-content-box">
+                <p class="mb-4" data-es="Ingeniero en Sistemas Computacionales con experiencia liderando áreas de TI, especializado en infraestructura tecnológica, soporte técnico, desarrollo backend y plataformas e-learning. Comprometido con la mejora continua, automatización de procesos y la entrega de soluciones tecnológicas eficientes y seguras." data-en="Computer Systems Engineer with experience leading IT departments, specialized in technological infrastructure, technical support, backend development and e-learning platforms. Committed to continuous improvement, process automation and delivering efficient and secure technological solutions.">
+                    Ingeniero en Sistemas Computacionales con experiencia liderando áreas de TI, especializado en infraestructura tecnológica, soporte técnico, desarrollo backend y plataformas e-learning. Comprometido con la mejora continua, automatización de procesos y la entrega de soluciones tecnológicas eficientes y seguras.
+                </p>
+                <!-- competencias tecnicas incorporadas en el grid de habilidades -->
+
+                    <!-- Terminal Command Output -->
+                    <div class="terminal-output" id="terminalOutput">
+                        <div class="terminal-header">
+                            <span class="terminal-title">Terminal</span>
+                            <div class="terminal-controls">
+                                <span class="terminal-control close"></span>
+                                <span class="terminal-control minimize"></span>
+                                <span class="terminal-control maximize"></span>
+                            </div>
+                        </div>
+                        <div class="terminal-content">
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">$</span>
+                                <span class="terminal-command" id="currentCommand"></span>
+                            </div>
+                            <div class="terminal-response" id="terminalResponse"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skills por Nivel -->
+                    <div class="skills-by-level">
+                        <!-- === NIVEL AVANZADO === -->
+                        <h4 class="skill-level-title" data-es="Nivel Avanzado" data-en="Advanced Level">
+                            <span class="level-indicator advanced"></span>
+                            Nivel Avanzado
+                        </h4>
+                        <div class="skills-grid">
+                            <!-- Avanzado -->
+                            <div class="skill-item" data-skill="HTML5" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-html5-plain"></i><span>HTML5</span></div>
+                            <div class="skill-item" data-skill="CSS3" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-css3-plain"></i><span>CSS3</span></div>
+                            <div class="skill-item" data-skill="MySQL" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-mysql-plain"></i><span>MySQL</span></div>
+                            <div class="skill-item" data-skill="JavaScript" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-javascript-plain"></i><span>JavaScript</span></div>
+                            <div class="skill-item" data-skill="Python" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-python-plain"></i><span>Python</span></div>
+                            <div class="skill-item" data-skill="Java" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-java-plain"></i><span>Java</span></div>
+                            <div class="skill-item" data-skill="Node.js" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-nodejs-plain"></i><span>Node.js</span></div>
+                            <div class="skill-item" data-skill="TailwindCSS" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-tailwindcss-plain"></i><span>TailwindCSS</span></div>
+                            <div class="skill-item" data-skill="Moodle" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-moodle-plain"></i><span>Moodle</span></div>
+                            <div class="skill-item" data-skill="n8n" data-level="Avanzado" data-level-en="Advanced"><i class="fas fa-project-diagram"></i><span>n8n</span></div>
+                            <div class="skill-item" data-skill="Shell Script" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-bash-plain"></i><span>Shell Script</span></div>
+                            <div class="skill-item" data-skill="WordPress" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-wordpress-plain"></i><span>WordPress</span></div>
+                            <div class="skill-item" data-skill="Arduino" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-arduino-plain"></i><span>Arduino</span></div>
+                            <div class="skill-item" data-skill="Postman" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-postman-plain"></i><span>Postman</span></div>
+                            <div class="skill-item" data-skill="CCTV" data-level="Avanzado" data-level-en="Advanced" data-description-es="Sistemas de videovigilancia y CCTV" data-description-en="CCTV & Video Surveillance"><i class="fas fa-video"></i><span>CCTV</span></div>
+                        </div>
+
+                        <!-- === NIVEL INTERMEDIO === -->
+                        <h4 class="skill-level-title" data-es="Nivel Intermedio" data-en="Intermediate Level">
+                            <span class="level-indicator intermediate"></span>
+                            Nivel Intermedio
+                        </h4>
+                        <div class="skills-grid">
+                            <!-- Intermedio -->
+                            <div class="skill-item" data-skill="PHP" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-php-plain"></i><span>PHP</span></div>
+                            <div class="skill-item" data-skill="Git" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-git-plain"></i><span>Git</span></div>
+                            <div class="skill-item" data-skill="Docker" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-docker-plain"></i><span>Docker</span></div>
+                            <div class="skill-item" data-skill="MongoDB" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-mongodb-plain"></i><span>MongoDB</span></div>
+                            <div class="skill-item" data-skill="Apache" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-apache-plain"></i><span>Apache</span></div>
+                            <div class="skill-item" data-skill="Figma" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-figma-plain"></i><span>Figma</span></div>
+                            <div class="skill-item" data-skill="Spring" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-spring-plain"></i><span>Spring</span></div>
+                            <div class="skill-item" data-skill="Next.js" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-nextjs-plain"></i><span>Next.js</span></div>
+                            <div class="skill-item" data-skill="Bootstrap" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-bootstrap-plain"></i><span>Bootstrap</span></div>
+                        </div>
+
+                        <!-- === NIVEL BÁSICO === -->
+                        <h4 class="skill-level-title" data-es="Nivel Básico" data-en="Basic Level">
+                            <span class="level-indicator basic"></span>
+                            Nivel Básico
+                        </h4>
+                        <div class="skills-grid">
+                            <!-- Básico -->
+                            <div class="skill-item" data-skill="React" data-level="Básico" data-level-en="Basic"><i class="devicon-react-original"></i><span>React</span></div>
+                            <div class="skill-item" data-skill="Angular" data-level="Básico" data-level-en="Basic"><i class="devicon-angularjs-plain"></i><span>Angular</span></div>
+                            <div class="skill-item" data-skill="Django" data-level="Básico" data-level-en="Basic"><i class="devicon-django-plain"></i><span>Django</span></div>
+                            <div class="skill-item" data-skill="Ionic" data-level="Básico" data-level-en="Basic"><i class="devicon-ionic-original"></i><span>Ionic</span></div>
+                            <div class="skill-item" data-skill="Nuxt" data-level="Básico" data-level-en="Basic"><i class="devicon-nuxtjs-plain"></i><span>Nuxt</span></div>
+                            <div class="skill-item" data-skill="SQLite" data-level="Básico" data-level-en="Basic"><i class="devicon-sqlite-plain"></i><span>SQLite</span></div>
+                            <div class="skill-item" data-skill="Express.js" data-level="Básico" data-level-en="Basic"><i class="devicon-express-original"></i><span>Express.js</span></div>
+                            <div class="skill-item" data-skill="Swagger" data-level="Básico" data-level-en="Basic"><i class="devicon-swagger-plain"></i><span>Swagger</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Certificaciones -->
+                    <div class="certifications-container">
+                        <h3 class="certifications-title" data-es="Certificaciones" data-en="Certifications">Certificaciones</h3>
+                        <ul class="certifications-list">
+                            <li data-es="Oracle Next Education F2 T5 – Back-End (Alura LATAM)" data-en="Oracle Next Education F2 T5 – Back-End (Alura LATAM)">Oracle Next Education F2 T5 – Back-End (Alura LATAM)</li>
+                            <li data-es="Oracle Next Education – Bases de Datos (Alura LATAM)" data-en="Oracle Next Education – Databases (Alura LATAM)">Oracle Next Education – Bases de Datos (Alura LATAM)</li>
+                            <li data-es="Postman Student Expert (Postman)" data-en="Postman Student Expert (Postman)">Postman Student Expert (Postman)</li>
+                        </ul>
+                    </div>
+
+                <!-- Terminal Overlay -->
+                <div class="terminal-overlay" id="terminalOverlay"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Timeline -->
+    <section id="timeline" class="section-animate">
+        <div class="container">
+            <h2 data-es="Mi Experiencia" data-en="My Experience">Mi Experiencia</h2>
+            <div class="timeline">
+                <!-- Nueva Experiencia 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - Presente</div>
+                        <h3 data-es="Coordinador de Sistemas - Carpe Diem México" data-en="Systems Coordinator - Carpe Diem México">Coordinador de Sistemas - Carpe Diem México</h3>
+                        <p data-es="Lideré un equipo de TI, administré plataformas e-learning (Moodle) y realicé mantenimiento de infraestructura, incrementando la eficiencia operativa en un 15 %." data-en="Led an IT team, managed e-learning platforms (Moodle) and performed infrastructure maintenance, increasing operational efficiency by 15 %.">
+                            Lideré un equipo de TI, administré plataformas e-learning (Moodle) y realicé mantenimiento de infraestructura, incrementando la eficiencia operativa en un 15 %.
+                        </p>
+                        <div class="timeline-tags">
+                            <span>Moodle</span>
+                            <span>WordPress</span>
+                            <span>Gestión de Equipos</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Nueva Experiencia 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - Presente</div>
+                        <h3 data-es="Coordinador de Sistemas - Ópticas Kairóz" data-en="Systems Coordinator - Ópticas Kairóz">Coordinador de Sistemas - Ópticas Kairóz</h3>
+                        <p data-es="Supervisión de mantenimiento tecnológico, implementación de sistemas de videovigilancia y administración de redes." data-en="Supervised technological maintenance, implemented video-surveillance systems and managed networks.">
+                            Supervisión de mantenimiento tecnológico, implementación de sistemas de videovigilancia y administración de redes.
+                        </p>
+                        <div class="timeline-tags">
+                            <span>Redes</span>
+                            <span>Videovigilancia</span>
+                            <span>Soporte Técnico</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Nueva Experiencia 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021 - Presente</div>
+                        <h3 data-es="Desarrollador y Soporte IT (Freelance)" data-en="Developer & IT Support (Freelance)">Desarrollador y Soporte IT (Freelance)</h3>
+                        <p data-es="Automatización de procesos con n8n, configuración de servidores Linux y desarrollo backend con Node.js y Python para soluciones personalizadas." data-en="Process automation with n8n, Linux server configuration and backend development with Node.js and Python for custom solutions.">
+                            Automatización de procesos con n8n, configuración de servidores Linux y desarrollo backend con Node.js y Python para soluciones personalizadas.
+                        </p>
+                        <div class="timeline-tags">
+                            <span>Node.js</span>
+                            <span>Python</span>
+                            <span>n8n</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Proyectos -->
+    <section id="proyectos" class="section-animate">
+        <div class="container">
+            <h2 data-es="Mis Proyectos" data-en="My Projects">Mis Proyectos</h2>
+            <div class="project-grid">
+                <!-- Tarjeta de Proyecto 5 -->
+                <div class="project-card" data-index="5">
+                    <div class="project-status" data-es="Completado" data-en="Completed">Completado</div>
+                    <!-- Imagen de Proyecto -->
+                    <img src="images/projects/carpediem.webp" alt="Captura del sitio web Carpe Diem México" class="project-image"/>
+                    <h3 data-es="Sitio Web Carpe Diem México" data-en="Carpe Diem México Website">Sitio Web Carpe Diem México</h3>
+                    <p data-es="Rescaté y modernicé la página web de Carpe Diem México. Eliminé la advertencia de sitio malicioso, resolví vulnerabilidades de seguridad e implementé estrategias SEO que incrementaron las ventas de sus cursos y certificaciones. Desarrollado y optimizado con WordPress, HTML, CSS, JavaScript, PHP y MySQL." data-en="I rescued and modernized Carpe Diem México's website. Removed the malicious-site warning, patched security vulnerabilities and implemented SEO strategies that boosted course and certification sales. Built and optimized with WordPress, HTML, CSS, JavaScript, PHP and MySQL.">
+                        Rescaté y modernicé la página web de Carpe Diem México. Eliminé la advertencia de sitio malicioso, resolví vulnerabilidades de seguridad e implementé estrategias SEO que incrementaron las ventas de sus cursos y certificaciones. Desarrollado y optimizado con WordPress, HTML, CSS, JavaScript, PHP y MySQL.
+                    </p>
+                    <!-- Métricas del Proyecto -->
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <i class="fas fa-code"></i>
+                            <span data-es="6K líneas" data-en="6K lines">6K líneas</span>
+                        </div>
+                        <div class="metric">
+                            <i class="fas fa-clock"></i>
+                            <span data-es="3 meses" data-en="3 months">3 meses</span>
+                        </div>
+                        <div class="metric">
+                            <i class="fas fa-chart-line"></i>
+                            <span data-es="Mejora SEO" data-en="SEO Improvement">Mejora SEO</span>
+                        </div>
+                    </div>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>PHP</span>
+                        <span>MySQL</span>
+                        <span>WordPress</span>
+                        <span>SEO</span>
+                    </div>
+                    <!-- Botón de proyecto eliminado -->
+                </div>
+                <!--
+                -->
+                <!-- Tarjeta de Proyecto 6 -->
+                <div class="project-card" data-index="6">
+                    <div class="project-status" data-es="Completado" data-en="Completed">Completado</div>
+                    <!-- Imagen de Proyecto -->
+                    <img src="images/projects/opticas-kairoz.webp" alt="Captura de la tienda en línea Ópticas Kairóz" class="project-image"/>
+                    <h3 data-es="E-commerce Ópticas Kairóz" data-en="Ópticas Kairóz E-commerce">E-commerce Ópticas Kairóz</h3>
+                    <p data-es="Lideré un equipo de 3 personas para crear la tienda en línea de Ópticas Kairóz. Implementamos un catálogo de armazones con pasarela de pago y un sistema de agendamiento de citas en la óptica. Optimizamos rendimiento, seguridad y SEO, incrementando las conversiones y la visibilidad del negocio." data-en="I led a 3-member team to build Ópticas Kairóz online store. We implemented a frame catalog with payment gateway and an appointment-booking system for the optical store. Performance, security and SEO were optimized, boosting conversions and brand visibility.">
+                        Lideré un equipo de 3 personas para crear la tienda en línea de Ópticas Kairóz. Implementamos un catálogo de armazones con pasarela de pago y un sistema de agendamiento de citas en la óptica. Optimizamos rendimiento, seguridad y SEO, incrementando las conversiones y la visibilidad del negocio.
+                    </p>
+                    <!-- Métricas del Proyecto -->
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <i class="fas fa-code"></i>
+                            <span data-es="7K líneas" data-en="7K lines">7K líneas</span>
+                        </div>
+                        <div class="metric">
+                            <i class="fas fa-clock"></i>
+                            <span data-es="4 meses" data-en="4 months">4 meses</span>
+                        </div>
+                        <div class="metric">
+                            <i class="fas fa-users"></i>
+                            <span data-es="Equipo de 3" data-en="Team of 3">Equipo de 3</span>
+                        </div>
+                    </div>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>PHP</span>
+                        <span>MySQL</span>
+                        <span>WordPress</span>
+                        <span>WooCommerce</span>
+                    </div>
+                    <!-- Botón de proyecto eliminado -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="section-animate">
+        <div class="container">
+            <h2 data-es="Contáctame" data-en="Contact Me">Contáctame</h2>
+            <p data-es="¿Tienes una idea o quieres colaborar? ¡No dudes en contactarme!" data-en="Have an idea or want to collaborate? Don't hesitate to contact me!">¿Tienes una idea o quieres colaborar? ¡No dudes en contactarme!</p>
+            <div class="contact-links">
+                <a href="mailto:iarsfate@gmail.com"><i class="fas fa-envelope"></i> iarsfate@gmail.com</a>
+                <a href="https://wa.me/527202302698" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://github.com/ismaiars" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Pie de Página -->
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Ismael Salazar. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
+        </div>
+    </footer>
+
+    <!-- Enlace al archivo JavaScript externo -->
+    <script src="js/script.js" defer></script>
+    <!-- Lottie Player -->
+     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" defer></script>
+    <!-- i18next -->
+    <script src="https://unpkg.com/i18next@22.4.14/dist/umd/i18next.min.js" defer></script>
+
+    <!-- Registro de Service Worker -->
+    <script defer>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js');
+            });
+        }
+    </script>
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ismael Salazar",
+        "jobTitle": "Ingeniero de Sistemas",
+        "description": "Ingeniero en Sistemas Computacionales especializado en backend, infraestructura TI y plataformas e-learning, con experiencia liderando equipos y automatizando procesos.",
+        "url": "https://tu-dominio.com",
+        "sameAs": [
+            "https://github.com/ismaiars"
+        ],
+        "knowsAbout": [
+            "Node.js", "Python", "PHP", "Java", "Next.js", "Tailwind CSS", "Express.js", "MySQL", "MongoDB", "SQLite", "WordPress", "Git", "Docker", "Moodle", "Postman", "Swagger", "n8n"
+        ],
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Freelance"
+        },
+        "alumniOf": {
+            "@type": "Organization",
+            "name": "UniverMilenium"
+        }
+    }
+    </script>
+</body>
+</html>
