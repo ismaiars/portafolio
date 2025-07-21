@@ -470,16 +470,7 @@ Available commands:
         });
     });
 
-    // Parallax effect for hero background (deshabilitado para prueba de scroll)
-    /*
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const heroBackground = document.querySelector('.hero-background');
-        if (heroBackground) {
-            heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
-        }
-    });
-    */
+    
 
     // Add typing effect to hero text
     const typewriterElement = document.querySelector('.typewriter');
@@ -702,13 +693,10 @@ Available commands:
 
     // Función para exportar CV
     function exportCV() {
-        const currentLang = html.getAttribute('lang');
-        const fileName = currentLang === 'es' ? 'CV_Ismael_Alejandro_Ramirez_Salazar.pdf' : 'CV_Ismael_Alejandro_Ramirez_Salazar.pdf';
-
         // Crear un enlace temporal para descargar
         const link = document.createElement('a');
-        link.href = 'CV_Ismael_Alejandro_Ramirez_Salazar.pdf';
-        link.download = fileName;
+        link.href = 'docs/cv_ismael_salazar.pdf';
+        link.download = 'cv_ismael_salazar.pdf';
         link.target = '_blank';
 
         document.body.appendChild(link);
@@ -1113,22 +1101,7 @@ Available commands:
     window.addEventListener('resize', updateScrollProgress);
     updateScrollProgress();
 
-    // Parallax layers
-    const parallaxLayers = document.querySelectorAll('.parallax-layer');
-
-    function updateParallax() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        parallaxLayers.forEach(layer => {
-            let depth = 0.2;
-            if (layer.classList.contains('slow')) depth = 0.1;
-            else if (layer.classList.contains('medium')) depth = 0.3;
-            else if (layer.classList.contains('fast')) depth = 0.5;
-            layer.style.transform = `translateY(${scrollTop * depth}px)`;
-        });
-    }
-
-    window.addEventListener('scroll', updateParallax);
-    updateParallax();
+    
 
     // i18next setup
     // i18next setup
