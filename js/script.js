@@ -627,6 +627,8 @@ Available commands:
     });
 
     // Add touch support for mobile devices
+    // Se ha deshabilitado el manejador de swipe para corregir el problema de scroll en móviles.
+    /*
     let touchStartY = 0;
     let touchEndY = 0;
     
@@ -655,6 +657,7 @@ Available commands:
             }
         }
     }
+    */
 
     // Initialize animations
     setTimeout(() => {
