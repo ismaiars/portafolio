@@ -470,7 +470,8 @@ Available commands:
         });
     });
 
-    // Parallax effect for hero background
+    // Parallax effect for hero background (deshabilitado para prueba de scroll)
+    /*
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         const heroBackground = document.querySelector('.hero-background');
@@ -478,6 +479,7 @@ Available commands:
             heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
         }
     });
+    */
 
     // Add typing effect to hero text
     const typewriterElement = document.querySelector('.typewriter');
