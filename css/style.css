@@ -1143,7 +1143,7 @@ footer p {
     .contact-links a {
         width: 100%;
         text-align: center;
-        padding: 1.2rem 2rem;
+        padding: 1.2rem 1rem; /* Padding horizontal reducido para evitar desbordamiento */
     }
 
     .language-toggle {
