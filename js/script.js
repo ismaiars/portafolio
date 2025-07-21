@@ -549,29 +549,7 @@ Available commands:
         });
     });
 
-    // Add loading animation for project links
-    const projectLinks = document.querySelectorAll('.project-link');
-    projectLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Add loading effect
-            const originalText = this.textContent;
-            const currentLang = html.getAttribute('lang');
-            const loadingText = currentLang === 'es' ? 'Cargando...' : 'Loading...';
-            
-            this.textContent = loadingText;
-            this.style.pointerEvents = 'none';
-            
-            setTimeout(() => {
-                this.textContent = originalText;
-                this.style.pointerEvents = 'auto';
-                // Here you would normally navigate to the project
-                const message = currentLang === 'es' ? 'Proyecto en desarrollo - Próximamente disponible' : 'Project in development - Coming soon';
-                alert(message);
-            }, 1500);
-        });
-    });
+    // El bloque de animación de carga para los enlaces de proyecto fue eliminado para permitir la navegación correcta.
 
     // Add skill level tooltips
     skillItems.forEach(item => {
