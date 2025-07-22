@@ -29,6 +29,13 @@
     --terminal-glow-purple: 0 0 20px rgba(189, 147, 249, 0.3);
 }
 
+/* Efecto de brillo para títulos en tema oscuro */
+[data-theme='dark'] h2,
+[data-theme='dark'] h3,
+[data-theme='dark'] h4 {
+    text-shadow: 0 0 8px currentColor, 0 0 16px rgba(255, 255, 255, 0.2);
+}
+
 body {
     font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
     margin: 0;
@@ -1987,3 +1994,104 @@ body.presentation-mode .timeline-item {
         height: 150px;
     }
 }
+
+/* Sección Metodología */
+#metodologia {
+    background-color: var(--terminal-bg); /* Changed from --background-color to --terminal-bg */
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0;
+}
+
+.methodology-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    font-size: 1.1rem;
+    color: var(--text-secondary); /* Changed from --text-secondary-color to --text-secondary */
+}
+
+.methodology-terminal {
+    background-color: #1a1b26; /* Un color oscuro tipo terminal */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid #333;
+}
+
+.methodology-terminal-header {
+    background-color: #2a2c3a;
+    padding: 10px 15px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+.methodology-terminal-header .controls {
+    display: flex;
+    gap: 8px;
+    margin-right: auto;
+}
+
+.methodology-terminal-header .control {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+}
+
+.methodology-terminal-header .control.close { background-color: #ff5f56; }
+.methodology-terminal-header .control.minimize { background-color: #ffbd2e; }
+.methodology-terminal-header .control.maximize { background-color: #27c93f; }
+
+.methodology-terminal-header .title {
+    color: #c0c5ce;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+}
+
+.methodology-terminal-body {
+    padding: 20px 25px;
+    font-family: 'JetBrains Mono', monospace;
+    color: #c0c5ce;
+}
+
+.methodology-line {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.methodology-line:last-child {
+    margin-bottom: 0;
+}
+
+.methodology-line .prompt {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.methodology-line .prompt.step-1 { color: #82aaff; } /* Azul */
+.methodology-line .prompt.step-2 { color: #c3e88d; } /* Verde */
+.methodology-line .prompt.step-3 { color: #ffcb6b; } /* Amarillo */
+.methodology-line .prompt.step-4 { color: #f07178; } /* Rojo */
+.methodology-line .prompt.step-5 { color: #c792ea; } /* Púrpura */
+
+.command-content h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: var(--accent-green); /* Changed from --primary-color to --accent-green */
+}
+
+.command-content p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #a6accd;
+}
+
+/* Fin Sección Metodología */
