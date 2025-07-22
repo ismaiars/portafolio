@@ -2138,7 +2138,7 @@ body.presentation-mode .timeline-item {
 
     #inicio {
         height: auto;
-        padding: 160px 20px 40px; /* Increased top padding further */
+        padding: 180px 20px 40px; /* Even more top padding */
         flex-direction: column;
     }
 
