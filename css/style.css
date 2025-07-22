@@ -2104,6 +2104,25 @@ body.presentation-mode .timeline-item {
     border-bottom: 1px solid var(--border-color);
 }
 
+/* Decorative Section Separators */
+#sobre-mi::after,
+#metodologia::after,
+#timeline::after,
+#proyectos::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    border-radius: 2px;
+    margin: 80px auto 0;
+}
+
+#sobre-mi::after { background: var(--primary-color); } /* Azul */
+#metodologia::after { background: var(--secondary-color); } /* Morado */
+#timeline::after { background: #ffcb6b; } /* Amarillo */
+#proyectos::after { background: #27c93f; } /* Verde */
+
+
 @media (max-width: 768px) {
     .navbar-content {
         flex-direction: column;
@@ -2112,7 +2131,7 @@ body.presentation-mode .timeline-item {
 
     #inicio {
         height: auto;
-        padding: 120px 20px 60px;
+        padding: 120px 20px 30px; /* Reduce bottom padding */
         flex-direction: column;
     }
 
