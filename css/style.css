@@ -27,6 +27,7 @@
     --terminal-glow: 0 0 20px rgba(0, 255, 156, 0.3);
     --terminal-glow-blue: 0 0 20px rgba(0, 212, 255, 0.3);
     --terminal-glow-purple: 0 0 20px rgba(189, 147, 249, 0.3);
+    --border-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Efecto de brillo para títulos en tema oscuro */
@@ -2095,3 +2096,44 @@ body.presentation-mode .timeline-item {
 }
 
 /* Fin Sección Metodología */
+
+#sobre-mi,
+#metodologia,
+#timeline,
+#proyectos {
+    border-bottom: 1px solid var(--border-color);
+}
+
+@media (max-width: 768px) {
+    .navbar-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #inicio {
+        height: auto;
+        padding: 120px 20px 60px;
+        flex-direction: column;
+    }
+
+    .nav-links {
+        margin-top: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .lottie-hero {
+        position: relative;
+        width: 80%;
+        max-width: 300px;
+        height: auto;
+        bottom: auto;
+        margin-top: 30px;
+    }
+
+    .about-me-content-box {
+        flex-direction: column;
+    }
+}
