@@ -2110,17 +2110,24 @@ body.presentation-mode .timeline-item {
 #timeline::after,
 #proyectos::after {
     content: '';
-    display: block;
+    position: absolute;
+    bottom: 60px; /* Center in the 120px bottom padding */
+    left: 50%;
+    transform: translateX(-50%);
     width: 80px;
     height: 4px;
     border-radius: 2px;
-    margin: 80px auto 0;
 }
 
-#sobre-mi::after { background: var(--primary-color); } /* Azul */
-#metodologia::after { background: var(--secondary-color); } /* Morado */
-#timeline::after { background: #ffcb6b; } /* Amarillo */
-#proyectos::after { background: #27c93f; } /* Verde */
+#sobre-mi::after { background-color: var(--primary-color); } /* Azul */
+#metodologia::after { background-color: var(--secondary-color); } /* Morado */
+#timeline::after { background-color: #ffcb6b; } /* Amarillo */
+#proyectos::after { background-color: #27c93f; } /* Verde */
+
+/* Adjust padding on sections to make room for separators */
+#sobre-mi, #metodologia, #timeline, #proyectos {
+    padding-bottom: 120px !important;
+}
 
 
 @media (max-width: 768px) {
@@ -2131,7 +2138,7 @@ body.presentation-mode .timeline-item {
 
     #inicio {
         height: auto;
-        padding: 140px 20px 40px; /* More space top, adjusted bottom */
+        padding: 160px 20px 40px; /* Increased top padding further */
         flex-direction: column;
     }
 
