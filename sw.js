@@ -1,5 +1,5 @@
 // Service Worker optimizado para mejor rendimiento
-const CACHE_NAME = 'portfolio-v2.2';
+const CACHE_NAME = 'portfolio-cache-v2.2';
 const STATIC_CACHE = 'static-v2.2';
 const DYNAMIC_CACHE = 'dynamic-v2.2';
 const IMAGE_CACHE = 'images-v2.2';
@@ -10,9 +10,8 @@ const CRITICAL_RESOURCES = [
     '/index.html',
     '/css/style.css',
     '/js/script.js',
-    '/docs/cv_ismael_salazar.pdf',
-    '/images/projects/favicon/favicon-96x96.png',
-    '/images/projects/favicon/favicon.svg'
+    '/manifest.json',
+    '/images/projects/preimagen.webp'
 ];
 
 // Recursos para pre-caché
@@ -34,9 +33,9 @@ const CACHE_STRATEGIES = {
 
 // Límites de caché para evitar uso excesivo de almacenamiento
 const CACHE_LIMITS = {
-    [STATIC_CACHE]: 30,
-    [DYNAMIC_CACHE]: 50,
-    [IMAGE_CACHE]: 60
+    [STATIC_CACHE]: 100,
+    [DYNAMIC_CACHE]: 75,
+    [IMAGE_CACHE]: 50
 };
 
 // Instalación del Service Worker

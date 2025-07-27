@@ -24,9 +24,13 @@
     <link rel="preconnect" href="https://unpkg.com">
     
     <!-- Preload recursos críticos -->
-    <link rel="preload" href="css/style.css" as="style">
-    <link rel="preload" href="js/script.js" as="script">
+    <link rel="preload" href="css/style.min.css" as="style">
+    <link rel="preload" href="js/script.min.js" as="script">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    
+
     
     <!-- SEO Meta Tags -->
     <title data-es="Portafolio de Ismael Salazar - Ingeniero de Sistemas" data-en="Ismael Salazar - Systems Engineer Portfolio">Portafolio de Ismael Salazar - Ingeniero de Sistemas</title>
@@ -67,8 +71,9 @@
     <meta name="msapplication-TileColor" content="#00ff41">
     <meta name="msapplication-config" content="/browserconfig.xml">
     
-    <!-- Enlace al archivo CSS externo -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- CSS Principal minificado -->
+    <link rel="stylesheet" href="css/style.min.css">
+    
     <!-- Enlace a Devicon para los logos de habilidades -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <!-- Enlace a JetBrains Mono para el estilo terminal -->
@@ -426,7 +431,7 @@
                 <div class="project-card" data-index="1">
                     <div class="project-status" data-es="Completado" data-en="Completed">Completado</div>
                     <!-- Imagen de Proyecto -->
-                    <img src="images/projects/carpediem.webp" alt="Captura de pantalla del sitio web de Carpe Diem México, mostrando su diseño moderno y secciones de cursos." class="project-image" loading="lazy"/>
+                    <img src="images/projects/carpediem.webp" alt="Captura de pantalla del sitio web de Carpe Diem México, mostrando su diseño moderno y secciones de cursos." class="project-image" loading="lazy" decoding="async" width="400" height="250"/>
                     <h3 data-es="Sitio Web Carpe Diem México" data-en="Carpe Diem México Website">Sitio Web Carpe Diem México</h3>
                     <p data-es="Rescaté un sitio web que había sido marcado como malicioso, restaurando la confianza de sus clientes. Tras resolver vulnerabilidades críticas y aplicar una estrategia SEO, logramos un notable incremento en la venta de cursos y certificaciones. El proyecto fue desarrollado y optimizado con WordPress, HTML, CSS, JavaScript, PHP y MySQL." data-en="I rescued a website that had been marked as malicious, restoring customer trust. After resolving critical vulnerabilities and applying an SEO strategy, we achieved a notable increase in course and certification sales. The project was developed and optimized with WordPress, HTML, CSS, JavaScript, PHP, and MySQL.">
                         Rescaté un sitio web que había sido marcado como malicioso, restaurando la confianza de sus clientes. Tras resolver vulnerabilidades críticas y aplicar una estrategia SEO, logramos un notable incremento en la venta de cursos y certificaciones. El proyecto fue desarrollado y optimizado con WordPress, HTML, CSS, JavaScript, PHP y MySQL.
@@ -463,7 +468,7 @@
                 <div class="project-card" data-index="2">
                     <div class="project-status" data-es="Completado" data-en="Completed">Completado</div>
                     <!-- Imagen de Proyecto -->
-                    <img src="images/projects/opticas-kairoz.webp" alt="Captura de pantalla de la tienda en línea Ópticas Kairóz, mostrando un catálogo de armazones y la interfaz de usuario." class="project-image" loading="lazy"/>
+                    <img src="images/projects/opticas-kairoz.webp" alt="Captura de pantalla de la tienda en línea Ópticas Kairóz, mostrando un catálogo de armazones y la interfaz de usuario." class="project-image" loading="lazy" decoding="async" width="400" height="250"/>
                     <h3 data-es="E-commerce Ópticas Kairóz" data-en="Ópticas Kairóz E-commerce">E-commerce Ópticas Kairóz</h3>
                     <p data-es="Lideré un equipo de 3 personas para construir la tienda en línea de Ópticas Kairóz, un proyecto clave para su transformación digital. Implementamos un catálogo de productos con pasarela de pago y un sistema de agendamiento de citas, resultando en un aumento de las conversiones y una mayor visibilidad online para el negocio." data-en="I led a 3-member team to build the Ópticas Kairóz online store, a key project for their digital transformation. We implemented a product catalog with a payment gateway and an appointment booking system, resulting in increased conversions and greater online visibility for the business.">
                         Lideré un equipo de 3 personas para construir la tienda en línea de Ópticas Kairóz, un proyecto clave para su transformación digital. Implementamos un catálogo de productos con pasarela de pago y un sistema de agendamiento de citas, resultando en un aumento de las conversiones y una mayor visibilidad online para el negocio.
@@ -498,7 +503,7 @@
                 <div class="project-card" data-index="3">
                     <div class="project-status" data-es="Completado" data-en="Completed">Completado</div>
                     <!-- Imagen de Proyecto -->
-                    <img src="images/projects/inventario.webp" alt="Captura de pantalla del sistema de gestión de inventario, mostrando el dashboard y la lista de equipos." class="project-image" loading="lazy"/>
+                    <img src="images/projects/inventario.webp" alt="Captura de pantalla del sistema de gestión de inventario, mostrando el dashboard y la lista de equipos." class="project-image" loading="lazy" decoding="async" width="400" height="250"/>
                     <h3 data-es="Sistema de Inventario Corporativo" data-en="Corporate Inventory System">Sistema de Inventario Corporativo</h3>
                     <p data-es="Desarrollé un sistema de gestión de inventario desde cero, enfocado en la seguridad y una experiencia de usuario fluida. El proyecto cuenta con un dashboard interactivo para el seguimiento de activos y se implementó un robusto sistema de autenticación con Google (OAuth 2.0) usando NextAuth.js para restringir el acceso únicamente a personal autorizado a través de una lista blanca, garantizando la máxima seguridad de los datos." data-en="I developed an inventory management system from scratch, focusing on security and a smooth user experience. The project features an interactive dashboard for asset tracking and a robust authentication system with Google (OAuth 2.0) was implemented using NextAuth.js to restrict access only to authorized personnel through a whitelist, ensuring maximum data security.">
                         Desarrollé un sistema de gestión de inventario desde cero, enfocado en la seguridad y una experiencia de usuario fluida. El proyecto cuenta con un dashboard interactivo para el seguimiento de activos y se implementó un robusto sistema de autenticación con Google (OAuth 2.0) usando NextAuth.js para restringir el acceso únicamente a personal autorizado a través de una lista blanca, garantizando la máxima seguridad de los datos.
@@ -559,8 +564,8 @@
         </div>
     </footer>
 
-    <!-- Enlace al archivo JavaScript externo -->
-    <script src="js/script.js" defer></script>
+    <!-- Enlace al archivo JavaScript minificado -->
+    <script src="js/script.min.js" defer></script>
     <!-- Lottie Player -->
      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" defer></script>
     <!-- i18next -->

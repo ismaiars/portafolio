@@ -1,0 +1,20 @@
+{
+  "name": "portfolio-optimization",
+  "version": "1.0.0",
+  "description": "Optimización del portafolio con CSS modular y minificación",
+  "scripts": {
+    "build": "npm run minify-css && npm run optimize-images",
+    "minify-css": "cleancss -o css/base.min.css css/base.css && cleancss -o css/layout.min.css css/layout.css && cleancss -o css/navigation.min.css css/navigation.css && cleancss -o css/components.min.css css/components.css && cleancss -o css/animations.min.css css/animations.css",
+    "optimize-images": "imagemin images/projects/*.webp --out-dir=images/projects/optimized",
+    "serve": "python -m http.server 8000",
+    "lighthouse": "lighthouse http://localhost:8000 --output=html --output-path=./lighthouse-report.html"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.2",
+    "imagemin": "^8.0.1",
+    "imagemin-webp": "^7.0.0"
+  },
+  "keywords": ["portfolio", "optimization", "css", "performance"],
+  "author": "Ismael Salazar",
+  "license": "MIT"
+}

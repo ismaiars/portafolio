@@ -91,9 +91,15 @@ body {
     text-rendering: optimizeLegibility;
     transition: opacity 0.5s ease;
     line-height: 1.6;
-    /* Optimizaciones de rendimiento */
+    /* Optimizaciones de rendimiento mejoradas */
     contain: layout style paint;
     will-change: scroll-position;
+    /* Optimización de compositing */
+    transform: translateZ(0);
+    /* Optimización de memoria */
+    backface-visibility: hidden;
+    /* Optimización de scroll */
+    scroll-behavior: smooth;
 }
 
 /* Optimización para elementos que cambian frecuentemente */
@@ -101,9 +107,12 @@ body {
 #scrollProgress,
 .loader {
     contain: layout style paint;
+    /* Optimización adicional para elementos fijos */
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
-/* Optimización para elementos animados */
+/* Optimización para elementos animados con lazy loading */
 .parallax-layer,
 .nebula,
 #stars,
@@ -111,6 +120,23 @@ body {
 #stars3 {
     will-change: transform;
     contain: layout style paint;
+    /* Optimización GPU para animaciones */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    /* Lazy loading inicial - animaciones pausadas */
+    animation-play-state: paused;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Activar animaciones después de la carga inicial */
+.animations-loaded .parallax-layer,
+.animations-loaded .nebula,
+.animations-loaded #stars,
+.animations-loaded #stars2,
+.animations-loaded #stars3 {
+    animation-play-state: running;
+    opacity: 1;
 }
 
 /* Utilidades de accesibilidad */
@@ -1800,10 +1826,13 @@ html {
     animation-duration: 8s;
 }
 
-/* Efectos Parallax */
+/* Efectos Parallax optimizados */
 .parallax-container {
     position: relative;
     overflow: hidden;
+    /* Optimización de rendimiento */
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .parallax-layer {
@@ -1814,18 +1843,22 @@ html {
     height: 100%;
     pointer-events: none;
     z-index: 1;
+    /* Optimización GPU */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform;
 }
 
 .parallax-layer.slow {
-    transform: translateZ(-10px) scale(2);
+    transform: translate3d(0, 0, -10px) scale(2);
 }
 
 .parallax-layer.medium {
-    transform: translateZ(-5px) scale(1.5);
+    transform: translate3d(0, 0, -5px) scale(1.5);
 }
 
 .parallax-layer.fast {
-    transform: translateZ(0px) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
 }
 
 .parallax-layer.slow.layer-purple {
@@ -1843,7 +1876,7 @@ html {
     opacity: 0.12;
 }
 
-/* Nebula parallax */
+/* Nebula parallax optimizada */
 .nebula-container {
     position: absolute;
     top: 0;
@@ -1852,6 +1885,9 @@ html {
     height: 100%;
     overflow: hidden;
     z-index: 1;
+    /* Optimización de rendimiento */
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .nebula {
@@ -1860,6 +1896,10 @@ html {
     filter: blur(40px);
     opacity: 0.3;
     animation: nebulaFloat 20s infinite ease-in-out;
+    /* Optimización GPU */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform;
 }
 
 .nebula1 {
@@ -1881,10 +1921,28 @@ html {
 }
 
 @keyframes nebulaFloat {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(50px, -30px) scale(1.1); }
-    50% { transform: translate(-30px, 50px) scale(0.9); }
-    75% { transform: translate(30px, 30px) scale(1.05); }
+    0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+    25% { transform: translate3d(50px, -30px, 0) scale(1.1); }
+    50% { transform: translate3d(-30px, 50px, 0) scale(0.9); }
+    75% { transform: translate3d(30px, 30px, 0) scale(1.05); }
+}
+
+/* Optimización para usuarios que prefieren movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .parallax-layer,
+    .nebula {
+        animation: none !important;
+        transform: none !important;
+    }
 }
 
 

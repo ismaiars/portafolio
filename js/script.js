@@ -20,7 +20,6 @@ class PortfolioApp {
         this.setupParticleEffect();
         this.setupContactRippleEffects();
         this.setupSkillTooltips();
-        this.setupProjectTooltips();
         this.setupKeyboardNavigation();
         this.setupPerformanceMonitoring();
         this.setupErrorHandling();
@@ -34,9 +33,19 @@ class PortfolioApp {
                 loader.classList.add('hidden');
                 setTimeout(() => {
                     loader.style.display = 'none';
+                    // Activar animaciones después de que se oculte el loader
+                    this.enableAnimations();
                 }, 500);
             }, 2000);
         }
+    }
+
+    // Nuevo método para activar animaciones de forma lazy
+    enableAnimations() {
+        // Esperar un poco más para asegurar que el contenido principal esté cargado
+        setTimeout(() => {
+            document.body.classList.add('animations-loaded');
+        }, 1000);
     }
 
     setupLanguageToggle() {
@@ -118,7 +127,7 @@ class PortfolioApp {
             } else {
                 scrollToTopBtn.classList.remove('visible');
             }
-        }, 100));
+        }, 100), { passive: true });
 
         // Scroll to top when clicked
         scrollToTopBtn.addEventListener('click', () => {
@@ -268,7 +277,7 @@ class PortfolioApp {
                     link.classList.add('active');
                 }
             });
-        }, 100));
+        }, 100), { passive: true });
     }
 
     setupSkillHoverEffects() {
@@ -577,43 +586,6 @@ class PortfolioApp {
             });
             
             item.addEventListener('mouseleave', () => {
-                tooltip.style.opacity = '0';
-            });
-        });
-    }
-
-    setupProjectTooltips() {
-        const projectCards = document.querySelectorAll('.project-card');
-        
-        projectCards.forEach(card => {
-            const status = card.getAttribute('data-status') || 'Completado';
-            const tooltip = document.createElement('div');
-            tooltip.className = 'project-tooltip';
-            tooltip.textContent = `Estado: ${status}`;
-            tooltip.style.cssText = `
-                position: absolute;
-                background: var(--terminal-surface);
-                color: var(--terminal-green);
-                padding: 5px 10px;
-                border-radius: 4px;
-                font-size: 12px;
-                top: 10px;
-                right: 10px;
-                opacity: 0;
-                pointer-events: none;
-                transition: opacity 0.3s ease;
-                border: 1px solid var(--terminal-green);
-                z-index: 1000;
-            `;
-            
-            card.style.position = 'relative';
-            card.appendChild(tooltip);
-            
-            card.addEventListener('mouseenter', () => {
-                tooltip.style.opacity = '1';
-            });
-            
-            card.addEventListener('mouseleave', () => {
                 tooltip.style.opacity = '0';
             });
         });
