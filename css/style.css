@@ -117,11 +117,26 @@ body {
     top: 6px;
 }
 
-/* Optimización de animaciones con will-change */
+/* === SISTEMA DE ANIMACIONES MEJORADO === */
+/* Animaciones base para secciones */
+.section-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: opacity, transform;
+}
+
+.section-animate.animate {
+    opacity: 1;
+    transform: translateY(0);
+    will-change: auto;
+}
+
+/* Animaciones escalonadas para elementos dentro de secciones */
 .animate-on-scroll {
     opacity: 0;
     transform: translateY(30px);
-    transition: all 0.6s ease-out;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     will-change: opacity, transform;
 }
 
@@ -129,6 +144,144 @@ body {
     opacity: 1;
     transform: translateY(0);
     will-change: auto;
+}
+
+/* Animaciones con delay para efecto cascada */
+.animate-delay-1 { transition-delay: 0.1s; }
+.animate-delay-2 { transition-delay: 0.2s; }
+.animate-delay-3 { transition-delay: 0.3s; }
+.animate-delay-4 { transition-delay: 0.4s; }
+.animate-delay-5 { transition-delay: 0.5s; }
+
+/* Animaciones específicas por tipo de elemento */
+.animate-fade-in {
+    opacity: 0;
+    transition: opacity 0.8s ease-out;
+}
+
+.animate-fade-in.animate {
+    opacity: 1;
+}
+
+.animate-slide-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-slide-up.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate-slide-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-slide-left.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.animate-slide-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-slide-right.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.animate-scale {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-scale.animate {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Animación especial para títulos */
+.animate-title {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-title.animate {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Animación para cards/tarjetas */
+.animate-card {
+    opacity: 0;
+    transform: translateY(30px) rotateX(10deg);
+    transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    perspective: 1000px;
+}
+
+.animate-card.animate {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+}
+
+/* Animación para elementos de lista */
+.animate-list-item {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-list-item.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Animación de entrada suave para el hero */
+.hero-animate {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+    transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hero-animate.animate {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Animaciones para elementos interactivos */
+.interactive-element {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.interactive-element:hover {
+    transform: translateY(-2px);
+}
+
+/* Optimización de rendimiento */
+@media (prefers-reduced-motion: reduce) {
+    .section-animate,
+    .animate-on-scroll,
+    .animate-fade-in,
+    .animate-slide-up,
+    .animate-slide-left,
+    .animate-slide-right,
+    .animate-scale,
+    .animate-title,
+    .animate-card,
+    .animate-list-item,
+    .hero-animate {
+        transition: none;
+        opacity: 1;
+        transform: none;
+    }
 }
 
 
@@ -2177,4 +2330,233 @@ html {
 
 .contact-links a:hover i {
     color: var(--terminal-bg);
+}
+
+/* ========================================
+   EFECTOS DE HOVER MEJORADOS
+   ======================================== */
+
+/* Efectos de hover mejorados para botones */
+.btn, button {
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-smooth);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.btn::after, button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 156, 0.3), transparent);
+    transition: left 0.5s ease;
+    z-index: 1;
+}
+
+.btn:hover::after, button:hover::after {
+    left: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 0 35px rgba(0, 255, 156, 0.6);
+}
+
+.btn:active {
+    transform: translateY(-1px) scale(0.98);
+    transition: all 0.1s ease;
+}
+
+/* Efectos de hover para tarjetas de proyecto */
+.project-card {
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-smooth);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 255, 156, 0.1), rgba(130, 170, 255, 0.1));
+    opacity: 0;
+    transition: opacity var(--transition-smooth);
+    z-index: 1;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-green);
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.1);
+}
+
+.project-card .project-image {
+    transition: transform var(--transition-smooth);
+    overflow: hidden;
+}
+
+.project-card:hover .project-title {
+    color: var(--accent-green);
+    transform: translateX(5px);
+}
+
+.project-card .project-title {
+    transition: all var(--transition-smooth);
+}
+
+/* Efectos de hover mejorados para habilidades */
+.skill-item:hover {
+    transform: translateY(-5px) scale(1.08);
+    box-shadow: 0 15px 35px rgba(0, 255, 156, 0.4);
+    border-color: var(--accent-green);
+    background: var(--terminal-surface);
+}
+
+.skill-item:hover span {
+    color: var(--accent-green);
+    text-shadow: 0 0 10px rgba(0, 255, 156, 0.5);
+}
+
+.skill-item:hover i, .skill-item:hover svg {
+    transform: scale(1.2) rotate(5deg);
+    filter: drop-shadow(0 0 10px currentColor);
+}
+
+/* Efectos de hover para enlaces sociales */
+.social-link {
+    position: relative;
+    transition: all var(--transition-smooth);
+    overflow: hidden;
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, var(--accent-green), transparent);
+    opacity: 0.2;
+    border-radius: 50%;
+    transition: all var(--transition-smooth);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.social-link:hover::before {
+    width: 100px;
+    height: 100px;
+}
+
+.social-link:hover {
+    transform: translateY(-3px) rotate(5deg) scale(1.1);
+    color: var(--accent-green);
+    text-shadow: 0 0 15px currentColor;
+}
+
+/* Efectos de hover para elementos de timeline */
+.timeline-item {
+    transition: all var(--transition-smooth);
+}
+
+.timeline-item:hover {
+    transform: translateX(10px);
+}
+
+.timeline-item:hover .timeline-content {
+    background: linear-gradient(135deg, rgba(0, 255, 156, 0.05), rgba(130, 170, 255, 0.05));
+    border-left-color: var(--accent-green);
+    box-shadow: 0 8px 25px rgba(0, 255, 156, 0.2);
+}
+
+.timeline-content {
+    transition: all var(--transition-smooth);
+    border-left: 3px solid transparent;
+}
+
+/* Efectos de hover para navegación */
+.nav-link {
+    position: relative;
+    transition: all var(--transition-smooth);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent-green);
+    transition: all var(--transition-smooth);
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px var(--accent-green);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: var(--accent-green);
+    transform: translateY(-2px);
+    text-shadow: 0 0 10px rgba(0, 255, 156, 0.5);
+}
+
+/* Efectos de hover para about-me-content-box */
+.about-me-content-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 255, 156, 0.3);
+    border-color: var(--accent-green);
+}
+
+/* Efectos de hover para contact links */
+.contact-links a:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(130, 170, 255, 0.4);
+}
+
+/* Efectos de hover para methodology terminal */
+.methodology-terminal:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.methodology-terminal:hover .methodology-terminal-header {
+    background: linear-gradient(135deg, #2a2c3a, #3a3c4a);
+}
+
+/* Efectos de hover para elementos con animación de pulso */
+.pulse-on-hover:hover {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Efectos de hover para elementos con glow */
+.glow-on-hover:hover {
+    box-shadow: 0 0 20px var(--accent-green), 0 0 40px var(--accent-green), 0 0 60px var(--accent-green);
+    border-color: var(--accent-green);
 }

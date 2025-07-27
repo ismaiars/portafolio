@@ -197,64 +197,164 @@ class PortfolioApp {
     }
 
     setupSectionAnimations() {
-        // Optimized animations using Intersection Observer
+        // Sistema de animaciones mejorado usando Intersection Observer
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.15,
+            rootMargin: '0px 0px -100px 0px'
         };
 
-        const observer = new IntersectionObserver((entries) => {
+        // Observer principal para secciones
+        const sectionObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
                     entry.target.classList.add('animate');
-                    observer.unobserve(entry.target);
+                    
+                    // Animar elementos hijos con delay escalonado
+                    this.animateChildElements(entry.target);
+                    
+                    // Dejar de observar una vez animado
+                    sectionObserver.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        // Observe sections
+        // Observer para elementos individuales
+        const elementObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    elementObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        // Aplicar clases de animación a secciones
         const sections = document.querySelectorAll('section:not(#inicio)');
         sections.forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = 'all 0.6s ease-out';
-            observer.observe(section);
+            section.classList.add('section-animate');
+            sectionObserver.observe(section);
         });
 
-        // Observe timeline items
-        const timelineItems = document.querySelectorAll('.timeline-item');
-        timelineItems.forEach(item => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(30px)';
-            item.style.transition = 'all 0.6s ease-out';
-            observer.observe(item);
+        // Animar elementos específicos
+        this.setupElementAnimations(elementObserver);
+        
+        // Animación especial para el hero
+        this.setupHeroAnimation();
+    }
+
+    animateChildElements(section) {
+        // Animar títulos
+        const titles = section.querySelectorAll('h2, h3, h4');
+        titles.forEach((title, index) => {
+            title.classList.add('animate-title', `animate-delay-${Math.min(index + 1, 5)}`);
+            setTimeout(() => title.classList.add('animate'), 100 * (index + 1));
         });
 
-        // Observe project cards
-        const projectCards = document.querySelectorAll('.project-card');
-        projectCards.forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'all 0.6s ease-out';
-            observer.observe(card);
+        // Animar párrafos
+        const paragraphs = section.querySelectorAll('p');
+        paragraphs.forEach((p, index) => {
+            p.classList.add('animate-fade-in', `animate-delay-${Math.min(index + 2, 5)}`);
+            setTimeout(() => p.classList.add('animate'), 200 * (index + 1));
         });
 
-        // Observe skill items
-        const skillItems = document.querySelectorAll('.skill-item');
-        skillItems.forEach(item => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(20px)';
-            item.style.transition = 'all 0.4s ease-out';
-            observer.observe(item);
+        // Animar tarjetas de proyecto
+        const projectCards = section.querySelectorAll('.project-card');
+        projectCards.forEach((card, index) => {
+            card.classList.add('animate-card', `animate-delay-${Math.min(index + 1, 5)}`);
+            setTimeout(() => card.classList.add('animate'), 150 * (index + 1));
         });
 
-        // Make hero section immediately visible
-        const heroSection = document.querySelector('#inicio');
-        if (heroSection) {
-            heroSection.style.opacity = '1';
-            heroSection.style.transform = 'translateY(0)';
+        // Animar elementos de timeline
+        const timelineItems = section.querySelectorAll('.timeline-item');
+        timelineItems.forEach((item, index) => {
+            const animationClass = index % 2 === 0 ? 'animate-slide-left' : 'animate-slide-right';
+            item.classList.add(animationClass, `animate-delay-${Math.min(index + 1, 5)}`);
+            setTimeout(() => item.classList.add('animate'), 200 * (index + 1));
+        });
+
+        // Animar habilidades
+        const skillItems = section.querySelectorAll('.skill-item');
+        skillItems.forEach((skill, index) => {
+            skill.classList.add('animate-scale', `animate-delay-${Math.min((index % 10) + 1, 5)}`);
+            setTimeout(() => skill.classList.add('animate'), 50 * (index + 1));
+        });
+
+        // Animar elementos de lista
+        const listItems = section.querySelectorAll('li');
+        listItems.forEach((item, index) => {
+            item.classList.add('animate-list-item', `animate-delay-${Math.min(index + 1, 5)}`);
+            setTimeout(() => item.classList.add('animate'), 100 * (index + 1));
+        });
+
+        // Animar botones
+        const buttons = section.querySelectorAll('.btn, button');
+        buttons.forEach((btn, index) => {
+            btn.classList.add('animate-slide-up', `animate-delay-${Math.min(index + 3, 5)}`);
+            setTimeout(() => btn.classList.add('animate'), 300 * (index + 1));
+        });
+    }
+
+    setupElementAnimations(observer) {
+        // Elementos que necesitan animación individual
+        const animatedElements = document.querySelectorAll(`
+            .hero-buttons,
+            .about-me-content-box,
+            .methodology-terminal,
+            .skills-grid,
+            .certifications-container,
+            .contact-form,
+            .social-links
+        `);
+
+        animatedElements.forEach(element => {
+            element.classList.add('animate-on-scroll');
+            observer.observe(element);
+        });
+    }
+
+    setupHeroAnimation() {
+        const heroContent = document.querySelector('.hero-content');
+        const heroBackground = document.querySelector('.hero-background');
+        
+        if (heroContent) {
+            heroContent.classList.add('hero-animate');
+            
+            // Animar hero después de que se cargue la página
+            setTimeout(() => {
+                heroContent.classList.add('animate');
+                
+                // Animar elementos del hero por separado
+                const heroTitle = heroContent.querySelector('h1');
+                const heroDescription = heroContent.querySelector('p');
+                const heroButtons = heroContent.querySelector('.hero-buttons');
+                const lottiePlayer = heroContent.querySelector('lottie-player');
+
+                if (heroTitle) {
+                    heroTitle.classList.add('animate-title');
+                    setTimeout(() => heroTitle.classList.add('animate'), 300);
+                }
+
+                if (heroDescription) {
+                    heroDescription.classList.add('animate-fade-in');
+                    setTimeout(() => heroDescription.classList.add('animate'), 600);
+                }
+
+                if (heroButtons) {
+                    heroButtons.classList.add('animate-slide-up');
+                    setTimeout(() => heroButtons.classList.add('animate'), 900);
+                }
+
+                if (lottiePlayer) {
+                    lottiePlayer.classList.add('animate-scale');
+                    setTimeout(() => lottiePlayer.classList.add('animate'), 1200);
+                }
+            }, 500);
+        }
+
+        // Animar fondo del hero
+        if (heroBackground) {
+            heroBackground.classList.add('animate-fade-in');
+            setTimeout(() => heroBackground.classList.add('animate'), 100);
         }
     }
 
