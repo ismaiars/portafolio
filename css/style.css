@@ -406,7 +406,7 @@ html .navbar,
     
     /* Hero específico para tablets */
     #inicio {
-        padding-top: 120px;
+        padding-top: 160px;
         min-height: calc(100vh - 60px);
     }
     
@@ -492,7 +492,7 @@ section:first-of-type {
     
     /* Hero específico para móviles */
     #inicio {
-        padding-top: 140px;
+        padding-top: 180px;
         min-height: calc(100vh - 80px);
     }
     
@@ -569,7 +569,7 @@ p {
     background: var(--terminal-bg);
     position: relative;
     overflow: hidden;
-    padding-top: 80px; /* Espacio para el navbar fijo */
+    padding-top: 120px; /* Más espacio para el navbar fijo */
 }
 
 /* === Animación de gradiente global === */
