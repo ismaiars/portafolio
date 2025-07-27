@@ -1,12 +1,12 @@
 /* Optimización de variables CSS para mejor rendimiento */
 :root {
-    /* Paleta de colores inspirada en terminales Linux con Oh My Zsh */
+    /* Paleta de colores inspirada en terminales Linux con Oh My Zsh - Mejorada para accesibilidad */
     --terminal-bg: #0a0e14; /* Fondo oscuro de terminal */
     --terminal-surface: #1a1f2e; /* Superficie de terminal */
     --terminal-border: #2d3748; /* Bordes de terminal */
-    --text-primary: #f7fafc; /* Texto principal más brillante para mejor contraste */
-    --text-secondary: #cbd5e0; /* Texto secundario con mejor contraste */
-    --text-muted: #9ca3af; /* Texto atenuado con mejor legibilidad */
+    --text-primary: #e2e8f0;
+    --text-secondary: #e2e8f0; /* Texto secundario con mejor contraste (ratio 4.5:1) */
+    --text-muted: #a0aec0; /* Texto atenuado con contraste mejorado (ratio 3:1) */
     --accent-green: #00ff9c; /* Verde neón para comandos */
     --accent-blue: #00d4ff; /* Azul neón para enlaces */
     --accent-purple: #bd93f9; /* Púrpura neón para títulos */
@@ -730,23 +730,9 @@ p {
     padding-top: 200px; /* Mucho más espacio para asegurar visibilidad */
 }
 
-/* === Animación de gradiente global === */
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+/* === Animaciones eliminadas === */
 
-/* Hero Background mejorado */
-.hero-background {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(120deg, var(--accent-green), var(--accent-blue), var(--accent-purple));
-    background-size: 600% 600%;
-    animation: gradientShift 20s ease infinite;
-    opacity: 0.12;
-    mix-blend-mode: screen;
-}
+/* Hero Background eliminado */
 
 .hero-content {
     position: relative;
@@ -762,12 +748,13 @@ p {
     font-weight: bold;
     margin-bottom: 1rem;
     color: var(--text-primary);
-    text-shadow: var(--terminal-glow);
+    text-shadow: none;
     font-family: 'JetBrains Mono', monospace;
 }
 
 .hero-content h1 span:first-child {
-    color: var(--accent-green);
+    color: var(--accent-purple);
+    text-shadow: none;
 }
 
 .hero-content h1 span:first-child::before {
@@ -777,7 +764,7 @@ p {
 
 .hero-content h1 .typewriter {
     color: var(--accent-purple);
-    text-shadow: var(--terminal-glow-purple);
+    text-shadow: none;
 }
 
 .hero-content p {
@@ -793,13 +780,20 @@ p {
 }
 
 /* Typewriter effect mejorado */
+.greeting-text {
+    color: var(--accent-purple);
+    text-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+}
+
 .typewriter {
     display: inline-block;
+    color: var(--accent-green);
+    text-shadow: 0 0 10px rgba(0, 255, 156, 0.5);
     overflow: hidden;
-    border-right: 3px solid var(--accent-purple);
+    border-right: 3px solid var(--accent-green);
     white-space: nowrap;
     max-width: 0;
-    animation: typing 3.5s steps(40, end) 1s forwards, blink-caret 0.75s step-end infinite;
+    animation: typing 2s steps(40, end) 1s forwards, blink-caret 0.75s step-end infinite;
 }
 
 @keyframes typing {
@@ -1636,8 +1630,30 @@ html {
 .project-link:focus,
 .contact-links a:focus,
 .scroll-to-top:focus {
-    outline: 2px solid var(--accent-green);
-    outline-offset: 2px;
+    outline: 3px solid var(--accent-green);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 1px var(--terminal-bg), 0 0 10px rgba(0, 255, 156, 0.5);
+    border-radius: 4px;
+}
+
+/* Focus visible para navegadores modernos */
+.nav-links a:focus-visible,
+.btn:focus-visible,
+.project-link:focus-visible,
+.contact-links a:focus-visible,
+.scroll-to-top:focus-visible {
+    outline: 3px solid var(--accent-green);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 1px var(--terminal-bg), 0 0 15px rgba(0, 255, 156, 0.6);
+}
+
+/* Remover outline por defecto solo cuando focus-visible está disponible */
+.nav-links a:focus:not(:focus-visible),
+.btn:focus:not(:focus-visible),
+.project-link:focus:not(:focus-visible),
+.contact-links a:focus:not(:focus-visible),
+.scroll-to-top:focus:not(:focus-visible) {
+    outline: none;
 }
 
 /* Final polish */
@@ -2559,4 +2575,152 @@ html {
 .glow-on-hover:hover {
     box-shadow: 0 0 20px var(--accent-green), 0 0 40px var(--accent-green), 0 0 60px var(--accent-green);
     border-color: var(--accent-green);
+}
+
+/* CTAs Optimizados */
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
+    color: var(--terminal-bg);
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-download {
+    position: relative;
+    animation: pulse-glow 2s infinite;
+}
+
+.btn-pulse {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    background: var(--accent-orange);
+    opacity: 0;
+    animation: pulse-ring 2s infinite;
+    pointer-events: none;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(255, 184, 108, 0.3); }
+    50% { box-shadow: 0 0 30px rgba(255, 184, 108, 0.6); }
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Project Actions */
+.project-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.project-link.primary {
+    background: var(--accent-green);
+    color: var(--terminal-bg);
+    flex: 1;
+    min-width: 140px;
+    transition: all 0.3s ease;
+}
+
+.project-link.secondary {
+    background: transparent;
+    color: var(--accent-purple);
+    border: 2px solid var(--accent-purple);
+    flex: 1;
+    min-width: 120px;
+    transition: all 0.3s ease;
+}
+
+.project-link.secondary:hover {
+    background: var(--accent-purple);
+    color: var(--terminal-bg);
+    transform: translateY(-2px);
+}
+
+.project-link i {
+    margin-right: 0.5rem;
+}
+
+/* Micro-animaciones mejoradas */
+.btn, .project-link {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:hover, .project-link:hover {
+    transform: translateY(-3px) scale(1.02);
+}
+
+.btn:active, .project-link:active {
+    transform: translateY(-1px) scale(0.98);
+    transition: all 0.1s ease;
+}
+
+.skill-item {
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px) rotate(2deg);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.metric {
+    transition: all 0.3s ease;
+}
+
+.metric:hover {
+    transform: scale(1.1);
+    background: var(--accent-green);
+    color: var(--terminal-bg);
+}
+
+/* Responsive para CTAs */
+@media (max-width: 768px) {
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+    
+    .project-actions {
+        flex-direction: column;
+    }
+    
+    .project-link {
+        text-align: center;
+    }
 }

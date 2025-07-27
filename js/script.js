@@ -314,7 +314,6 @@ class PortfolioApp {
 
     setupHeroAnimation() {
         const heroContent = document.querySelector('.hero-content');
-        const heroBackground = document.querySelector('.hero-background');
         
         if (heroContent) {
             heroContent.classList.add('hero-animate');
@@ -351,11 +350,7 @@ class PortfolioApp {
             }, 500);
         }
 
-        // Animar fondo del hero
-        if (heroBackground) {
-            heroBackground.classList.add('animate-fade-in');
-            setTimeout(() => heroBackground.classList.add('animate'), 100);
-        }
+        // Hero background animation removed
     }
 
     setupCurrentYear() {
@@ -537,7 +532,7 @@ class PortfolioApp {
         const typewriterElement = document.querySelector('.typewriter');
         if (!typewriterElement) return;
         
-        // Set the name immediately and make it permanent
+        // Set only the name for the typewriter effect
         const originalText = 'Ismael Salazar';
         typewriterElement.textContent = originalText;
         
