@@ -1,25 +1,39 @@
 // Portfolio App - Optimized JavaScript
 class PortfolioApp {
     constructor() {
-        this.init();
+        this.initCritical();
+        this.initNonCritical();
     }
 
-    init() {
+    // Inicializar funcionalidades críticas inmediatamente
+    initCritical() {
         this.setupLoader();
-        this.setupTypewriterEffect(); // Moved before language toggle
         this.setupLanguageToggle();
+        this.setupActiveNavigation();
+    }
+
+    // Inicializar funcionalidades no críticas con delay
+    initNonCritical() {
+        // Usar requestIdleCallback para funcionalidades no críticas
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(() => this.initSecondaryFeatures());
+        } else {
+            setTimeout(() => this.initSecondaryFeatures(), 100);
+        }
+    }
+
+    initSecondaryFeatures() {
+        this.setupTypewriterEffect();
         this.setupScrollToTopButton();
         this.setupSmoothScrolling();
         this.setupScrollProgress();
         this.setupSectionAnimations();
         this.setupCurrentYear();
-        this.setupActiveNavigation();
         this.setupSkillHoverEffects();
         this.setupProjectHoverEffects();
         this.setupTerminalFunctionality();
-        this.setupParticleEffect();
         this.setupContactRippleEffects();
-        this.setupSkillTooltips();
+
         this.setupKeyboardNavigation();
         this.setupPerformanceMonitoring();
         this.setupErrorHandling();
@@ -281,19 +295,7 @@ class PortfolioApp {
     }
 
     setupSkillHoverEffects() {
-        const skillItems = document.querySelectorAll('.skill-item');
-        
-        skillItems.forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px) scale(1.05)';
-                this.style.boxShadow = '0 10px 25px rgba(0, 255, 65, 0.3)';
-            });
-            
-            item.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-                this.style.boxShadow = '0 4px 15px rgba(0, 255, 65, 0.2)';
-            });
-        });
+        // Hover effects removed as requested
     }
 
     setupProjectHoverEffects() {
@@ -446,65 +448,6 @@ class PortfolioApp {
         typewriterElement.style.display = 'inline-block';
     }
 
-    setupParticleEffect() {
-        const heroSection = document.getElementById('inicio');
-        if (!heroSection) return;
-        
-        const createParticle = () => {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.cssText = `
-                position: absolute;
-                width: 2px;
-                height: 2px;
-                background: var(--terminal-green);
-                border-radius: 50%;
-                pointer-events: none;
-                opacity: 0.7;
-                left: ${Math.random() * 100}%;
-                top: 100%;
-                animation: floatUp 6s linear infinite;
-            `;
-            
-            heroSection.appendChild(particle);
-            
-            // Remove particle after animation
-            setTimeout(() => {
-                if (particle.parentNode) {
-                    particle.parentNode.removeChild(particle);
-                }
-            }, 6000);
-        };
-        
-        // Create particles periodically
-        setInterval(createParticle, 300);
-        
-        // Add CSS animation for particles
-        if (!document.querySelector('#particle-styles')) {
-            const style = document.createElement('style');
-            style.id = 'particle-styles';
-            style.textContent = `
-                @keyframes floatUp {
-                    0% {
-                        transform: translateY(0) rotate(0deg);
-                        opacity: 0;
-                    }
-                    10% {
-                        opacity: 0.7;
-                    }
-                    90% {
-                        opacity: 0.7;
-                    }
-                    100% {
-                        transform: translateY(-100vh) rotate(360deg);
-                        opacity: 0;
-                    }
-                }
-            `;
-            document.head.appendChild(style);
-        }
-    }
-
     setupContactRippleEffects() {
         const contactLinks = document.querySelectorAll('.contact-item a');
         
@@ -553,44 +496,6 @@ class PortfolioApp {
         }
     }
 
-    setupSkillTooltips() {
-        const skillItems = document.querySelectorAll('.skill-item');
-        
-        skillItems.forEach(item => {
-            const level = item.getAttribute('data-level') || 'intermedio';
-            const tooltip = document.createElement('div');
-            tooltip.className = 'skill-tooltip';
-            tooltip.textContent = `Nivel: ${level}`;
-            tooltip.style.cssText = `
-                position: absolute;
-                background: var(--terminal-surface);
-                color: var(--terminal-green);
-                padding: 5px 10px;
-                border-radius: 4px;
-                font-size: 12px;
-                top: -35px;
-                left: 50%;
-                transform: translateX(-50%);
-                opacity: 0;
-                pointer-events: none;
-                transition: opacity 0.3s ease;
-                border: 1px solid var(--terminal-green);
-                z-index: 1000;
-            `;
-            
-            item.style.position = 'relative';
-            item.appendChild(tooltip);
-            
-            item.addEventListener('mouseenter', () => {
-                tooltip.style.opacity = '1';
-            });
-            
-            item.addEventListener('mouseleave', () => {
-                tooltip.style.opacity = '0';
-            });
-        });
-    }
-
     setupKeyboardNavigation() {
         document.addEventListener('keydown', (e) => {
             // Escape key to scroll to top
@@ -622,31 +527,53 @@ class PortfolioApp {
     }
 
     setupLazyLoading() {
-        // Enhanced lazy loading for images
+        // Enhanced lazy loading for images and picture elements WITHOUT blur effects
         const imageObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const img = entry.target;
+                    const target = entry.target;
                     
-                    // Add loading placeholder
-                    img.style.filter = 'blur(5px)';
-                    img.style.transition = 'filter 0.3s ease';
-                    
-                    if (img.dataset.src) {
-                        img.src = img.dataset.src;
-                        img.onload = () => {
-                            img.style.filter = 'none';
-                            img.classList.add('loaded');
-                        };
-                        img.removeAttribute('data-src');
+                    // Handle picture elements
+                    if (target.tagName === 'PICTURE') {
+                        const img = target.querySelector('img');
+                        const sources = target.querySelectorAll('source');
+                        
+                        if (img) {
+                            // Load sources first
+                            sources.forEach(source => {
+                                if (source.dataset.srcset) {
+                                    source.srcset = source.dataset.srcset;
+                                    source.removeAttribute('data-srcset');
+                                }
+                            });
+                            
+                            // Then load the img
+                            if (img.dataset.src) {
+                                img.src = img.dataset.src;
+                                img.onload = () => {
+                                    img.classList.add('loaded');
+                                };
+                                img.removeAttribute('data-src');
+                            }
+                        }
+                    } 
+                    // Handle regular img elements
+                    else if (target.tagName === 'IMG') {
+                        if (target.dataset.src) {
+                            target.src = target.dataset.src;
+                            target.onload = () => {
+                                target.classList.add('loaded');
+                            };
+                            target.removeAttribute('data-src');
+                        }
+                        
+                        if (target.dataset.srcset) {
+                            target.srcset = target.dataset.srcset;
+                            target.removeAttribute('data-srcset');
+                        }
                     }
                     
-                    if (img.dataset.srcset) {
-                        img.srcset = img.dataset.srcset;
-                        img.removeAttribute('data-srcset');
-                    }
-                    
-                    observer.unobserve(img);
+                    observer.unobserve(target);
                 }
             });
         }, {
@@ -654,21 +581,37 @@ class PortfolioApp {
             rootMargin: '50px 0px'
         });
 
-        // Observe all images with data-src
-        const lazyImages = document.querySelectorAll('img[data-src]');
-        lazyImages.forEach(img => imageObserver.observe(img));
+        // Observe all images and picture elements with data-src
+        const lazyElements = document.querySelectorAll('img[data-src], picture');
+        lazyElements.forEach(element => imageObserver.observe(element));
 
-        // Observe project images specifically
-        const projectImages = document.querySelectorAll('.project-card img, .hero img');
-        projectImages.forEach(img => {
-            if (!img.complete) {
-                img.style.filter = 'blur(5px)';
-                img.style.transition = 'filter 0.3s ease';
+        // Handle already loaded images - NO BLUR EFFECTS
+        const allImages = document.querySelectorAll('.project-image, .hero img');
+        allImages.forEach(img => {
+            if (img.complete && img.naturalHeight !== 0) {
+                // Image is already loaded, mark as loaded immediately
+                img.classList.add('loaded');
+            } else {
+                // No blur effects - just handle loading
                 img.onload = () => {
-                    img.style.filter = 'none';
+                    img.classList.add('loaded');
                 };
             }
         });
+
+        // Preload critical images after initial load
+        setTimeout(() => {
+            const criticalImages = document.querySelectorAll('.project-image');
+            criticalImages.forEach(img => {
+                if (!img.classList.contains('loaded')) {
+                    const link = document.createElement('link');
+                    link.rel = 'preload';
+                    link.as = 'image';
+                    link.href = img.src;
+                    document.head.appendChild(link);
+                }
+            });
+        }, 2000);
     }
 
     // Utility functions

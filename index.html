@@ -13,8 +13,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Content Security Policy -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://*.lottiefiles.com; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://unpkg.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net data:; connect-src 'self' https://*.lottiefiles.com https://www.google-analytics.com;">
+    <!-- Meta tags para forzar recarga sin caché -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <!-- Content Security Policy mejorada -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://*.lottiefiles.com; script-src 'self' 'sha256-nI71XVeHXdSSEbMde7la0id6MbvsAr7QMiIP0ueo95E=' 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://unpkg.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net data:; connect-src 'self' https://*.lottiefiles.com https://www.google-analytics.com;">
 
     <!-- Preconnects para rendimiento -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,14 +27,39 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://assets5.lottiefiles.com">
     
-    <!-- Preload recursos críticos -->
+    <!-- CSS crítico inline para FCP optimizado -->
+    <style>
+        :root{--terminal-bg:#0a0e14;--terminal-surface:#1a1f2e;--terminal-border:#2d3748;--text-primary:#e2e8f0;--text-secondary:#a0aec0;--text-muted:#718096;--accent-green:#00ff9c;--accent-blue:#00d4ff;--accent-purple:#bd93f9;--accent-orange:#ffb86c;--accent-red:#ff5555;--accent-yellow:#f1fa8c;--glass-bg:rgba(26,31,46,0.9);--glass-border:rgba(45,55,72,0.3);--shadow-light:0 2px 8px rgba(0,0,0,0.3);--shadow-medium:0 4px 16px rgba(0,0,0,0.4);--shadow-dark:0 8px 32px rgba(0,0,0,0.5);--gradient-primary:linear-gradient(135deg,#00ff9c 0%,#00d4ff 100%);--gradient-secondary:linear-gradient(135deg,#bd93f9 0%,#ffb86c 100%);--gradient-accent:linear-gradient(135deg,#00d4ff 0%,#bd93f9 100%);--terminal-glow:0 0 20px rgba(0,255,156,0.3);--terminal-glow-blue:0 0 20px rgba(0,212,255,0.3);--terminal-glow-purple:0 0 20px rgba(189,147,249,0.3);--border-color:rgba(255,255,255,0.1);--transition-fast:0.2s ease;--transition-normal:0.3s ease;--transition-slow:0.5s ease;--spacing-xs:0.5rem;--spacing-sm:1rem;--spacing-md:2rem;--spacing-lg:3rem;--spacing-xl:4rem;--font-family-mono:'JetBrains Mono','Courier New',monospace;--font-size-xs:0.75rem;--font-size-sm:0.875rem;--font-size-base:1rem;--font-size-lg:1.125rem;--font-size-xl:1.25rem;--font-size-2xl:1.5rem;--font-size-3xl:2rem;--font-size-4xl:2.5rem;--z-loader:9999;--z-navbar:1000;--z-modal:1001;--z-tooltip:1002;--z-progress:1003}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;font-size:16px;line-height:1.6}body{font-family:var(--font-family-mono);background:var(--terminal-bg);color:var(--text-primary);overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;transition:opacity 0.5s ease;line-height:1.6;scroll-behavior:smooth}.navbar{position:fixed!important;top:0!important;left:0!important;right:0!important;width:100%!important;height:auto!important;z-index:999999!important;background:rgba(13,17,23,0.95)!important;backdrop-filter:blur(15px)!important;-webkit-backdrop-filter:blur(15px)!important;border-bottom:2px solid var(--accent-green)!important;padding:0.5rem 0!important;box-shadow:0 2px 20px rgba(0,255,156,0.3),0 0 40px rgba(0,0,0,0.5)!important;transition:all 0.3s ease!important;visibility:visible!important;opacity:1!important;display:block!important;pointer-events:auto!important;transform:none!important;margin:0!important}.navbar *,.navbar-content,.navbar-brand,.nav-links,.nav-links a,.language-toggle{visibility:visible!important;opacity:1!important;display:flex!important;pointer-events:auto!important}.nav-links a{display:inline-block!important}.navbar-content{display:flex;justify-content:space-between;align-items:center}.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+    </style>
+    
+    <!-- Preload del CSS completo -->
     <link rel="preload" href="css/style.min.css" as="style">
+    <link rel="stylesheet" href="css/style.min.css">
     <link rel="preload" href="js/script.min.js" as="script">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap" as="style">
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" as="style">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
     
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/jetbrainsmono/v23/tDbV2o-flEEny0FZhsfKu5WU4xD7OwGtT0rU.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="images/projects/preimagen.webp" as="image">
+    
+    <!-- Prefetch de recursos que se usarán después -->
+    <link rel="prefetch" href="https://assets5.lottiefiles.com/packages/lf20_4kx2q32n.json" as="fetch" crossorigin>
+    <link rel="prefetch" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" as="style">
+    <link rel="prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    
+    <!-- DNS prefetch para recursos externos -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://assets5.lottiefiles.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    
+    <!-- Preconnect para recursos críticos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://assets5.lottiefiles.com" crossorigin>
 
     
     <!-- SEO Meta Tags -->
@@ -72,13 +102,16 @@
     <meta name="msapplication-config" content="/browserconfig.xml">
     
     <!-- CSS Principal minificado -->
-    <link rel="stylesheet" href="css/style.min.css">
     
-    <!-- Enlace a Devicon para los logos de habilidades -->
+    <!-- CSS no crítico - carga directa para iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <!-- Enlace a JetBrains Mono para el estilo terminal -->
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome para iconos -->
+    
+    <!-- Fuentes optimizadas con font-display: swap -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/jetbrainsmono/v23/tDbV2o-flEEny0FZhsfKu5WU4xD7OwGtT0rU.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap"></noscript>
+    
+    <!-- Font Awesome - carga directa -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Schema.org markup for SEO -->
@@ -164,12 +197,6 @@
     <section id="inicio">
         <div class="hero-background" aria-hidden="true"></div>
 
-        <!-- Capas Parallax -->
-        <div class="parallax-container" aria-hidden="true">
-            <div class="parallax-layer slow layer-purple"></div>
-            <div class="parallax-layer medium layer-blue"></div>
-            <div class="parallax-layer fast layer-green"></div>
-        </div>
         <div class="container hero-content">
             <h1><span data-es="¡Hola! Soy" data-en="Hello! I'm">¡Hola! Soy</span> <span class="typewriter">Ismael Salazar</span></h1>
             <p data-es="Ingeniero de Sistemas apasionado por la innovación y la creación de soluciones." data-en="Systems Engineer passionate about innovation and creating solutions.">Ingeniero de Sistemas apasionado por la innovación y la creación de soluciones.</p>
@@ -185,18 +212,11 @@
 
     <!-- Sección Sobre Mí -->
     <section id="sobre-mi" class="section-animate">
-        <div class="nebula-container">
-            <div class="nebula nebula1"></div>
-            <div class="nebula nebula2"></div>
-        </div>
-        <div id="stars"></div>
-        <div id="stars2"></div>
-        <div id="stars3"></div>
         <div class="container">
             <h2 data-i18n="section.about" data-es="Sobre Mí" data-en="About Me">Sobre Mí</h2>
             <div class="about-me-content-box">
-                <p class="mb-4" data-es="Ingeniero en Sistemas Computacionales con experiencia liderando áreas de TI, especializado en infraestructura tecnológica, soporte técnico, desarrollo backend y plataformas e-learning. Comprometido con la mejora continua, automatización de procesos y la entrega de soluciones tecnológicas eficientes y seguras." data-en="Computer Systems Engineer with experience leading IT departments, specialized in technological infrastructure, technical support, backend development and e-learning platforms. Committed to continuous improvement, process automation and delivering efficient and secure technological solutions.">
-                    Ingeniero en Sistemas Computacionales con experiencia liderando áreas de TI, especializado en infraestructura tecnológica, soporte técnico, desarrollo backend y plataformas e-learning. Comprometido con la mejora continua, automatización de procesos y la entrega de soluciones tecnológicas eficientes y seguras.
+                <p class="mb-4" data-es="¡Hola! Soy Ismael, un apasionado de la tecnología que acaba de graduarse en Ingeniería en Sistemas Computacionales. Desde pequeño, siempre me fascinó entender cómo funcionan las cosas, y esa curiosidad me llevó al mundo de la programación. Me encanta resolver problemas complejos y convertir ideas en soluciones digitales que realmente impacten la vida de las personas. Cuando no estoy frente a la computadora, probablemente me encuentres explorando nuevas tecnologías, leyendo sobre innovación, o disfrutando de un buen café mientras planeo mi próximo proyecto. Creo firmemente que la tecnología debe ser accesible y útil para todos, y esa filosofía guía cada línea de código que escribo. Mi objetivo es seguir aprendiendo, creciendo profesionalmente y contribuir a crear un mundo más conectado y eficiente a través de la tecnología." data-en="Hello! I'm Ismael, a technology enthusiast who just graduated in Computer Systems Engineering. Since I was little, I've always been fascinated by understanding how things work, and that curiosity led me to the world of programming. I love solving complex problems and turning ideas into digital solutions that truly impact people's lives. When I'm not in front of the computer, you'll probably find me exploring new technologies, reading about innovation, or enjoying a good coffee while planning my next project. I firmly believe that technology should be accessible and useful for everyone, and that philosophy guides every line of code I write. My goal is to keep learning, growing professionally, and contribute to creating a more connected and efficient world through technology.">
+                    ¡Hola! Soy Ismael, un apasionado de la tecnología que acaba de graduarse en Ingeniería en Sistemas Computacionales. Desde pequeño, siempre me fascinó entender cómo funcionan las cosas, y esa curiosidad me llevó al mundo de la programación. Me encanta resolver problemas complejos y convertir ideas en soluciones digitales que realmente impacten la vida de las personas. Cuando no estoy frente a la computadora, probablemente me encuentres explorando nuevas tecnologías, leyendo sobre innovación, o disfrutando de un buen café mientras planeo mi próximo proyecto. Creo firmemente que la tecnología debe ser accesible y útil para todos, y esa filosofía guía cada línea de código que escribo. Mi objetivo es seguir aprendiendo, creciendo profesionalmente y contribuir a crear un mundo más conectado y eficiente a través de la tecnología.
                 </p>
                 <!-- competencias tecnicas incorporadas en el grid de habilidades -->
 
@@ -227,21 +247,31 @@
                             Nivel Avanzado
                         </h4>
                         <div class="skills-grid">
-                            <!-- Avanzado -->
+                            <!-- Frontend -->
                             <div class="skill-item" data-skill="HTML5" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-html5-plain"></i><span>HTML5</span></div>
                             <div class="skill-item" data-skill="CSS3" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-css3-plain"></i><span>CSS3</span></div>
-                            <div class="skill-item" data-skill="MySQL" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-mysql-plain"></i><span>MySQL</span></div>
                             <div class="skill-item" data-skill="JavaScript" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-javascript-plain"></i><span>JavaScript</span></div>
+                            <div class="skill-item" data-skill="TailwindCSS" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-tailwindcss-plain"></i><span>TailwindCSS</span></div>
+                            
+                            <!-- Backend -->
+                            <div class="skill-item" data-skill="Node.js" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-nodejs-plain"></i><span>Node.js</span></div>
                             <div class="skill-item" data-skill="Python" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-python-plain"></i><span>Python</span></div>
                             <div class="skill-item" data-skill="Java" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-java-plain"></i><span>Java</span></div>
-                            <div class="skill-item" data-skill="Node.js" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-nodejs-plain"></i><span>Node.js</span></div>
-                            <div class="skill-item" data-skill="TailwindCSS" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-tailwindcss-plain"></i><span>TailwindCSS</span></div>
-                            <div class="skill-item" data-skill="Moodle" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-moodle-plain"></i><span>Moodle</span></div>
-                            <div class="skill-item" data-skill="n8n" data-level="Avanzado" data-level-en="Advanced"><i class="fas fa-project-diagram"></i><span>n8n</span></div>
-                            <div class="skill-item" data-skill="Shell Script" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-bash-plain"></i><span>Shell Script</span></div>
+                            
+                            <!-- Bases de Datos -->
+                            <div class="skill-item" data-skill="MySQL" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-mysql-plain"></i><span>MySQL</span></div>
+                            
+                            <!-- CMS y Plataformas -->
                             <div class="skill-item" data-skill="WordPress" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-wordpress-plain"></i><span>WordPress</span></div>
-                            <div class="skill-item" data-skill="Arduino" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-arduino-plain"></i><span>Arduino</span></div>
+                            <div class="skill-item" data-skill="Moodle" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-moodle-plain"></i><span>Moodle</span></div>
+                            
+                            <!-- Herramientas y Automatización -->
+                            <div class="skill-item" data-skill="n8n" data-level="Avanzado" data-level-en="Advanced"><i class="fas fa-project-diagram"></i><span>n8n</span></div>
                             <div class="skill-item" data-skill="Postman" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-postman-plain"></i><span>Postman</span></div>
+                            <div class="skill-item" data-skill="Shell Script" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-bash-plain"></i><span>Shell Script</span></div>
+                            
+                            <!-- Hardware -->
+                            <div class="skill-item" data-skill="Arduino" data-level="Avanzado" data-level-en="Advanced"><i class="devicon-arduino-plain"></i><span>Arduino</span></div>
                             <div class="skill-item" data-skill="CCTV" data-level="Avanzado" data-level-en="Advanced" data-description-es="Sistemas de videovigilancia y CCTV" data-description-en="CCTV & Video Surveillance"><i class="fas fa-video"></i><span>CCTV</span></div>
                         </div>
 
@@ -251,16 +281,32 @@
                             Nivel Intermedio
                         </h4>
                         <div class="skills-grid">
-                            <!-- Intermedio -->
+                            <!-- Frontend Frameworks -->
+                            <div class="skill-item" data-skill="Next.js" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-nextjs-plain"></i><span>Next.js</span></div>
+                            <div class="skill-item" data-skill="React" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-react-original"></i><span>React</span></div>
+                            <div class="skill-item" data-skill="TypeScript" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-typescript-plain"></i><span>TypeScript</span></div>
+                            <div class="skill-item" data-skill="Bootstrap" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-bootstrap-plain"></i><span>Bootstrap</span></div>
+                            
+                            <!-- Backend -->
                             <div class="skill-item" data-skill="PHP" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-php-plain"></i><span>PHP</span></div>
+                            <div class="skill-item" data-skill="Express.js" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-express-original"></i><span>Express.js</span></div>
+                            <div class="skill-item" data-skill="Spring" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-spring-plain"></i><span>Spring</span></div>
+                            
+                            <!-- Bases de Datos -->
+                            <div class="skill-item" data-skill="MongoDB" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-mongodb-plain"></i><span>MongoDB</span></div>
+                            <div class="skill-item" data-skill="SQLite" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-sqlite-plain"></i><span>SQLite</span></div>
+                            
+                            <!-- DevOps y Herramientas -->
                             <div class="skill-item" data-skill="Git" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-git-plain"></i><span>Git</span></div>
                             <div class="skill-item" data-skill="Docker" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-docker-plain"></i><span>Docker</span></div>
-                            <div class="skill-item" data-skill="MongoDB" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-mongodb-plain"></i><span>MongoDB</span></div>
                             <div class="skill-item" data-skill="Apache" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-apache-plain"></i><span>Apache</span></div>
+                            <div class="skill-item" data-skill="Nginx" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-nginx-original"></i><span>Nginx</span></div>
+                            
+                            <!-- Diseño -->
                             <div class="skill-item" data-skill="Figma" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-figma-plain"></i><span>Figma</span></div>
-                            <div class="skill-item" data-skill="Spring" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-spring-plain"></i><span>Spring</span></div>
-                            <div class="skill-item" data-skill="Next.js" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-nextjs-plain"></i><span>Next.js</span></div>
-                            <div class="skill-item" data-skill="Bootstrap" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-bootstrap-plain"></i><span>Bootstrap</span></div>
+                            
+                            <!-- APIs -->
+                            <div class="skill-item" data-skill="Swagger" data-level="Intermedio" data-level-en="Intermediate"><i class="devicon-swagger-plain"></i><span>Swagger</span></div>
                         </div>
 
                         <!-- === NIVEL BÁSICO === -->
@@ -269,15 +315,29 @@
                             Nivel Básico
                         </h4>
                         <div class="skills-grid">
-                            <!-- Básico -->
-                            <div class="skill-item" data-skill="React" data-level="Básico" data-level-en="Basic"><i class="devicon-react-original"></i><span>React</span></div>
+                            <!-- Frontend Frameworks -->
                             <div class="skill-item" data-skill="Angular" data-level="Básico" data-level-en="Basic"><i class="devicon-angularjs-plain"></i><span>Angular</span></div>
-                            <div class="skill-item" data-skill="Django" data-level="Básico" data-level-en="Basic"><i class="devicon-django-plain"></i><span>Django</span></div>
-                            <div class="skill-item" data-skill="Ionic" data-level="Básico" data-level-en="Basic"><i class="devicon-ionic-original"></i><span>Ionic</span></div>
+                            <div class="skill-item" data-skill="Vue.js" data-level="Básico" data-level-en="Basic"><i class="devicon-vuejs-plain"></i><span>Vue.js</span></div>
                             <div class="skill-item" data-skill="Nuxt" data-level="Básico" data-level-en="Basic"><i class="devicon-nuxtjs-plain"></i><span>Nuxt</span></div>
-                            <div class="skill-item" data-skill="SQLite" data-level="Básico" data-level-en="Basic"><i class="devicon-sqlite-plain"></i><span>SQLite</span></div>
-                            <div class="skill-item" data-skill="Express.js" data-level="Básico" data-level-en="Basic"><i class="devicon-express-original"></i><span>Express.js</span></div>
-                            <div class="skill-item" data-skill="Swagger" data-level="Básico" data-level-en="Basic"><i class="devicon-swagger-plain"></i><span>Swagger</span></div>
+                            
+                            <!-- Backend Frameworks -->
+                            <div class="skill-item" data-skill="Django" data-level="Básico" data-level-en="Basic"><i class="devicon-django-plain"></i><span>Django</span></div>
+                            <div class="skill-item" data-skill="FastAPI" data-level="Básico" data-level-en="Basic"><i class="devicon-fastapi-plain"></i><span>FastAPI</span></div>
+                            
+                            <!-- Mobile -->
+                            <div class="skill-item" data-skill="Ionic" data-level="Básico" data-level-en="Basic"><i class="devicon-ionic-original"></i><span>Ionic</span></div>
+                            <div class="skill-item" data-skill="React Native" data-level="Básico" data-level-en="Basic"><i class="devicon-react-original"></i><span>React Native</span></div>
+                            
+                            <!-- Cloud y DevOps -->
+                            <div class="skill-item" data-skill="AWS" data-level="Básico" data-level-en="Basic"><i class="fas fa-cloud"></i><span>AWS</span></div>
+                            <div class="skill-item" data-skill="Vercel" data-level="Básico" data-level-en="Basic"><i class="devicon-vercel-original"></i><span>Vercel</span></div>
+                            
+                            <!-- Bases de Datos -->
+                            <div class="skill-item" data-skill="PostgreSQL" data-level="Básico" data-level-en="Basic"><i class="devicon-postgresql-plain"></i><span>PostgreSQL</span></div>
+                            <div class="skill-item" data-skill="Redis" data-level="Básico" data-level-en="Basic"><i class="devicon-redis-plain"></i><span>Redis</span></div>
+                            
+                            <!-- Testing -->
+                            <div class="skill-item" data-skill="Jest" data-level="Básico" data-level-en="Basic"><i class="devicon-jest-plain"></i><span>Jest</span></div>
                         </div>
                     </div>
 
@@ -376,8 +436,8 @@
                     <div class="timeline-content">
                         <div class="timeline-date">2024 - Presente</div>
                         <h3 data-es="Coordinador de Sistemas - Carpe Diem México" data-en="Systems Coordinator - Carpe Diem México">Coordinador de Sistemas - Carpe Diem México</h3>
-                        <p data-es="Lideré un equipo de TI, administré plataformas e-learning (Moodle) y realicé mantenimiento de infraestructura, incrementando la eficiencia operativa en un 15 %." data-en="Led an IT team, managed e-learning platforms (Moodle) and performed infrastructure maintenance, increasing operational efficiency by 15 %.">
-                            Lideré un equipo de TI, administré plataformas e-learning (Moodle) y realicé mantenimiento de infraestructura, incrementando la eficiencia operativa en un 15 %.
+                        <p data-es="Administré la infraestructura tecnológica de la institución educativa, gestionando plataformas Moodle para estudiantes y docentes. Implementé sistemas de respaldo automatizados para proteger la información académica, desarrollé mejoras en el sitio web institucional que aumentaron las inscripciones, y establecí protocolos básicos de seguridad informática. Brindé soporte técnico diario a usuarios y mantuve los equipos de cómputo funcionando correctamente." data-en="Managed the educational institution's technological infrastructure, handling Moodle platforms for students and teachers. Implemented automated backup systems to protect academic information, developed website improvements that increased enrollments, and established basic IT security protocols. Provided daily technical support to users and kept computer equipment running properly.">
+                            Administré la infraestructura tecnológica de la institución educativa, gestionando plataformas Moodle para estudiantes y docentes. Implementé sistemas de respaldo automatizados para proteger la información académica, desarrollé mejoras en el sitio web institucional que aumentaron las inscripciones, y establecí protocolos básicos de seguridad informática. Brindé soporte técnico diario a usuarios y mantuve los equipos de cómputo funcionando correctamente.
                         </p>
                         <div class="timeline-tags">
                             <span>Moodle</span>
@@ -392,8 +452,8 @@
                     <div class="timeline-content">
                         <div class="timeline-date">2024 - Presente</div>
                         <h3 data-es="Coordinador de Sistemas - Ópticas Kairóz" data-en="Systems Coordinator - Ópticas Kairóz">Coordinador de Sistemas - Ópticas Kairóz</h3>
-                        <p data-es="Supervisión de mantenimiento tecnológico, implementación de sistemas de videovigilancia y administración de redes." data-en="Supervised technological maintenance, implemented video-surveillance systems and managed networks.">
-                            Supervisión de mantenimiento tecnológico, implementación de sistemas de videovigilancia y administración de redes.
+                        <p data-es="Implementé y mantuve la infraestructura tecnológica de las sucursales de la óptica, incluyendo sistemas de videovigilancia básicos y redes locales. Administré equipos de cómputo y sistemas POS para las transacciones diarias, establecí procedimientos de respaldo de información y brindé capacitación básica al personal en el uso de nuevas tecnologías. También desarrollé mejoras menores en el sitio web y sistemas internos para optimizar las operaciones diarias." data-en="Implemented and maintained the technological infrastructure of the optical store branches, including basic video surveillance systems and local networks. Managed computer equipment and POS systems for daily transactions, established information backup procedures, and provided basic training to staff on new technologies. Also developed minor improvements to the website and internal systems to optimize daily operations.">
+                            Implementé y mantuve la infraestructura tecnológica de las sucursales de la óptica, incluyendo sistemas de videovigilancia básicos y redes locales. Administré equipos de cómputo y sistemas POS para las transacciones diarias, establecí procedimientos de respaldo de información y brindé capacitación básica al personal en el uso de nuevas tecnologías. También desarrollé mejoras menores en el sitio web y sistemas internos para optimizar las operaciones diarias.
                         </p>
                         <div class="timeline-tags">
                             <span>Redes</span>
@@ -406,10 +466,10 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2021 - Presente</div>
+                        <div class="timeline-date">2023 - Presente</div>
                         <h3 data-es="Desarrollador y Soporte IT (Freelance)" data-en="Developer & IT Support (Freelance)">Desarrollador y Soporte IT (Freelance)</h3>
-                        <p data-es="Automatización de procesos con n8n, configuración de servidores Linux y desarrollo backend con Node.js y Python para soluciones personalizadas." data-en="Process automation with n8n, Linux server configuration and backend development with Node.js and Python for custom solutions.">
-                            Automatización de procesos con n8n, configuración de servidores Linux y desarrollo backend con Node.js y Python para soluciones personalizadas.
+                        <p data-es="Durante mis estudios universitarios, comencé a desarrollar soluciones tecnológicas para pequeños negocios locales, especializándome en automatización de procesos con n8n que ayudaron a reducir tareas manuales. Configuré servidores básicos en plataformas cloud para algunos proyectos web, creé APIs sencillas con Node.js y Python para conectar diferentes sistemas, y desarrollé scripts de automatización que ahorraron tiempo a mis clientes. Esta experiencia me permitió aplicar conocimientos teóricos en proyectos reales mientras completaba mi formación académica." data-en="During my university studies, I began developing technological solutions for small local businesses, specializing in process automation with n8n that helped reduce manual tasks. Configured basic servers on cloud platforms for some web projects, created simple APIs with Node.js and Python to connect different systems, and developed automation scripts that saved time for my clients. This experience allowed me to apply theoretical knowledge in real projects while completing my academic training.">
+                            Durante mis estudios universitarios, comencé a desarrollar soluciones tecnológicas para pequeños negocios locales, especializándome en automatización de procesos con n8n que ayudaron a reducir tareas manuales. Configuré servidores básicos en plataformas cloud para algunos proyectos web, creé APIs sencillas con Node.js y Python para conectar diferentes sistemas, y desarrollé scripts de automatización que ahorraron tiempo a mis clientes. Esta experiencia me permitió aplicar conocimientos teóricos en proyectos reales mientras completaba mi formación académica.
                         </p>
                         <div class="timeline-tags">
                             <span>Node.js</span>
@@ -431,24 +491,28 @@
                 <div class="project-card" data-index="1">
                     <div class="project-status" data-es="Completado" data-en="Completed">Completado</div>
                     <!-- Imagen de Proyecto -->
-                    <img src="images/projects/carpediem.webp" alt="Captura de pantalla del sitio web de Carpe Diem México, mostrando su diseño moderno y secciones de cursos." class="project-image" loading="lazy" decoding="async" width="400" height="250"/>
+                    <picture>
+                        <source srcset="images/projects/carpediem.avif" type="image/avif">
+                        <source srcset="images/projects/carpediem.webp" type="image/webp">
+                        <img src="images/projects/carpediem.webp" alt="Captura de pantalla del sitio web de Carpe Diem México, mostrando su diseño moderno y secciones de cursos." class="project-image" loading="lazy" decoding="async"/>
+                    </picture>
                     <h3 data-es="Sitio Web Carpe Diem México" data-en="Carpe Diem México Website">Sitio Web Carpe Diem México</h3>
-                    <p data-es="Rescaté un sitio web que había sido marcado como malicioso, restaurando la confianza de sus clientes. Tras resolver vulnerabilidades críticas y aplicar una estrategia SEO, logramos un notable incremento en la venta de cursos y certificaciones. El proyecto fue desarrollado y optimizado con WordPress, HTML, CSS, JavaScript, PHP y MySQL." data-en="I rescued a website that had been marked as malicious, restoring customer trust. After resolving critical vulnerabilities and applying an SEO strategy, we achieved a notable increase in course and certification sales. The project was developed and optimized with WordPress, HTML, CSS, JavaScript, PHP, and MySQL.">
-                        Rescaté un sitio web que había sido marcado como malicioso, restaurando la confianza de sus clientes. Tras resolver vulnerabilidades críticas y aplicar una estrategia SEO, logramos un notable incremento en la venta de cursos y certificaciones. El proyecto fue desarrollado y optimizado con WordPress, HTML, CSS, JavaScript, PHP y MySQL.
+                    <p data-es="Realicé la recuperación de un sitio web que había sido comprometido y marcado por Google Safe Browsing. Ejecuté la limpieza de malware, actualización de plugins y temas, y configuré medidas básicas de seguridad. Implementé mejoras de SEO básicas que ayudaron a mejorar el posicionamiento en buscadores y optimicé la velocidad de carga del sitio. El proyecto incluyó la migración a un hosting más seguro y la configuración de copias de seguridad automáticas." data-en="Performed the recovery of a website that had been compromised and flagged by Google Safe Browsing. Executed malware cleanup, plugin and theme updates, and configured basic security measures. Implemented basic SEO improvements that helped improve search engine positioning and optimized site loading speed. The project included migration to more secure hosting and automatic backup configuration.">
+                        Realicé la recuperación de un sitio web que había sido comprometido y marcado por Google Safe Browsing. Ejecuté la limpieza de malware, actualización de plugins y temas, y configuré medidas básicas de seguridad. Implementé mejoras de SEO básicas que ayudaron a mejorar el posicionamiento en buscadores y optimicé la velocidad de carga del sitio. El proyecto incluyó la migración a un hosting más seguro y la configuración de copias de seguridad automáticas.
                     </p>
                     <!-- Métricas del Proyecto -->
                     <div class="project-metrics">
                         <div class="metric">
                             <i class="fas fa-code"></i>
-                            <span data-es="6K líneas" data-en="6K lines">6K líneas</span>
+                            <span data-es="3K líneas" data-en="3K lines">3K líneas</span>
                         </div>
                         <div class="metric">
                             <i class="fas fa-clock"></i>
-                            <span data-es="3 meses" data-en="3 months">3 meses</span>
+                            <span data-es="1 mes" data-en="1 month">1 mes</span>
                         </div>
                         <div class="metric">
-                            <i class="fas fa-chart-line"></i>
-                            <span data-es="Mejora SEO" data-en="SEO Improvement">Mejora SEO</span>
+                            <i class="fas fa-shield-alt"></i>
+                            <span data-es="Seguridad" data-en="Security">Seguridad</span>
                         </div>
                     </div>
                     <div class="project-tags">
@@ -468,24 +532,28 @@
                 <div class="project-card" data-index="2">
                     <div class="project-status" data-es="Completado" data-en="Completed">Completado</div>
                     <!-- Imagen de Proyecto -->
-                    <img src="images/projects/opticas-kairoz.webp" alt="Captura de pantalla de la tienda en línea Ópticas Kairóz, mostrando un catálogo de armazones y la interfaz de usuario." class="project-image" loading="lazy" decoding="async" width="400" height="250"/>
+                    <picture>
+                        <source srcset="images/projects/opticas-kairoz.avif" type="image/avif">
+                        <source srcset="images/projects/opticas-kairoz.webp" type="image/webp">
+                        <img src="images/projects/opticas-kairoz.webp" alt="Captura de pantalla de la tienda en línea Ópticas Kairóz, mostrando un catálogo de armazones y la interfaz de usuario." class="project-image" loading="lazy" decoding="async"/>
+                    </picture>
                     <h3 data-es="E-commerce Ópticas Kairóz" data-en="Ópticas Kairóz E-commerce">E-commerce Ópticas Kairóz</h3>
-                    <p data-es="Lideré un equipo de 3 personas para construir la tienda en línea de Ópticas Kairóz, un proyecto clave para su transformación digital. Implementamos un catálogo de productos con pasarela de pago y un sistema de agendamiento de citas, resultando en un aumento de las conversiones y una mayor visibilidad online para el negocio." data-en="I led a 3-member team to build the Ópticas Kairóz online store, a key project for their digital transformation. We implemented a product catalog with a payment gateway and an appointment booking system, resulting in increased conversions and greater online visibility for the business.">
-                        Lideré un equipo de 3 personas para construir la tienda en línea de Ópticas Kairóz, un proyecto clave para su transformación digital. Implementamos un catálogo de productos con pasarela de pago y un sistema de agendamiento de citas, resultando en un aumento de las conversiones y una mayor visibilidad online para el negocio.
+                    <p data-es="Desarrollé una tienda en línea para Ópticas Kairóz utilizando WordPress y WooCommerce. Configuré el catálogo de productos, implementé pasarelas de pago básicas (PayPal y transferencias), y personalicé el diseño para adaptarlo a la marca. Agregué funcionalidades como sistema de citas en línea y optimicé el sitio para dispositivos móviles. El proyecto incluyó capacitación básica al personal para la gestión del contenido y productos." data-en="Developed an online store for Ópticas Kairóz using WordPress and WooCommerce. Configured the product catalog, implemented basic payment gateways (PayPal and transfers), and customized the design to match the brand. Added functionalities like online appointment system and optimized the site for mobile devices. The project included basic staff training for content and product management.">
+                        Desarrollé una tienda en línea para Ópticas Kairóz utilizando WordPress y WooCommerce. Configuré el catálogo de productos, implementé pasarelas de pago básicas (PayPal y transferencias), y personalicé el diseño para adaptarlo a la marca. Agregué funcionalidades como sistema de citas en línea y optimicé el sitio para dispositivos móviles. El proyecto incluyó capacitación básica al personal para la gestión del contenido y productos.
                     </p>
                     <!-- Métricas del Proyecto -->
                     <div class="project-metrics">
                         <div class="metric">
                             <i class="fas fa-code"></i>
-                            <span data-es="7K líneas" data-en="7K lines">7K líneas</span>
+                            <span data-es="4K líneas" data-en="4K lines">4K líneas</span>
                         </div>
                         <div class="metric">
                             <i class="fas fa-clock"></i>
-                            <span data-es="4 meses" data-en="4 months">4 meses</span>
+                            <span data-es="2 meses" data-en="2 months">2 meses</span>
                         </div>
                         <div class="metric">
-                            <i class="fas fa-users"></i>
-                            <span data-es="Equipo de 3" data-en="Team of 3">Equipo de 3</span>
+                            <i class="fas fa-shopping-cart"></i>
+                            <span data-es="E-commerce" data-en="E-commerce">E-commerce</span>
                         </div>
                     </div>
                     <div class="project-tags">
@@ -503,10 +571,14 @@
                 <div class="project-card" data-index="3">
                     <div class="project-status" data-es="Completado" data-en="Completed">Completado</div>
                     <!-- Imagen de Proyecto -->
-                    <img src="images/projects/inventario.webp" alt="Captura de pantalla del sistema de gestión de inventario, mostrando el dashboard y la lista de equipos." class="project-image" loading="lazy" decoding="async" width="400" height="250"/>
+                    <picture>
+                        <source srcset="images/projects/inventario.avif" type="image/avif">
+                        <source srcset="images/projects/inventario.webp" type="image/webp">
+                        <img src="images/projects/inventario.webp" alt="Captura de pantalla del sistema de gestión de inventario, mostrando el dashboard y la lista de equipos." class="project-image" loading="lazy" decoding="async"/>
+                    </picture>
                     <h3 data-es="Sistema de Inventario Corporativo" data-en="Corporate Inventory System">Sistema de Inventario Corporativo</h3>
-                    <p data-es="Desarrollé un sistema de gestión de inventario desde cero, enfocado en la seguridad y una experiencia de usuario fluida. El proyecto cuenta con un dashboard interactivo para el seguimiento de activos y se implementó un robusto sistema de autenticación con Google (OAuth 2.0) usando NextAuth.js para restringir el acceso únicamente a personal autorizado a través de una lista blanca, garantizando la máxima seguridad de los datos." data-en="I developed an inventory management system from scratch, focusing on security and a smooth user experience. The project features an interactive dashboard for asset tracking and a robust authentication system with Google (OAuth 2.0) was implemented using NextAuth.js to restrict access only to authorized personnel through a whitelist, ensuring maximum data security.">
-                        Desarrollé un sistema de gestión de inventario desde cero, enfocado en la seguridad y una experiencia de usuario fluida. El proyecto cuenta con un dashboard interactivo para el seguimiento de activos y se implementó un robusto sistema de autenticación con Google (OAuth 2.0) usando NextAuth.js para restringir el acceso únicamente a personal autorizado a través de una lista blanca, garantizando la máxima seguridad de los datos.
+                    <p data-es="Desarrollé un sistema de gestión de inventario utilizando Next.js, TypeScript y Tailwind CSS. Implementé autenticación con NextAuth.js y Google OAuth para controlar el acceso al sistema. El dashboard incluye funcionalidades básicas como registro de equipos, filtros de búsqueda, y exportación de reportes en Excel. Utilicé SWR para el manejo de datos y Zod para validación de formularios, creando una interfaz moderna y responsive." data-en="Developed an inventory management system using Next.js, TypeScript, and Tailwind CSS. Implemented authentication with NextAuth.js and Google OAuth to control system access. The dashboard includes basic functionalities like equipment registration, search filters, and Excel report exports. Used SWR for data handling and Zod for form validation, creating a modern and responsive interface.">
+                        Desarrollé un sistema de gestión de inventario utilizando Next.js, TypeScript y Tailwind CSS. Implementé autenticación con NextAuth.js y Google OAuth para controlar el acceso al sistema. El dashboard incluye funcionalidades básicas como registro de equipos, filtros de búsqueda, y exportación de reportes en Excel. Utilicé SWR para el manejo de datos y Zod para validación de formularios, creando una interfaz moderna y responsive.
                     </p>
                     <!-- Métricas del Proyecto -->
                     <div class="project-metrics">
