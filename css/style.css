@@ -253,7 +253,7 @@ section:not(#inicio)::before {
     backdrop-filter: blur(15px) !important;
     -webkit-backdrop-filter: blur(15px) !important;
     border-bottom: 2px solid var(--accent-green) !important;
-    padding: 0.5rem 0 !important;
+    padding: 0.3rem 0 !important; /* Reducido de 0.5rem a 0.3rem */
     box-shadow: 0 2px 20px rgba(0, 255, 156, 0.3), 0 0 40px rgba(0, 0, 0, 0.5) !important;
     transition: all 0.3s ease !important;
     visibility: visible !important;
@@ -322,7 +322,7 @@ html .navbar,
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 0.8rem; /* Reducido de 0.5rem 1rem */
     border-radius: 4px;
     position: relative;
     font-family: 'JetBrains Mono', monospace;
@@ -353,7 +353,7 @@ html .navbar,
     background: var(--terminal-surface);
     border: 1px solid var(--accent-blue);
     border-radius: 4px;
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 0.8rem; /* Reducido de 0.5rem 1rem */
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -406,8 +406,12 @@ html .navbar,
     
     /* Hero específico para tablets */
     #inicio {
-        padding-top: 160px;
+        padding-top: 220px;
         min-height: calc(100vh - 60px);
+    }
+    
+    .hero-content {
+        margin-top: 120px; /* Espacio en blanco adicional para tablets */
     }
     
     .hero-content h1 {
@@ -492,13 +496,14 @@ section:first-of-type {
     
     /* Hero específico para móviles */
     #inicio {
-        padding-top: 180px;
+        padding-top: 240px;
         min-height: calc(100vh - 80px);
     }
     
     .hero-content {
         text-align: center; /* Centrar en móviles */
         padding: 0 0.5rem;
+        margin-top: 140px; /* Espacio en blanco adicional para móviles */
     }
     
     .hero-content h1 {
@@ -564,12 +569,12 @@ p {
 #inicio {
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Cambio de center a flex-start */
     justify-content: center;
     background: var(--terminal-bg);
     position: relative;
     overflow: hidden;
-    padding-top: 120px; /* Más espacio para el navbar fijo */
+    padding-top: 200px; /* Mucho más espacio para asegurar visibilidad */
 }
 
 /* === Animación de gradiente global === */
@@ -596,6 +601,7 @@ p {
     color: var(--text-primary);
     max-width: 800px;
     text-align: left;
+    margin-top: 100px; /* Espacio en blanco adicional para separar del navbar */
 }
 
 .hero-content h1 {
