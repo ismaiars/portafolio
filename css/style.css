@@ -503,7 +503,7 @@ section:first-of-type {
     .hero-content {
         text-align: center; /* Centrar en móviles */
         padding: 0 0.5rem;
-        margin-top: 140px; /* Espacio en blanco adicional para móviles */
+        margin-top: 180px; /* Aún más espacio en blanco para móviles */
     }
     
     .hero-content h1 {
