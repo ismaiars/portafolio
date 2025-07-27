@@ -496,14 +496,14 @@ section:first-of-type {
     
     /* Hero específico para móviles */
     #inicio {
-        padding-top: 300px !important;
+        padding-top: 150px !important;
         min-height: calc(100vh - 80px);
     }
     
     .hero-content {
         text-align: center; /* Centrar en móviles */
         padding: 0 0.5rem;
-        margin-top: 350px !important; /* MUCHO más espacio en blanco para móviles */
+        margin-top: 175px !important; /* Reducido a la mitad del espacio anterior */
     }
     
     .hero-content h1 {
