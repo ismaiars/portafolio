@@ -411,7 +411,7 @@ html .navbar,
     }
     
     .hero-content {
-        margin-top: 120px; /* Espacio en blanco adicional para tablets */
+        margin-top: 160px; /* Más espacio en blanco para tablets */
     }
     
     .hero-content h1 {
@@ -503,7 +503,7 @@ section:first-of-type {
     .hero-content {
         text-align: center; /* Centrar en móviles */
         padding: 0 0.5rem;
-        margin-top: 180px; /* Aún más espacio en blanco para móviles */
+        margin-top: 250px; /* Mucho más espacio en blanco para móviles */
     }
     
     .hero-content h1 {
