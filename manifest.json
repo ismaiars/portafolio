@@ -1,0 +1,66 @@
+{
+  "name": "Ismael Salazar Portfolio",
+  "short_name": "IS Portfolio",
+  "description": "Portafolio profesional de Ismael Salazar - Ingeniero de Sistemas",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#00ff41",
+  "orientation": "portrait-primary",
+  "categories": ["portfolio", "developer", "engineer"],
+  "lang": "es",
+  "icons": [
+    {
+      "src": "/images/projects/favicon/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/projects/favicon/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/projects/favicon/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/projects/preimagen.webp",
+      "sizes": "1280x720",
+      "type": "image/webp",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Proyectos",
+      "short_name": "Proyectos",
+      "description": "Ver mis proyectos",
+      "url": "/#proyectos",
+      "icons": [
+        {
+          "src": "/images/projects/favicon/favicon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Contacto",
+      "short_name": "Contacto",
+      "description": "Información de contacto",
+      "url": "/#contacto",
+      "icons": [
+        {
+          "src": "/images/projects/favicon/favicon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}

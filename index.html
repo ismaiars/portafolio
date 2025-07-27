@@ -20,6 +20,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    
+    <!-- Preload recursos críticos -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/script.js" as="script">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap" as="style">
     
     <!-- SEO Meta Tags -->
     <title data-es="Portafolio de Ismael Salazar - Ingeniero de Sistemas" data-en="Ismael Salazar - Systems Engineer Portfolio">Portafolio de Ismael Salazar - Ingeniero de Sistemas</title>
@@ -50,7 +57,15 @@
     <link rel="icon" type="image/svg+xml" href="/images/projects/favicon/favicon.svg" />
     <link rel="shortcut icon" href="/images/projects/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/images/projects/favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="/images/projects/favicon/site.webmanifest" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="IS Portfolio">
+    <meta name="msapplication-TileColor" content="#00ff41">
+    <meta name="msapplication-config" content="/browserconfig.xml">
     
     <!-- Enlace al archivo CSS externo -->
     <link rel="stylesheet" href="css/style.css">
@@ -60,16 +75,54 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Schema.org markup for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ismael Salazar",
+        "jobTitle": "Ingeniero de Sistemas",
+        "description": "Ingeniero de Sistemas con 4+ años de experiencia en desarrollo web, aplicaciones móviles y administración de servidores",
+        "url": "https://ismael-salazar-iars.vercel.app",
+        "sameAs": [
+            "https://github.com/ismael-salazar",
+            "https://linkedin.com/in/ismael-salazar"
+        ],
+        "knowsAbout": [
+            "JavaScript",
+            "PHP",
+            "Python",
+            "React",
+            "Node.js",
+            "MySQL",
+            "MongoDB",
+            "DevOps"
+        ],
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Universidad"
+        },
+        "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Ingeniero de Sistemas",
+            "occupationLocation": {
+                "@type": "Place",
+                "name": "México"
+            }
+        }
+    }
+    </script>
 </head>
 <body>
     <!-- Barra de progreso de scroll -->
-    <div id="scrollProgress"></div>
+    <div id="scrollProgress" aria-hidden="true"></div>
 
     <!-- Enlace de accesibilidad: Saltar al contenido principal -->
     <a href="#mainContent" class="skip-link" data-es="Saltar al contenido" data-en="Skip to content">Saltar al contenido</a>
 
     <!-- Loader -->
-    <div class="loader" id="loader">
+    <div class="loader" id="loader" aria-hidden="true">
         <div class="loader-content">
             <div class="loader-spinner"></div>
             <h3 data-es="Cargando..." data-en="Loading...">Cargando...</h3>
@@ -85,8 +138,8 @@
             <div class="navbar-brand">Ismael Salazar</div>
             <div class="nav-links">
                 <!-- Language Toggle -->
-                <div class="language-toggle" id="languageToggle">
-                    <i class="fas fa-globe"></i>
+                <div class="language-toggle" id="languageToggle" role="button" tabindex="0" aria-label="Cambiar idioma">
+                    <i class="fas fa-globe" aria-hidden="true"></i>
                     <span data-es="ES" data-en="EN">ES</span>
                 </div>
                 <a href="#inicio" data-i18n="nav.home" data-es="Inicio" data-en="Home">Inicio</a>
@@ -104,10 +157,10 @@
 
     <!-- Sección Hero (Inicio) -->
     <section id="inicio">
-        <div class="hero-background"></div>
+        <div class="hero-background" aria-hidden="true"></div>
 
         <!-- Capas Parallax -->
-        <div class="parallax-container">
+        <div class="parallax-container" aria-hidden="true">
             <div class="parallax-layer slow layer-purple"></div>
             <div class="parallax-layer medium layer-blue"></div>
             <div class="parallax-layer fast layer-green"></div>
@@ -117,11 +170,11 @@
             <p data-es="Ingeniero de Sistemas apasionado por la innovación y la creación de soluciones." data-en="Systems Engineer passionate about innovation and creating solutions.">Ingeniero de Sistemas apasionado por la innovación y la creación de soluciones.</p>
             <div class="hero-buttons">
                 <a href="#proyectos" class="btn" data-i18n="button.viewProjects" data-es="Ver Mis Proyectos" data-en="View My Projects">Ver Mis Proyectos</a>
-                <a href="docs/cv_ismael_salazar.pdf" class="btn btn-secondary" id="exportCV" data-i18n="button.downloadCV" data-es="Descargar CV" data-en="Download CV" download target="_blank">Descargar CV</a>
+                <a href="docs/cv_ismael_salazar.pdf" class="btn btn-secondary" id="exportCV" data-i18n="button.downloadCV" data-es="Descargar CV" data-en="Download CV" download target="_blank" rel="noopener">Descargar CV</a>
             </div>
 
             <!-- Lottie Animation -->
-            <lottie-player class="lottie-hero" src="https://assets5.lottiefiles.com/packages/lf20_4kx2q32n.json" background="transparent" speed="1" loop autoplay></lottie-player>
+            <lottie-player class="lottie-hero" src="https://assets5.lottiefiles.com/packages/lf20_4kx2q32n.json" background="transparent" speed="1" loop autoplay aria-hidden="true"></lottie-player>
         </div>
     </section>
 
