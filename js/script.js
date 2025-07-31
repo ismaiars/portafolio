@@ -1,3 +1,4 @@
+window.si = window.si || function () { (window.si.q = window.si.q || []).push(arguments); };
 // Portfolio App - Optimized JavaScript
 class PortfolioApp {
     constructor() {
