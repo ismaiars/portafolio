@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize controllers
     window.UIController = new UIController();
     window.AnimationController = new AnimationController();
+    window.Logger = new Logger();
 
     // Initialize non-critical features with a delay
     if ('requestIdleCallback' in window) {

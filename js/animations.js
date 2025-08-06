@@ -191,6 +191,7 @@ class AnimationController {
             h2.dataset.value = h2.innerText;
 
             h2.addEventListener('mouseover', event => {
+                window.Logger.log(`[EVENT] Mouse hover on h2: ${event.target.dataset.value}.`);
                 let iterations = 0;
                 const interval = setInterval(() => {
                     event.target.innerText = event.target.innerText.split("")
