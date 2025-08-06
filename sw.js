@@ -14,7 +14,9 @@ const CRITICAL_RESOURCES = [
     '/',
     '/index.html',
     '/css/style.min.css',
-    '/js/script.min.js',
+    '/js/ui.js',
+    '/js/animations.js',
+    '/js/script.js',
     '/images/projects/preimagen.webp'
 ];
 

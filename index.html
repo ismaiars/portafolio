@@ -162,12 +162,8 @@
 
     <!-- Loader -->
     <div class="loader" id="loader" aria-hidden="true">
-        <div class="loader-content">
-            <div class="loader-spinner"></div>
-            <h3 data-es="Cargando..." data-en="Loading...">Cargando...</h3>
-            <div class="loader-progress">
-                <div class="loader-progress-bar"></div>
-            </div>
+        <div class="loader-terminal" id="loader-terminal">
+            <!-- Las líneas de arranque se generarán aquí -->
         </div>
     </div>
 
@@ -175,7 +171,15 @@
     <nav class="navbar" role="navigation" aria-label="Navegación principal">
         <div class="container navbar-content">
             <div class="navbar-brand">Ismael Salazar</div>
-            <div class="nav-links">
+            
+            <!-- Botón de Hamburguesa -->
+            <button class="navbar-toggle" id="navbarToggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <div class="nav-links" id="nav-menu">
                 <!-- Language Toggle -->
                 <div class="language-toggle" id="languageToggle" role="button" tabindex="0" aria-label="Cambiar idioma">
                     <i class="fas fa-globe" aria-hidden="true"></i>
@@ -655,9 +659,9 @@
             <h2 data-es="Contáctame" data-en="Contact Me">Contáctame</h2>
             <p data-es="¿Tienes una idea o quieres colaborar? ¡No dudes en contactarme!" data-en="Have an idea or want to collaborate? Don't hesitate to contact me!">¿Tienes una idea o quieres colaborar? ¡No dudes en contactarme!</p>
             <div class="contact-links">
-                <a href="mailto:iarsfate@gmail.com"><i class="fas fa-envelope"></i> iarsfate@gmail.com</a>
-                <a href="https://wa.me/527202302698" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                <a href="https://github.com/ismaiars" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                <a href="mailto:iarsfate@gmail.com"><i class="fas fa-envelope"></i><span class="sr-only">Enviar correo a</span> iarsfate@gmail.com</a>
+                <a href="https://wa.me/527202302698" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i><span class="sr-only">Enviar mensaje de WhatsApp</span> WhatsApp</a>
+                <a href="https://github.com/ismaiars" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i><span class="sr-only">Visitar perfil de GitHub</span> GitHub</a>
             </div>
         </div>
     </section>
@@ -674,7 +678,9 @@
         </div>
     </footer>
 
-    <!-- Enlace al archivo JavaScript -->
+    <!-- Enlaces a los archivos JavaScript -->
+    <script src="js/ui.js" defer></script>
+    <script src="js/animations.js" defer></script>
     <script src="js/script.js" defer></script>
     <!-- Lottie Player -->
      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" defer></script>

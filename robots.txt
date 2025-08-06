@@ -1,8 +1,6 @@
+# Allow all crawlers to access all content
 User-agent: *
 Allow: /
 
-# Sitemap
+# Point crawlers to the sitemap
 Sitemap: https://ismael-salazar-iars.vercel.app/sitemap.xml
-
-# Crawl-delay
-Crawl-delay: 1
