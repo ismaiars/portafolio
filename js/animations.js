@@ -1,4 +1,3 @@
-
 class AnimationController {
     constructor() {
         this.initAnimations();
@@ -10,6 +9,7 @@ class AnimationController {
         this.setupSkillHoverEffects();
         this.setupProjectHoverEffects();
         this.setupDecodeEffect();
+        this.setupGlitchEffect();
     }
 
     enableAnimations() {
@@ -191,7 +191,6 @@ class AnimationController {
             h2.dataset.value = h2.innerText;
 
             h2.addEventListener('mouseover', event => {
-                window.Logger.log(`[EVENT] Mouse hover on h2: ${event.target.dataset.value}.`);
                 let iterations = 0;
                 const interval = setInterval(() => {
                     event.target.innerText = event.target.innerText.split("")
@@ -209,6 +208,14 @@ class AnimationController {
 
                     iterations += 1 / 3;
                 }, 30);
+            });
+        });
+    }
+
+    setupGlitchEffect() {
+        document.querySelectorAll('.project-image').forEach(image => {
+            image.addEventListener('mouseenter', () => {
+                glitchIt(image);
             });
         });
     }

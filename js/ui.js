@@ -1,4 +1,3 @@
-
 class UIController {
     constructor() {
         this.setupLoader();
@@ -40,10 +39,9 @@ class UIController {
                     loader.classList.add('hidden');
                     setTimeout(() => {
                         loader.style.display = 'none';
-                                    if (window.AnimationController) {
-                window.AnimationController.enableAnimations();
-                window.Logger.log('[OK] Animations enabled.');
-            }
+                        if (window.AnimationController) {
+                            window.AnimationController.enableAnimations();
+                        }
                     }, 500);
                 }, 500);
                 return;
@@ -210,7 +208,6 @@ class UIController {
                 const sectionHeight = section.clientHeight;
                 if (window.pageYOffset >= sectionTop - sectionHeight / 3) {
                     current = section.getAttribute('id');
-                    window.Logger.log(`[INFO] Scrolled to section: #${current}.`);
                 }
             });
 

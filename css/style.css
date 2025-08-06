@@ -1993,41 +1993,4 @@ html {
     border-width: 0;
 }
 
-/* Estilos para el Live System Log */
-.live-log {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 350px;
-    height: 200px;
-    background: rgba(10, 14, 20, 0.8);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid var(--terminal-border);
-    border-radius: 4px;
-    padding: 10px;
-    font-family: var(--font-family-mono);
-    font-size: 0.75rem;
-    color: var(--accent-green);
-    overflow: hidden;
-    z-index: 999;
-    display: flex;
-    flex-direction: column-reverse;
-}
 
-.log-line {
-    margin-bottom: 0.3rem;
-    white-space: pre-wrap;
-    opacity: 0;
-    animation: log-fade-in 0.5s forwards;
-}
-
-@keyframes log-fade-in {
-    to { opacity: 1; }
-}
-
-@media (max-width: 768px) {
-    .live-log {
-        display: none; /* Ocultar en móviles para no saturar la pantalla */
-    }
-}
