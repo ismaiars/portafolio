@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, Suspense } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
 
 // Google Analytics tracking ID
@@ -46,16 +46,23 @@ export function trackEvent({
   }
 }
 
+// Page tracking component that uses useSearchParams
+function PageTracker() {
+  usePageView()
+  return null
+}
+
 // Analytics component
 export function Analytics() {
-  usePageView()
-
   if (!GA_TRACKING_ID) {
     return null
   }
 
   return (
     <>
+      <Suspense fallback={null}>
+        <PageTracker />
+      </Suspense>
       <script
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
