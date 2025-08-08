@@ -97,7 +97,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-16">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-terminal-bg via-terminal-surface to-terminal-bg" />
       <ParticleBackground />
@@ -106,7 +106,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-terminal-grid opacity-20" />
       
       {/* Content */}
-      <div className="relative z-10 container-custom text-center">
+      <div className="relative z-10 container-custom text-center mt-8 sm:mt-0">
         <motion.div
           variants={containerVariants}
           initial="hidden"

@@ -55,12 +55,12 @@ export function Navigation() {
         className="fixed top-0 left-0 right-0 z-50 bg-terminal-bg/90 backdrop-blur-md border-b border-accent-green/20"
       >
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-16 sm:h-14">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="text-xl font-bold text-accent-green font-mono"
+              className="text-lg sm:text-xl font-bold text-accent-green font-mono"
             >
               Ismael Salazar
             </motion.div>
