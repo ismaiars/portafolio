@@ -101,3 +101,26 @@ jspm_packages/
 
 # TernJS port file
 .tern-port
+
+# Legacy HTML/CSS files (obsolete)
+index.html
+css/
+js/
+images/
+.htaccess
+sw.js
+manifest.json
+robots.txt
+sitemap.xml
+docs/
+
+# Duplicate config files
+next-config.js
+tailwind-nextjs.config.js
+tsconfig-nextjs.json
+package-nextjs.json
+
+# Documentation files (keep only main README.md)
+README-NEXTJS-ARCHITECTURE.md
+MIGRATION_GUIDE.md
+PROPUESTA_ARQUITECTURA_MODERNA.md

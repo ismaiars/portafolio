@@ -1,6 +1,0 @@
-# Allow all crawlers to access all content
-User-agent: *
-Allow: /
-
-# Point crawlers to the sitemap
-Sitemap: https://ismael-salazar-iars.vercel.app/sitemap.xml
