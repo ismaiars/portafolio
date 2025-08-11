@@ -45,27 +45,27 @@ export default function HomePage() {
           </section>
           
           {/* About Section */}
-          <section id="about" className="py-20">
+          <section id="about" className="py-12 md:py-20">
             <About />
           </section>
           
           {/* Methodology Section */}
-          <section id="methodology" className="py-20">
+          <section id="methodology" className="py-12 md:py-20">
             <Methodology />
           </section>
           
           {/* Timeline Section */}
-          <section id="timeline" className="py-20">
+          <section id="timeline" className="py-12 md:py-20">
             <Timeline />
           </section>
           
           {/* Projects Section */}
-          <section id="projects" className="py-20">
+          <section id="projects" className="py-12 md:py-20">
             <Projects />
           </section>
           
           {/* Contact Section */}
-          <section id="contact" className="py-20">
+          <section id="contact" className="py-12 md:py-20">
             <Contact />
           </section>
         </Suspense>

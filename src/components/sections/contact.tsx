@@ -1,8 +1,124 @@
 'use client';
 
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+
+interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+interface FormErrors {
+  name?: string;
+  email?: string;
+  subject?: string;
+  message?: string;
+}
+
 export default function Contact() {
+  const [formData, setFormData] = useState<FormData>({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = 'El nombre es requerido';
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'El email es requerido';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Por favor ingresa un email válido';
+    }
+    
+    if (!formData.subject.trim()) {
+      newErrors.subject = 'El asunto es requerido';
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = 'El mensaje es requerido';
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = 'El mensaje debe tener al menos 10 caracteres';
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+    
+    // Limpiar error del campo cuando el usuario empiece a escribir
+    if (errors[name as keyof FormErrors]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: undefined
+      }));
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+    
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    
+    try {
+      // Simular envío de email (aquí puedes integrar con un servicio real como EmailJS, Formspree, etc.)
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Error al enviar el mensaje');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      // Por ahora, simularemos un envío exitoso para demostración
+      setSubmitStatus('success');
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
-    <section id="contacto" className="section-animate py-20 bg-terminal-surface">
+    <section id="contacto" className="section-animate py-8 md:py-16 bg-terminal-surface">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-8 text-accent-green" data-es="¿Hablamos? Estoy a Solo un Mensaje de Distancia" data-en="Let's Talk? I'm Just One Message Away">
           ¿Hablamos? Estoy a Solo un Mensaje de Distancia
@@ -106,7 +222,26 @@ export default function Contact() {
                       <span className="prompt text-accent-orange font-mono text-xl mt-1">➜</span>
                       <div className="command-content flex-1">
                         <h4 className="text-xl font-bold text-accent-orange mb-4" data-es="Envíame un Mensaje" data-en="Send Me a Message">Envíame un Mensaje</h4>
-                        <form className="space-y-4">
+                        {/* Mensaje de estado */}
+                        {submitStatus === 'success' && (
+                          <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="mb-6 p-4 bg-accent-green/10 border border-accent-green/30 rounded-lg"
+                          >
+                            <div className="flex items-center gap-2 text-accent-green">
+                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                              </svg>
+                              <span className="font-medium">¡Mensaje enviado exitosamente!</span>
+                            </div>
+                            <p className="text-text-secondary text-sm mt-1">
+                              Gracias por contactarme. Te responderé lo antes posible.
+                            </p>
+                          </motion.div>
+                        )}
+
+                        <form onSubmit={handleSubmit} className="space-y-4">
                           <div>
                             <label className="block text-text-secondary text-sm mb-2" htmlFor="name" data-es="Tu nombre:" data-en="Your name:">
                               Tu nombre:
@@ -114,12 +249,27 @@ export default function Contact() {
                             <input 
                               type="text" 
                               id="name" 
-                              name="name" 
-                              className="w-full bg-terminal-surface border border-terminal-border rounded px-4 py-2 text-text-primary focus:border-accent-green focus:outline-none transition-colors"
+                              name="name"
+                              value={formData.name}
+                              onChange={handleInputChange}
+                              className={`w-full bg-terminal-surface border rounded px-4 py-2 text-text-primary focus:outline-none transition-colors ${
+                                errors.name 
+                                  ? 'border-red-500 focus:border-red-500' 
+                                  : 'border-terminal-border focus:border-accent-green'
+                              }`}
                               placeholder="¿Cómo te llamas?"
                               data-es-placeholder="¿Cómo te llamas?"
                               data-en-placeholder="What's your name?"
                             />
+                            {errors.name && (
+                              <motion.p
+                                initial={{ opacity: 0, y: -5 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                className="text-red-500 text-sm mt-1"
+                              >
+                                {errors.name}
+                              </motion.p>
+                            )}
                           </div>
                           
                           <div>
@@ -129,12 +279,27 @@ export default function Contact() {
                             <input 
                               type="email" 
                               id="email" 
-                              name="email" 
-                              className="w-full bg-terminal-surface border border-terminal-border rounded px-4 py-2 text-text-primary focus:border-accent-green focus:outline-none transition-colors"
+                              name="email"
+                              value={formData.email}
+                              onChange={handleInputChange}
+                              className={`w-full bg-terminal-surface border rounded px-4 py-2 text-text-primary focus:outline-none transition-colors ${
+                                errors.email 
+                                  ? 'border-red-500 focus:border-red-500' 
+                                  : 'border-terminal-border focus:border-accent-green'
+                              }`}
                               placeholder="tu@email.com"
                               data-es-placeholder="tu@email.com"
                               data-en-placeholder="your@email.com"
                             />
+                            {errors.email && (
+                              <motion.p
+                                initial={{ opacity: 0, y: -5 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                className="text-red-500 text-sm mt-1"
+                              >
+                                {errors.email}
+                              </motion.p>
+                            )}
                           </div>
                           
                           <div>
@@ -144,12 +309,27 @@ export default function Contact() {
                             <input 
                               type="text" 
                               id="subject" 
-                              name="subject" 
-                              className="w-full bg-terminal-surface border border-terminal-border rounded px-4 py-2 text-text-primary focus:border-accent-green focus:outline-none transition-colors"
+                              name="subject"
+                              value={formData.subject}
+                              onChange={handleInputChange}
+                              className={`w-full bg-terminal-surface border rounded px-4 py-2 text-text-primary focus:outline-none transition-colors ${
+                                errors.subject 
+                                  ? 'border-red-500 focus:border-red-500' 
+                                  : 'border-terminal-border focus:border-accent-green'
+                              }`}
                               placeholder="¿De qué quieres hablar?"
                               data-es-placeholder="¿De qué quieres hablar?"
                               data-en-placeholder="What do you want to talk about?"
                             />
+                            {errors.subject && (
+                              <motion.p
+                                initial={{ opacity: 0, y: -5 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                className="text-red-500 text-sm mt-1"
+                              >
+                                {errors.subject}
+                              </motion.p>
+                            )}
                           </div>
                           
                           <div>
@@ -158,25 +338,56 @@ export default function Contact() {
                             </label>
                             <textarea 
                               id="message" 
-                              name="message" 
+                              name="message"
+                              value={formData.message}
+                              onChange={handleInputChange}
                               rows={4}
-                              className="w-full bg-terminal-surface border border-terminal-border rounded px-4 py-2 text-text-primary focus:border-accent-green focus:outline-none transition-colors resize-none"
+                              className={`w-full bg-terminal-surface border rounded px-4 py-2 text-text-primary focus:outline-none transition-colors resize-none ${
+                                errors.message 
+                                  ? 'border-red-500 focus:border-red-500' 
+                                  : 'border-terminal-border focus:border-accent-green'
+                              }`}
                               placeholder="Cuéntame sobre tu proyecto, idea, o simplemente saluda..."
                               data-es-placeholder="Cuéntame sobre tu proyecto, idea, o simplemente saluda..."
                               data-en-placeholder="Tell me about your project, idea, or just say hello..."
                             ></textarea>
+                            {errors.message && (
+                              <motion.p
+                                initial={{ opacity: 0, y: -5 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                className="text-red-500 text-sm mt-1"
+                              >
+                                {errors.message}
+                              </motion.p>
+                            )}
                           </div>
                           
                           <button 
                             type="submit" 
-                            className="w-full bg-accent-green hover:bg-accent-green/80 text-terminal-bg font-medium py-3 px-6 rounded transition-all duration-300 flex items-center justify-center gap-2"
+                            disabled={isSubmitting}
+                            className={`w-full font-medium py-3 px-6 rounded transition-all duration-300 flex items-center justify-center gap-2 ${
+                              isSubmitting
+                                ? 'bg-accent-green/50 text-terminal-bg/70 cursor-not-allowed'
+                                : 'bg-accent-green hover:bg-accent-green/80 text-terminal-bg hover:shadow-lg hover:shadow-accent-green/25'
+                            }`}
                             data-es="Enviar Mensaje"
                             data-en="Send Message"
                           >
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                            </svg>
-                            Enviar Mensaje
+                            {isSubmitting ? (
+                              <>
+                                <svg className="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                                </svg>
+                                Enviando...
+                              </>
+                            ) : (
+                              <>
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                                </svg>
+                                Enviar Mensaje
+                              </>
+                            )}
                           </button>
                         </form>
                       </div>

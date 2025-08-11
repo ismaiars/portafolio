@@ -2,7 +2,7 @@
 
 export default function Methodology() {
   return (
-    <section id="metodologia" className="section-animate py-20 bg-terminal-bg">
+    <section id="metodologia" className="section-animate py-8 md:py-16 bg-terminal-bg">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-8 text-accent-green" data-es="Mi Plan de Juego: Cómo Creamos Magia Juntos" data-en="My Game Plan: How We Create Magic Together">
           Mi Plan de Juego: Cómo Creamos Magia Juntos

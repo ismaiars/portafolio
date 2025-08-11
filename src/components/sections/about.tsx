@@ -111,7 +111,7 @@ export default function About() {
   const showCursor = !isTypingCommand && displayedResponse.length < currentResponse.length;
 
   return (
-    <section id="sobre-mi" className="section-animate py-20 bg-terminal-surface/50">
+    <section id="sobre-mi" className="section-animate py-8 md:py-16 bg-terminal-surface/50">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-accent-green" data-es="Sobre Mi" data-en="About Me">
           Sobre Mi

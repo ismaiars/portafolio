@@ -8,7 +8,7 @@ import {
 
 export default function Projects() {
   return (
-    <section id="proyectos" className="section-animate py-20 bg-terminal-bg">
+    <section id="proyectos" className="section-animate py-8 md:py-16 bg-terminal-bg">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-8 text-accent-green" data-es="Mis Creaciones: Proyectos que Me Enorgullecen" data-en="My Creations: Projects I'm Proud Of">
           Mis Creaciones: Proyectos que Me Enorgullecen

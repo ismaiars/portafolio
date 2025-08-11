@@ -2,7 +2,7 @@
 
 export default function Timeline() {
   return (
-    <section id="timeline" className="section-animate py-20 bg-terminal-surface">
+    <section id="timeline" className="section-animate py-8 md:py-16 bg-terminal-surface">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-8 text-accent-green" data-es="Mi Aventura Profesional: De Cero a Héroe (Bueno, Casi)" data-en="My Professional Adventure: From Zero to Hero (Well, Almost)">
           Mi Aventura Profesional: De Cero a Héroe (Bueno, Casi)
