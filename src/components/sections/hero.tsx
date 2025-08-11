@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { ChevronDown, Download, Github, Mail } from 'lucide-react'
+import { Download, Github, Mail } from 'lucide-react'
 import { TypewriterEffect } from '@/components/ui/typewriter-effect'
 import { ParticleBackground } from '@/components/ui/particle-background'
 import { Button } from '@/components/ui/button'
@@ -40,16 +40,7 @@ const itemVariants = {
   }
 }
 
-const floatingVariants = {
-  animate: {
-    y: [-10, 10, -10],
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      ease: 'easeInOut'
-    }
-  }
-}
+
 
 export function Hero() {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0)
@@ -84,9 +75,7 @@ export function Hero() {
     return () => observer.disconnect()
   }, [])
 
-  const handleScrollToAbout = () => {
-    scrollTo('about')
-  }
+
 
   const handleDownloadCV = () => {
     // Trigger CV download
