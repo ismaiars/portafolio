@@ -290,7 +290,7 @@ export default function Testimonials() {
                 }}
                 className="absolute inset-0 cursor-grab active:cursor-grabbing"
               >
-                <div className="testimonial-mobile bg-terminal-bg border border-terminal-border rounded-xl p-4 md:p-6 lg:p-8 h-full flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-8 shadow-terminal">
+                <div className="testimonial-mobile bg-terminal-bg border border-terminal-border rounded-xl p-4 md:p-6 lg:p-8 h-full flex flex-col gap-4 md:gap-8 md:flex-row shadow-terminal">
                   {/* Left Side - Testimonial Content */}
                   <div className="flex-1 flex flex-col justify-center">
                     {/* Quote Icon */}
@@ -362,20 +362,20 @@ export default function Testimonials() {
 
                   {/* Right Side - Metrics */}
                   {currentTestimonial.metrics && (
-                    <div className="md:w-80 bg-terminal-surface border border-terminal-border rounded-lg p-6">
-                      <h5 className="text-accent-purple font-semibold mb-4 text-center">
+                    <div className="w-full md:w-80 bg-terminal-surface border border-terminal-border rounded-lg p-4 md:p-6 mt-4 md:mt-0">
+                      <h5 className="text-accent-purple font-semibold mb-3 md:mb-4 text-center text-sm md:text-base">
                         <span data-es="Resultados Obtenidos" data-en="Results Achieved">Resultados Obtenidos</span>
                       </h5>
-                      <div className="space-y-4">
+                      <div className="grid grid-cols-3 md:space-y-4 md:block gap-2 md:gap-0">
                         {currentTestimonial.metrics.map((metric, index) => (
                           <div key={index} className="text-center">
-                            <div className="text-2xl font-bold text-accent-green mb-1">
+                            <div className="text-lg md:text-2xl font-bold text-accent-green mb-1">
                               {metric.value}
                             </div>
-                            <div className="text-text-primary font-medium text-sm mb-1">
+                            <div className="text-text-primary font-medium text-xs md:text-sm mb-1">
                               {getCurrentMetricLabel(metric)}
                             </div>
-                            <div className="text-text-secondary text-xs">
+                            <div className="text-text-secondary text-xs hidden md:block">
                               {getCurrentMetricImprovement(metric)}
                             </div>
                           </div>
@@ -387,11 +387,11 @@ export default function Testimonials() {
               </motion.div>
             </AnimatePresence>
 
-            {/* Navigation Arrows */}
+            {/* Navigation Arrows - Hidden on mobile */}
             <Button
               variant="outline"
               size="icon"
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-terminal-bg/80 border-terminal-border hover:bg-accent-green hover:text-terminal-bg"
+              className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-terminal-bg/80 border-terminal-border hover:bg-accent-green hover:text-terminal-bg"
               onClick={() => paginate(-1)}
             >
               <ChevronLeft className="w-5 h-5" />
@@ -399,7 +399,7 @@ export default function Testimonials() {
             <Button
               variant="outline"
               size="icon"
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-terminal-bg/80 border-terminal-border hover:bg-accent-green hover:text-terminal-bg"
+              className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-terminal-bg/80 border-terminal-border hover:bg-accent-green hover:text-terminal-bg"
               onClick={() => paginate(1)}
             >
               <ChevronRight className="w-5 h-5" />
@@ -407,7 +407,7 @@ export default function Testimonials() {
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center gap-2">
+          <div className="flex justify-center gap-2 mt-4">
             {testimonials.map((_, index) => (
               <button
                 key={index}
@@ -419,6 +419,28 @@ export default function Testimonials() {
                 }`}
               />
             ))}
+          </div>
+          
+          {/* Mobile Navigation Buttons */}
+          <div className="flex justify-center gap-4 mt-4 md:hidden">
+            <Button
+              variant="outline"
+              size="sm"
+              className="bg-terminal-bg/80 border-terminal-border hover:bg-accent-green hover:text-terminal-bg"
+              onClick={() => paginate(-1)}
+            >
+              <ChevronLeft className="w-4 h-4 mr-1" />
+              <span className="text-xs">Anterior</span>
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="bg-terminal-bg/80 border-terminal-border hover:bg-accent-green hover:text-terminal-bg"
+              onClick={() => paginate(1)}
+            >
+              <span className="text-xs">Siguiente</span>
+              <ChevronRight className="w-4 h-4 ml-1" />
+            </Button>
           </div>
         </div>
 
