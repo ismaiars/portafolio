@@ -102,25 +102,35 @@ jspm_packages/
 # TernJS port file
 .tern-port
 
-# Legacy HTML/CSS files (obsolete)
-index.html
-css/
-js/
-images/
-.htaccess
-sw.js
-manifest.json
-robots.txt
-sitemap.xml
-docs/
+# PWA and Build artifacts
+# Note: Keep public/sw.js and public/manifest.json (they are needed for PWA)
 
-# Duplicate config files
-next-config.js
-tailwind-nextjs.config.js
-tsconfig-nextjs.json
-package-nextjs.json
+# Test artifacts
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
+# Environment files
+.env.example
+
+# Backup files
+*.backup
+*.bak
+*.tmp
+
+# Editor files
+*.sublime-*
+.history/
+
+# Analytics and tracking
+.vercel/
 
 # Documentation files (keep only main README.md)
-README-NEXTJS-ARCHITECTURE.md
-MIGRATION_GUIDE.md
-PROPUESTA_ARQUITECTURA_MODERNA.md
+README-*.md
+DOCS.md
+CHANGELOG.md
+
+# Legacy files (if any)
+legacy/
+old/
+deprecated/

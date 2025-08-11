@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from 'next/font/google'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import { Analytics } from '@/components/analytics'
 import { SkipNav } from '@/components/skip-nav'
+import PWAManager from '@/components/pwa'
 import { cn } from '@/lib/utils'
 import './globals.css'
 
@@ -118,6 +119,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="ga-tracking-id" content={process.env.NEXT_PUBLIC_GA_ID || ''} />
+        
+        {/* PWA Manifest */}
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/icons/icon-192x192.svg" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -150,6 +155,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <div id="main-content" className="flex-1">{children}</div>
           </div>
           <Analytics />
+          <PWAManager />
         </ThemeProvider>
       </body>
     </html>

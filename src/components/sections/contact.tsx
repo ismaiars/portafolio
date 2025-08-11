@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
+import { trackEvent } from '@/components/analytics';
 
 interface FormData {
   name: string;
@@ -83,36 +85,44 @@ export default function Contact() {
     setSubmitStatus('idle');
     
     try {
-      // Simular envío de email (aquí puedes integrar con un servicio real como EmailJS, Formspree, etc.)
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      // Configuración de EmailJS
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
       
-      if (response.ok) {
+      if (!serviceId || !templateId || !publicKey) {
+        console.warn('EmailJS no está configurado. Usando modo demo.');
+        // Simular envío exitoso en modo demo
+        await new Promise(resolve => setTimeout(resolve, 1000));
         setSubmitStatus('success');
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
+        trackEvent('form_submit', 'contact', 'Contact Form Demo', 1);
       } else {
-        throw new Error('Error al enviar el mensaje');
+        // Enviar email real con EmailJS
+        const templateParams = {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_name: 'Ismael Salazar',
+        };
+        
+        await emailjs.send(serviceId, templateId, templateParams, publicKey);
+        setSubmitStatus('success');
+        trackEvent('form_submit', 'contact', 'Contact Form Success', 1);
       }
-    } catch (error) {
-      console.error('Error:', error);
-      // Por ahora, simularemos un envío exitoso para demostración
-      setSubmitStatus('success');
+      
+      // Limpiar formulario
       setFormData({
         name: '',
         email: '',
         subject: '',
         message: ''
       });
+      
+    } catch (error) {
+      console.error('Error al enviar mensaje:', error);
+      setSubmitStatus('error');
+      trackEvent('form_error', 'contact', 'Contact Form Error', 1);
     } finally {
       setIsSubmitting(false);
     }
@@ -237,6 +247,24 @@ export default function Contact() {
                             </div>
                             <p className="text-text-secondary text-sm mt-1">
                               Gracias por contactarme. Te responderé lo antes posible.
+                            </p>
+                          </motion.div>
+                        )}
+
+                        {submitStatus === 'error' && (
+                          <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="mb-6 p-4 bg-red-500/10 border border-red-500/30 rounded-lg"
+                          >
+                            <div className="flex items-center gap-2 text-red-500">
+                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                              <span className="font-medium">Error al enviar el mensaje</span>
+                            </div>
+                            <p className="text-text-secondary text-sm mt-1">
+                              Hubo un problema al enviar tu mensaje. Por favor, intenta de nuevo o contáctame directamente por email.
                             </p>
                           </motion.div>
                         )}
