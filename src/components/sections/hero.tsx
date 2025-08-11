@@ -7,6 +7,7 @@ import { TypewriterEffect } from '@/components/ui/typewriter-effect'
 import { ParticleBackground } from '@/components/ui/particle-background'
 import { Button } from '@/components/ui/button'
 import { useScrollTo } from '@/hooks/use-scroll-to'
+import { trackEvent } from '@/components/analytics'
 
 const roles = [
   { es: 'Web Developer', en: 'Web Developer' },
@@ -69,11 +70,23 @@ export function Hero() {
 
 
   const handleDownloadCV = () => {
+    // Track CV download event
+    trackEvent('download', 'engagement', 'CV Download', 1)
+    
     // Trigger CV download
     const link = document.createElement('a')
     link.href = '/docs/cv_ismael_salazar.pdf'
     link.download = 'cv_ismael_salazar.pdf'
     link.click()
+  }
+
+  const handleContactClick = () => {
+    trackEvent('click', 'navigation', 'Contact Button', 1)
+    scrollTo('contact')
+  }
+
+  const handleGithubClick = () => {
+    trackEvent('click', 'social', 'GitHub Profile', 1)
   }
 
   return (
@@ -145,7 +158,7 @@ export function Hero() {
             </Button>
             
             <Button
-              onClick={() => scrollTo('contact')}
+              onClick={handleContactClick}
               variant="outline"
               className="btn-secondary"
               size="lg"
@@ -165,6 +178,7 @@ export function Hero() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Ver perfil de GitHub"
+                onClick={handleGithubClick}
               >
                 <Github className="w-6 h-6" />
               </a>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, JetBrains_Mono } from 'next/font/google'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import { Analytics } from '@/components/analytics'
+import { SkipNav } from '@/components/skip-nav'
 import { cn } from '@/lib/utils'
 import './globals.css'
 
@@ -88,7 +89,15 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
+  category: 'technology',
+  classification: 'Portfolio Website',
+  other: {
+    'application-name': 'Ismael Salazar Portfolio',
+    'mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-title': 'Ismael Salazar',
+    'msapplication-tooltip': 'Ismael Salazar - Full Stack Developer Portfolio',
   },
 }
 
@@ -108,6 +117,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <meta name="msapplication-TileColor" content="#0a0e14" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="ga-tracking-id" content={process.env.NEXT_PUBLIC_GA_ID || ''} />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -135,8 +145,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
           enableSystem={false}
           disableTransitionOnChange
         >
+          <SkipNav />
           <div className="relative flex min-h-screen flex-col">
-            <div className="flex-1">{children}</div>
+            <div id="main-content" className="flex-1">{children}</div>
           </div>
           <Analytics />
         </ThemeProvider>
