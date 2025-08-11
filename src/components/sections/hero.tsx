@@ -43,17 +43,8 @@ const itemVariants = {
 
 
 export function Hero() {
-  const [currentRoleIndex, setCurrentRoleIndex] = useState(0)
   const [currentLanguage, setCurrentLanguage] = useState('es')
   const scrollTo = useScrollTo()
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentRoleIndex((prev) => (prev + 1) % roles.length)
-    }, 3000)
-
-    return () => clearInterval(interval)
-  }, [])
 
   useEffect(() => {
     // Listen for language changes
@@ -115,9 +106,13 @@ export function Hero() {
           {/* Role with Typewriter Effect */}
           <motion.div variants={itemVariants} className="h-16 md:h-20">
             <TypewriterEffect
-              words={[roles[currentRoleIndex][currentLanguage as keyof typeof roles[0]]]}
+              words={roles.map(role => role[currentLanguage as keyof typeof role])}
               className="text-2xl md:text-4xl lg:text-5xl font-bold text-text-primary"
               cursorClassName="bg-accent-green"
+              typeSpeed={100}
+              deleteSpeed={50}
+              delayBetweenWords={3000}
+              loop={true}
             />
           </motion.div>
           
