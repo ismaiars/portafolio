@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Home, User, Briefcase, FolderOpen, Mail, MessageSquare } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 import { LanguageToggle } from '@/components/ui/language-toggle'
 import { useScrollTo } from '@/hooks/use-scroll-to'
 
