@@ -10,12 +10,12 @@ import { useScrollTo } from '@/hooks/use-scroll-to'
 import { trackEvent } from '@/components/analytics'
 
 const roles = [
-  { es: 'Web Developer', en: 'Web Developer' },
-  { es: 'Node.js Specialist', en: 'Node.js Specialist' },
-  { es: 'Python Developer', en: 'Python Developer' },
-  { es: 'Next.js Expert', en: 'Next.js Expert' },
-  { es: 'Systems Coordinator', en: 'Systems Coordinator' },
-  { es: 'Tech Innovator', en: 'Tech Innovator' }
+  { es: 'Soluciones Digitales Rentables', en: 'Profitable Digital Solutions' },
+  { es: 'Aplicaciones Web de Alto Rendimiento', en: 'High-Performance Web Applications' },
+  { es: 'Sistemas que Impulsan Negocios', en: 'Business-Driving Systems' },
+  { es: 'Experiencias de Usuario Excepcionales', en: 'Exceptional User Experiences' },
+  { es: 'Plataformas E-commerce Exitosas', en: 'Successful E-commerce Platforms' },
+  { es: 'Automatización que Ahorra Tiempo', en: 'Time-Saving Automation' }
 ]
 
 const containerVariants = {
@@ -108,12 +108,12 @@ export function Hero() {
         >
           {/* Greeting */}
           <motion.div variants={itemVariants} className="space-y-2">
-            <p className="text-accent-green font-mono text-lg md:text-xl" data-es="Hola, soy" data-en="Hello, I'm">
-              Hola, soy
-            </p>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white">
+            <h1 className="hero-title text-4xl md:text-6xl lg:text-7xl font-bold text-white">
               <span className="gradient-text">Ismael Salazar</span>
             </h1>
+            <p className="hero-subtitle text-accent-green font-mono text-lg md:text-xl" data-es="Transformo Ideas en" data-en="I Transform Ideas into">
+              Transformo Ideas en
+            </p>
           </motion.div>
           
           {/* Role with Typewriter Effect */}
@@ -132,46 +132,54 @@ export function Hero() {
           {/* Description */}
           <motion.p 
             variants={itemVariants}
-            className="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed"
           >
-            <span data-es="Especializado en" data-en="Specialized in">Especializado en</span>{' '}
-            <span className="text-accent-blue font-semibold">Node.js</span>,{' '}
-            <span className="text-accent-purple font-semibold">Python</span>,{' '}
-            <span className="text-accent-green font-semibold">Next.js</span> <span data-es="y" data-en="and">y</span>{' '}
-            <span className="text-accent-orange font-semibold" data-es="tecnologías modernas" data-en="modern technologies">tecnologías modernas</span>.
-            <br />
-            <span data-es="Creando soluciones web innovadoras y eficientes." data-en="Creating innovative and efficient web solutions.">Creando soluciones web innovadoras y eficientes.</span>
+            <span data-es="Desarrollo soluciones web que no solo se ven increíbles, sino que generan resultados reales: más ventas, mejor eficiencia y crecimiento sostenible para tu negocio." data-en="I develop web solutions that don't just look amazing, but deliver real results: more sales, better efficiency, and sustainable growth for your business.">
+              Desarrollo soluciones web que no solo se ven increíbles, sino que generan resultados reales: más ventas, mejor eficiencia y crecimiento sostenible para tu negocio.
+            </span>
           </motion.p>
+          
+          {/* Guarantee */}
+          <motion.div 
+            variants={itemVariants}
+            className="bg-terminal-surface/50 border border-accent-green/30 rounded-lg p-4 max-w-2xl mx-auto"
+          >
+            <p className="text-accent-green font-mono text-sm md:text-base">
+              <span data-es="✅ Proyectos entregados a tiempo y con calidad excepcional" data-en="✅ Projects delivered on time with exceptional quality">
+                ✅ Proyectos entregados a tiempo y con calidad excepcional
+              </span>
+            </p>
+          </motion.div>
           
           {/* CTA Buttons */}
           <motion.div 
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4"
           >
             <Button
-              onClick={handleDownloadCV}
-              className="btn-primary group"
+              onClick={handleContactClick}
+              className="btn-primary btn-mobile group w-full sm:w-auto"
               size="lg"
             >
-              <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-              <span data-es="Descargar CV" data-en="Download CV">Descargar CV</span>
+              <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              <span className="text-sm sm:text-base" data-es="📞 Hablemos de tu Proyecto" data-en="📞 Let's Talk About Your Project">📞 Hablemos de tu Proyecto</span>
             </Button>
             
             <Button
-              onClick={handleContactClick}
+              onClick={handleDownloadCV}
               variant="outline"
-              className="btn-secondary"
+              className="btn-secondary btn-mobile group w-full sm:w-auto"
               size="lg"
             >
-              <Mail className="w-5 h-5 mr-2" />
-              <span data-es="Contactar" data-en="Contact">Contactar</span>
+              <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:animate-bounce" />
+              <span className="text-sm sm:text-base" data-es="💼 Ver Mi Trabajo" data-en="💼 See My Work">💼 Ver Mi Trabajo</span>
             </Button>
             
             <Button
               asChild
               variant="ghost"
               size="lg"
-              className="text-text-secondary hover:text-accent-green transition-colors"
+              className="text-text-secondary hover:text-accent-green transition-colors btn-mobile"
             >
               <a 
                 href="https://github.com/ismaiars" 
@@ -180,7 +188,7 @@ export function Hero() {
                 aria-label="Ver perfil de GitHub"
                 onClick={handleGithubClick}
               >
-                <Github className="w-6 h-6" />
+                <Github className="w-5 h-5 sm:w-6 sm:h-6" />
               </a>
             </Button>
           </motion.div>
@@ -188,32 +196,41 @@ export function Hero() {
           {/* Stats */}
           <motion.div 
             variants={itemVariants}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto"
+            className="stats-mobile grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 mt-12 sm:mt-16 max-w-4xl mx-auto px-4"
           >
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-accent-green mb-2">
-                1+
+            <div className="text-center bg-terminal-surface/30 rounded-lg p-3 sm:p-4 border border-accent-green/20">
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent-green mb-1 sm:mb-2">
+                2+
               </div>
-              <div className="text-text-secondary font-mono text-sm" data-es="Año de Experiencia" data-en="Year of Experience">
-                Año de Experiencia
-              </div>
-            </div>
-            
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-accent-blue mb-2">
-                10+
-              </div>
-              <div className="text-text-secondary font-mono text-sm" data-es="Proyectos Completados" data-en="Completed Projects">
-                Proyectos Completados
+              <div className="text-text-secondary font-mono text-xs sm:text-sm leading-tight" data-es="Años Creando Soluciones" data-en="Years Creating Solutions">
+                Años Creando Soluciones
               </div>
             </div>
             
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-accent-purple mb-2">
+            <div className="text-center bg-terminal-surface/30 rounded-lg p-3 sm:p-4 border border-accent-blue/20">
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent-blue mb-1 sm:mb-2">
                 15+
               </div>
-              <div className="text-text-secondary font-mono text-sm" data-es="Tecnologías Dominadas" data-en="Technologies Mastered">
-                Tecnologías Dominadas
+              <div className="text-text-secondary font-mono text-xs sm:text-sm leading-tight" data-es="Proyectos Exitosos Entregados" data-en="Successful Projects Delivered">
+                Proyectos Exitosos Entregados
+              </div>
+            </div>
+            
+            <div className="text-center bg-terminal-surface/30 rounded-lg p-3 sm:p-4 border border-accent-purple/20">
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent-purple mb-1 sm:mb-2">
+                300%+
+              </div>
+              <div className="text-text-secondary font-mono text-xs sm:text-sm leading-tight" data-es="Promedio Aumento Conversiones" data-en="Average Conversion Increase">
+                Promedio Aumento Conversiones
+              </div>
+            </div>
+            
+            <div className="text-center bg-terminal-surface/30 rounded-lg p-3 sm:p-4 border border-accent-orange/20">
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent-orange mb-1 sm:mb-2">
+                99.9%
+              </div>
+              <div className="text-text-secondary font-mono text-xs sm:text-sm leading-tight" data-es="Tiempo Actividad Garantizado" data-en="Uptime Guaranteed">
+                Tiempo Actividad Garantizado
               </div>
             </div>
           </motion.div>

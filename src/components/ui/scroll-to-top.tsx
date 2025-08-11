@@ -8,7 +8,12 @@ import { useScrollToTop } from '@/hooks/use-scroll-to'
 
 export function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
   const scrollToTop = useScrollToTop()
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -22,6 +27,10 @@ export function ScrollToTop() {
     window.addEventListener('scroll', toggleVisibility)
     return () => window.removeEventListener('scroll', toggleVisibility)
   }, [])
+
+  if (!isMounted) {
+    return null
+  }
 
   return (
     <AnimatePresence>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Home, User, Briefcase, FolderOpen, Mail } from 'lucide-react'
+import { Menu, X, Home, User, Briefcase, FolderOpen, Mail, MessageSquare } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { LanguageToggle } from '@/components/ui/language-toggle'
 import { useScrollTo } from '@/hooks/use-scroll-to'
@@ -12,13 +12,19 @@ const navItems = [
   { id: 'about', label: 'Sobre Mí', labelEn: 'About Me', icon: User },
   { id: 'timeline', label: 'Experiencia', labelEn: 'Experience', icon: Briefcase },
   { id: 'projects', label: 'Proyectos', labelEn: 'Projects', icon: FolderOpen },
+  { id: 'testimonials', label: 'Testimonios', labelEn: 'Testimonials', icon: MessageSquare },
   { id: 'contacto', label: 'Contacto', labelEn: 'Contact', icon: Mail }
 ]
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
+  const [isMounted, setIsMounted] = useState(false)
   const scrollTo = useScrollTo()
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,23 +52,29 @@ export function Navigation() {
     setIsOpen(false)
   }
 
+  if (!isMounted) {
+    return null
+  }
+
   return (
     <>
       {/* Desktop Navigation */}
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="fixed top-0 left-0 right-0 z-50 bg-terminal-bg/90 backdrop-blur-md border-b border-accent-green/20"
+        className="fixed top-0 left-0 right-0 z-50 bg-terminal-bg/80 backdrop-blur-md border-b border-accent-green/20"
       >
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16 sm:h-14">
+        <div className="container mx-auto px-4 py-3 sm:py-4">
+          <div className="flex items-center justify-between">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="flex items-center gap-8 text-lg sm:text-xl font-bold text-accent-green font-mono"
+              className="nav-mobile text-lg sm:text-xl font-bold text-accent-green font-mono cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              onClick={() => handleNavClick('home')}
             >
-              <span>Ismael Salazar</span>
+              <span>&lt;IS /&gt;</span>
               {/* Language Toggle for Mobile */}
               <div className="md:hidden">
                 <LanguageToggle size="xs" />
@@ -103,16 +115,16 @@ export function Navigation() {
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="md:hidden">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setIsOpen(!isOpen)}
-                className="text-accent-green"
-              >
-                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </Button>
-            </div>
+            <motion.button
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden p-2 text-text-primary hover:text-accent-green transition-colors btn-mobile"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
+            </motion.button>
           </div>
         </div>
       </motion.nav>
@@ -121,35 +133,38 @@ export function Navigation() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed inset-y-0 right-0 z-50 w-64 bg-terminal-bg border-l border-accent-green/20 md:hidden"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-terminal-bg/95 backdrop-blur-md border-t border-accent-green/20"
           >
-            <div className="flex flex-col h-full pt-20 px-6">
-              {navItems.map((item, index) => {
-                const Icon = item.icon
-                return (
-                  <motion.button
-                    key={item.id}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1 * index }}
-                    onClick={() => handleNavClick(item.id)}
-                    className={`flex items-center space-x-3 px-4 py-3 rounded-md mb-2 transition-colors ${
-                      activeSection === item.id
-                        ? 'text-accent-green bg-accent-green/10'
-                        : 'text-gray-300 hover:text-accent-green hover:bg-accent-green/5'
-                    }`}
-                  >
-                    <Icon className="w-5 h-5" />
-                    <span className="font-mono" data-es={item.label} data-en={item.labelEn}>{item.label}</span>
-                  </motion.button>
-                )
-              })}
+            <div className="px-4 py-4 space-y-3">
+              {navItems.map((item, index) => (
+                <motion.button
+                  key={item.id}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  onClick={() => handleNavClick(item.id)}
+                  className={`btn-mobile block w-full text-left px-4 py-3 rounded-lg transition-all duration-200 ${
+                    activeSection === item.id
+                      ? 'bg-accent-green/20 text-accent-green border border-accent-green/30'
+                      : 'text-text-secondary hover:text-accent-green hover:bg-accent-green/10'
+                  }`}
+                >
+                  <span className="font-mono text-sm">{item.label}</span>
+                </motion.button>
+              ))}
               
-              {/* Language Toggle for Mobile has been moved next to Ismael Salazar */}
+              {/* Language Toggle in Mobile Menu */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: navItems.length * 0.1 }}
+                className="pt-3 border-t border-accent-green/20"
+              >
+                <LanguageToggle />
+              </motion.div>
             </div>
           </motion.div>
         )}

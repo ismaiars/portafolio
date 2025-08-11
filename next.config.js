@@ -5,11 +5,14 @@ const nextConfig = {
   },
   images: {
     formats: ['image/webp', 'image/avif'],
-    domains: ['localhost'],
     remotePatterns: [
       {
         protocol: 'https',
         hostname: '**',
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
       },
     ],
   },

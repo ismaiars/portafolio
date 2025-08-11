@@ -255,10 +255,106 @@
   .typewriter {
     font-size: 1.5rem;
   }
+  
+  /* Hero section mobile optimizations */
+  .hero-title {
+    font-size: 2.5rem !important;
+    line-height: 1.1;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem !important;
+  }
+  
+  /* Button optimizations for mobile */
+  .btn-mobile {
+    min-height: 44px;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+  
+  /* Card spacing mobile */
+  .card-mobile {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Navigation mobile */
+  .nav-mobile {
+    padding: 0.5rem 1rem;
+  }
+  
+  /* Stats grid mobile */
+  .stats-mobile {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  
+  /* Project cards mobile */
+  .project-mobile {
+    padding: 1rem;
+  }
+  
+  .project-mobile .project-header {
+    padding: 1rem;
+  }
+  
+  .project-mobile .project-details {
+    padding: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
   .typewriter {
     font-size: 1.25rem;
+  }
+  
+  /* Extra small mobile optimizations */
+  .hero-title {
+    font-size: 2rem !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9rem !important;
+  }
+  
+  /* Single column for very small screens */
+  .stats-mobile {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  /* Testimonial mobile */
+  .testimonial-mobile {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+  
+  /* Contact form mobile */
+  .form-mobile {
+    padding: 1rem;
+  }
+  
+  .form-mobile input,
+  .form-mobile textarea,
+  .form-mobile select {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+@media (max-width: 360px) {
+  /* Ultra small screens */
+  .hero-title {
+    font-size: 1.75rem !important;
+  }
+  
+  .container-custom {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .btn-mobile {
+    padding: 10px 16px;
+    font-size: 0.85rem;
   }
 }

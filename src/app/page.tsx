@@ -5,6 +5,7 @@ import About from '@/components/sections/about'
 import Methodology from '@/components/sections/methodology'
 import Timeline from '@/components/sections/timeline'
 import Projects from '@/components/sections/projects'
+import Testimonials from '@/components/sections/testimonials'
 import Contact from '@/components/sections/contact'
 import { Navigation } from '@/components/sections/navigation'
 import { Footer } from '@/components/sections/footer'
@@ -62,6 +63,11 @@ export default function HomePage() {
           {/* Projects Section */}
           <section id="projects" className="py-12 md:py-20">
             <Projects />
+          </section>
+          
+          {/* Testimonials Section */}
+          <section id="testimonials" className="py-12 md:py-20">
+            <Testimonials />
           </section>
           
           {/* Contact Section */}

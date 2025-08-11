@@ -1,0 +1,380 @@
+TEXTOS DEL PORTAFOLIO DE ISMAEL SALAZAR
+=============================================
+
+1. SECCIÓN HERO (src/components/sections/hero.tsx)
+==================================================
+Propósito: Presentación principal del desarrollador con roles, descripción y estadísticas
+
+Textos principales:
+- Saludo: "Hola, soy" / "Hello, I'm"
+- Nombre: "Ismael Salazar"
+- Roles (rotación automática):
+  * "Web Developer" / "Desarrollador Web"
+  * "Node.js Specialist" / "Especialista en Node.js"
+  * "Python Developer" / "Desarrollador Python"
+  * "Next.js Expert" / "Experto en Next.js"
+  * "Systems Coordinator" / "Coordinador de Sistemas"
+  * "Tech Innovator" / "Innovador Tecnológico"
+
+- Descripción: "Especializado en Node.js, Python, Next.js y tecnologías modernas para crear soluciones web innovadoras y eficientes."
+  (EN: "Specialized in Node.js, Python, Next.js and modern technologies to create innovative and efficient web solutions.")
+
+- Botones de acción:
+  * "Descargar CV" / "Download CV"
+  * "Contactar" / "Contact"
+  * "Ver GitHub" / "View GitHub"
+
+- Estadísticas:
+  * "1+ Año de Experiencia" / "1+ Year of Experience"
+  * "10+ Proyectos Completados" / "10+ Completed Projects"
+  * "15+ Tecnologías Dominadas" / "15+ Technologies Mastered"
+
+
+2. SECCIÓN ABOUT (src/components/sections/about.tsx)
+===================================================
+Propósito: Información personal, habilidades técnicas y certificaciones
+
+Textos principales:
+- Título: "Sobre Mí" / "About Me"
+- Subtítulo: "Conoce al desarrollador detrás del código" / "Meet the developer behind the code"
+
+- Terminal animada con comandos:
+  * "whoami" → "Ismael Salazar - Full Stack Developer"
+  * "cat about.txt" → Descripción personal
+  * "ls skills/" → Lista de tecnologías
+  * "pwd" → "/home/ismael/passion/coding"
+
+- Descripción personal:
+  "¡Hola! Soy Ismael, un apasionado desarrollador con más de un año de experiencia creando soluciones web innovadoras. Mi viaje en la programación comenzó con curiosidad y se ha convertido en una pasión por resolver problemas complejos con código elegante."
+  (EN: "Hello! I'm Ismael, a passionate developer with over a year of experience creating innovative web solutions. My programming journey started with curiosity and has become a passion for solving complex problems with elegant code.")
+
+- Habilidades categorizadas:
+  * Avanzado: JavaScript, Node.js, Python, React, Next.js, Express.js, MongoDB, MySQL, Git
+  * Intermedio: TypeScript, PostgreSQL, Docker, AWS, Tailwind CSS, Framer Motion
+  * Básico: GraphQL, Redis, Kubernetes, React Native
+
+- Certificaciones:
+  * "Oracle Next Education F2 T5 - Back-End (Alura LATAM)"
+  * "Oracle Next Education - Bases de Datos (Alura LATAM)"
+  * "Postman Student Expert (Postman)"
+
+
+3. SECCIÓN METHODOLOGY (src/components/sections/methodology.tsx)
+===============================================================
+Propósito: Explicar el proceso de trabajo y metodología del desarrollador
+
+Textos principales:
+- Título: "Mi Metodología" / "My Methodology"
+- Subtítulo: "Cómo transformo ideas en realidad digital" / "How I transform ideas into digital reality"
+
+- Introducción:
+  "Cada proyecto es único, pero mi enfoque siempre es el mismo: entender, planificar, desarrollar y entregar soluciones que superen las expectativas."
+  (EN: "Every project is unique, but my approach is always the same: understand, plan, develop and deliver solutions that exceed expectations.")
+
+- Pasos de la metodología:
+  1. "Análisis y Planificación" / "Analysis and Planning"
+     "Entiendo tus necesidades y defino la arquitectura técnica óptima."
+     (EN: "I understand your needs and define the optimal technical architecture.")
+
+  2. "Diseño y Prototipado" / "Design and Prototyping"
+     "Creo wireframes y prototipos para visualizar la solución antes del desarrollo."
+     (EN: "I create wireframes and prototypes to visualize the solution before development.")
+
+  3. "Desarrollo Iterativo" / "Iterative Development"
+     "Desarrollo en sprints cortos con entregas frecuentes y feedback continuo."
+     (EN: "I develop in short sprints with frequent deliveries and continuous feedback.")
+
+  4. "Testing y Optimización" / "Testing and Optimization"
+     "Pruebas exhaustivas y optimización de rendimiento para garantizar calidad."
+     (EN: "Comprehensive testing and performance optimization to ensure quality.")
+
+  5. "Despliegue y Mantenimiento" / "Deployment and Maintenance"
+     "Implementación segura y soporte continuo para el éxito a largo plazo."
+     (EN: "Secure implementation and continuous support for long-term success.")
+
+- Conclusión:
+  "¿Listo para llevar tu proyecto al siguiente nivel?"
+  (EN: "Ready to take your project to the next level?")
+
+
+4. SECCIÓN TIMELINE (src/components/sections/timeline.tsx)
+=========================================================
+Propósito: Mostrar la experiencia profesional y trayectoria laboral
+
+Textos principales:
+- Título: "Mi Trayectoria Profesional" / "My Professional Journey"
+- Subtítulo: "Experiencias que han moldeado mi carrera como desarrollador" / "Experiences that have shaped my career as a developer"
+
+- Experiencias laborales:
+
+  1. Carpe Diem México (2023 - Presente)
+     Posición: "Full Stack Developer" / "Desarrollador Full Stack"
+     Modalidad: "Remoto" / "Remote"
+     Descripción: "Desarrollo y mantenimiento de aplicaciones web corporativas utilizando tecnologías modernas como Next.js, Node.js y bases de datos relacionales."
+     (EN: "Development and maintenance of corporate web applications using modern technologies like Next.js, Node.js and relational databases.")
+     
+     Logros:
+     - "Implementación de sistema de gestión empresarial completo"
+     - "Optimización de rendimiento que redujo tiempos de carga en 40%"
+     - "Integración de APIs y servicios de terceros"
+     - "Desarrollo de interfaces de usuario responsivas y accesibles"
+
+  2. Ópticas Kairóz (2022 - 2023)
+     Posición: "Web Developer" / "Desarrollador Web"
+     Modalidad: "Híbrido" / "Hybrid"
+     Descripción: "Desarrollo de plataforma e-commerce personalizada para la venta de productos ópticos, incluyendo sistema de inventarios y gestión de pedidos."
+     (EN: "Development of custom e-commerce platform for optical products sales, including inventory system and order management.")
+     
+     Logros:
+     - "Creación de tienda online desde cero con carrito de compras"
+     - "Sistema de gestión de inventarios en tiempo real"
+     - "Integración con pasarelas de pago seguras"
+     - "Panel administrativo para gestión de productos y pedidos"
+
+  3. Freelance & Proyectos Personales (2021 - Presente)
+     Posición: "Independent Developer" / "Desarrollador Independiente"
+     Modalidad: "Remoto" / "Remote"
+     Descripción: "Desarrollo de proyectos personales y trabajos freelance para diversos clientes, enfocándome en soluciones web innovadoras y aprendizaje continuo."
+     (EN: "Development of personal projects and freelance work for various clients, focusing on innovative web solutions and continuous learning.")
+     
+     Logros:
+     - "Múltiples proyectos web con diferentes tecnologías"
+     - "Colaboración con equipos internacionales"
+     - "Desarrollo de habilidades en nuevas tecnologías"
+     - "Construcción de portafolio profesional"
+
+
+5. SECCIÓN PROJECTS (src/components/sections/projects.tsx)
+=========================================================
+Propósito: Mostrar los proyectos más importantes desarrollados
+
+Textos principales:
+- Título: "Proyectos Destacados" / "Featured Projects"
+- Subtítulo: "Una selección de mis trabajos más recientes y significativos" / "A selection of my most recent and significant work"
+
+- Proyectos:
+
+  1. Carpe Diem México
+     Tipo: "Sitio Web Corporativo" / "Corporate Website"
+     Descripción: "Plataforma web corporativa moderna y responsiva desarrollada para Carpe Diem México, enfocada en la presentación de servicios empresariales y generación de leads."
+     (EN: "Modern and responsive corporate web platform developed for Carpe Diem México, focused on business services presentation and lead generation.")
+     
+     Características principales:
+     - "Diseño responsivo y moderno"
+     - "Optimización SEO avanzada"
+     - "Sistema de contacto integrado"
+     - "Panel de administración"
+     - "Integración con redes sociales"
+     - "Análisis y métricas"
+     
+     Tecnologías: "Next.js, TypeScript, Tailwind CSS, Node.js, MongoDB"
+
+  2. Ópticas Kairóz
+     Tipo: "Plataforma E-commerce" / "E-commerce Platform"
+     Descripción: "Tienda online completa para productos ópticos con sistema de inventarios, carrito de compras y gestión de pedidos integrada."
+     (EN: "Complete online store for optical products with inventory system, shopping cart and integrated order management.")
+     
+     Características principales:
+     - "Catálogo de productos dinámico"
+     - "Carrito de compras avanzado"
+     - "Sistema de pagos seguro"
+     - "Gestión de inventarios"
+     - "Panel administrativo"
+     - "Reportes y analytics"
+     
+     Tecnologías: "React, Node.js, Express, MySQL, Stripe"
+
+  3. Sistema de Inventarios
+     Tipo: "Sistema Corporativo" / "Corporate System"
+     Descripción: "Sistema de gestión de inventarios desarrollado para optimizar el control de stock y automatizar procesos de almacén en empresas medianas."
+     (EN: "Inventory management system developed to optimize stock control and automate warehouse processes in medium-sized companies.")
+     
+     Características principales:
+     - "Control de stock en tiempo real"
+     - "Alertas automáticas"
+     - "Reportes detallados"
+     - "Gestión de proveedores"
+     - "Códigos de barras"
+     - "Múltiples almacenes"
+     
+     Tecnologías: "Python, Django, PostgreSQL, Redis"
+
+- Conclusión:
+  "Estos son solo algunos ejemplos de mi trabajo. Cada proyecto representa un desafío único y una oportunidad de crecimiento. ¿Quieres ver más?"
+  (EN: "These are just a few examples of my work. Each project represents a unique challenge and a growth opportunity. Want to see more?")
+
+- Botón: "Ver Más Proyectos en GitHub" / "View More Projects on GitHub"
+
+
+6. SECCIÓN TESTIMONIALS (src/components/sections/testimonials.tsx)
+=================================================================
+Propósito: Mostrar testimonios y recomendaciones de clientes
+
+Textos principales:
+- Título: "Lo Que Dicen Mis Clientes" / "What My Clients Say"
+- Subtítulo: "Testimonios reales de proyectos exitosos" / "Real testimonials from successful projects"
+
+- Testimonios de clientes:
+
+  1. María González - Directora de Marketing, Carpe Diem México
+     Testimonio: "Ismael transformó completamente nuestra presencia digital. Su atención al detalle y capacidad técnica son excepcionales. El sitio web no solo se ve increíble, sino que también ha mejorado significativamente nuestras conversiones."
+     Proyecto: "Sitio Web Corporativo"
+     Calificación: 5 estrellas
+     Métricas:
+     - "300% Aumento en conversiones"
+     - "50% Reducción en tiempo de carga"
+     - "95% Satisfacción del usuario"
+
+  2. Carlos Rodríguez - Gerente General, Ópticas Kairóz
+     Testimonio: "La plataforma e-commerce que desarrolló Ismael superó todas nuestras expectativas. Es intuitiva, rápida y ha revolucionado la forma en que vendemos online. Nuestras ventas digitales se han triplicado."
+     Proyecto: "Plataforma E-commerce"
+     Calificación: 5 estrellas
+     Métricas:
+     - "200% Incremento en ventas online"
+     - "40% Mejora en experiencia de usuario"
+     - "99.9% Uptime del sistema"
+
+  3. Ana Martínez - CEO, TechStart Solutions
+     Testimonio: "Trabajar con Ismael fue una experiencia fantástica. Su profesionalismo, creatividad y habilidades técnicas son de primer nivel. Entregó el proyecto a tiempo y superó nuestras expectativas en cada aspecto."
+     Proyecto: "Sistema de Gestión"
+     Calificación: 5 estrellas
+     Métricas:
+     - "80% Reducción en tiempo de procesos"
+     - "60% Mejora en eficiencia operativa"
+     - "100% Satisfacción del equipo"
+
+- Sección de resultados: "Resultados Obtenidos"
+- Call to action: "¿Quieres ser el próximo en obtener resultados como estos?"
+- Botón: "Hablemos de Tu Proyecto"
+
+
+7. SECCIÓN CONTACT (src/components/sections/contact.tsx)
+=======================================================
+Propósito: Formulario de contacto e información de contacto
+
+Textos principales:
+- Título: "¿Hablamos? Estoy a Solo un Mensaje de Distancia" / "Let's Talk? I'm Just One Message Away"
+
+- Introducción:
+  "Si llegaste hasta aquí, significa que algo te gustó (¡espero!). Ya sea que tengas un proyecto en mente, una pregunta técnica, o simplemente quieras charlar sobre tecnología, estaré encantado de escucharte. No muerdo, lo prometo."
+  (EN: "If you made it this far, it means you liked something (I hope!). Whether you have a project in mind, a technical question, or just want to chat about technology, I'll be happy to hear from you. I don't bite, I promise.")
+
+- Información de contacto:
+
+  1. Email Principal:
+     Título: "Email Principal" / "Main Email"
+     Descripción: "La forma más directa de contactarme. Reviso mi email regularmente (bueno, obsesivamente)."
+     (EN: "The most direct way to contact me. I check my email regularly (well, obsessively).")
+     Email: "iarsfate@gmail.com"
+
+  2. Redes Sociales:
+     Título: "Redes Sociales" / "Social Media"
+     Descripción: "Sígueme para ver mis últimos proyectos, reflexiones random sobre programación y ocasionales memes de desarrolladores."
+     (EN: "Follow me to see my latest projects, random programming thoughts and occasional developer memes.")
+     Enlaces: GitHub, LinkedIn
+
+  3. Ubicación:
+     Título: "Ubicación" / "Location"
+     Descripción: "Basado en México, pero trabajo con clientes de todo el mundo. El internet es mi oficina, y mi café es mi combustible."
+     (EN: "Based in Mexico, but I work with clients from around the world. The internet is my office, and coffee is my fuel.")
+     Ubicación: "México"
+
+- Formulario de contacto:
+  Título: "Envíame un Mensaje" / "Send Me a Message"
+  
+  Campos:
+  - "Tu nombre:" / "Your name:" (placeholder: "¿Cómo te llamas?" / "What's your name?")
+  - "Tu email:" / "Your email:" (placeholder: "tu@email.com" / "your@email.com")
+  - "Asunto:" / "Subject:" (placeholder: "¿De qué quieres hablar?" / "What do you want to talk about?")
+  - "Tu mensaje:" / "Your message:" (placeholder: "Cuéntame sobre tu proyecto, idea, o simplemente saluda..." / "Tell me about your project, idea, or just say hello...")
+  
+  Botón: "Enviar Mensaje" / "Send Message"
+  
+  Mensajes de estado:
+  - Éxito: "¡Mensaje enviado exitosamente!" + "Gracias por contactarme. Te responderé lo antes posible."
+  - Error: "Error al enviar el mensaje" + "Hubo un problema al enviar tu mensaje. Por favor, intenta de nuevo o contáctame directamente por email."
+  - Enviando: "Enviando..."
+  
+  Validaciones:
+  - "El nombre es requerido"
+  - "El email es requerido"
+  - "Por favor ingresa un email válido"
+  - "El asunto es requerido"
+  - "El mensaje es requerido"
+  - "El mensaje debe tener al menos 10 caracteres"
+
+
+8. SECCIÓN FOOTER (src/components/sections/footer.tsx)
+=====================================================
+Propósito: Información final, enlaces rápidos y datos de contacto
+
+Textos principales:
+- Marca: "Ismael Salazar"
+- Descripción: "Ingeniero de Sistemas especializado en desarrollo web con Node.js, Python y tecnologías modernas."
+  (EN: "Systems Engineer specialized in web development with Node.js, Python and modern technologies.")
+
+- Enlaces rápidos:
+  Título: "Enlaces Rápidos" / "Quick Links"
+  - "Inicio" / "Home"
+  - "Sobre Mí" / "About Me"
+  - "Experiencia" / "Experience"
+  - "Proyectos" / "Projects"
+  - "Contacto" / "Contact"
+
+- Información de contacto:
+  Título: "Contacto" / "Contact"
+  - "Email: iarsfate@gmail.com"
+  - "Ubicación: Toluca, México" / "Location: Toluca, México"
+  - "Estado: Disponible para proyectos" / "Status: Available for projects"
+  
+  Botón: "Trabajemos Juntos" / "Let's Work Together"
+
+- Copyright:
+  "© 2024 Hecho con ❤️ por Ismael Salazar" / "© 2024 Made with ❤️ by Ismael Salazar"
+
+
+9. SECCIÓN NAVIGATION (src/components/sections/navigation.tsx)
+=============================================================
+Propósito: Menú de navegación principal
+
+Textos principales:
+- Elementos del menú:
+  - "Inicio" / "Home"
+  - "Sobre Mí" / "About"
+  - "Experiencia" / "Experience"
+  - "Proyectos" / "Projects"
+  - "Contacto" / "Contact"
+
+- Botón de idioma: "ES" / "EN"
+- Botón de tema: Icono de sol/luna
+
+
+10. METADATOS Y CONFIGURACIÓN
+============================
+
+- Título del sitio: "Ismael Salazar - Full Stack Developer"
+- Descripción meta: "Portafolio profesional de Ismael Salazar, desarrollador Full Stack especializado en Node.js, Python y tecnologías web modernas."
+
+- PWA (manifest.json):
+  - Nombre: "Ismael Salazar Portfolio"
+  - Nombre corto: "IS Portfolio"
+  - Descripción: "Portafolio profesional de Ismael Salazar"
+  - Accesos directos:
+    * "Inicio" / "Home"
+    * "Proyectos" / "Projects"
+    * "Contacto" / "Contact"
+
+
+NOTAS IMPORTANTES:
+==================
+- Todos los textos están disponibles en español e inglés
+- El sitio incluye un sistema de cambio de idioma dinámico
+- Los textos están organizados con atributos data-es y data-en para la internacionalización
+- Se incluyen validaciones de formulario en español
+- Los testimonios están únicamente en español
+- Las métricas y estadísticas están en formato numérico con descripciones en ambos idiomas
+- El proyecto incluye tracking de eventos para analytics
+- Todos los enlaces externos se abren en nueva pestaña
+- El diseño es completamente responsivo
+- Se incluyen animaciones y transiciones suaves
+- El tema visual es tipo terminal/consola con colores verdes y azules

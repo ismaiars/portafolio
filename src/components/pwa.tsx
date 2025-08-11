@@ -16,6 +16,11 @@ export default function PWAManager() {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [showInstallPrompt, setShowInstallPrompt] = useState(false);
   const [isInstalled, setIsInstalled] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     // Register service worker
@@ -85,7 +90,7 @@ export default function PWAManager() {
     trackEvent('pwa_install_banner_dismissed', 'pwa', 'Install Banner Dismissed', 1);
   };
 
-  if (!showInstallPrompt || isInstalled) {
+  if (!isMounted || !showInstallPrompt || isInstalled) {
     return null;
   }
 
