@@ -60,9 +60,13 @@ export function Navigation() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="text-lg sm:text-xl font-bold text-accent-green font-mono"
+              className="flex items-center gap-8 text-lg sm:text-xl font-bold text-accent-green font-mono"
             >
-              Ismael Salazar
+              <span>Ismael Salazar</span>
+              {/* Language Toggle for Mobile */}
+              <div className="md:hidden">
+                <LanguageToggle size="xs" />
+              </div>
             </motion.div>
 
             {/* Desktop Menu */}
@@ -145,15 +149,7 @@ export function Navigation() {
                 )
               })}
               
-              {/* Language Toggle for Mobile */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.1 * navItems.length }}
-                className="mt-4 px-4"
-              >
-                <LanguageToggle className="w-full justify-center" />
-              </motion.div>
+              {/* Language Toggle for Mobile has been moved next to Ismael Salazar */}
             </div>
           </motion.div>
         )}

@@ -6,9 +6,10 @@ import { Button } from '@/components/ui/button'
 
 interface LanguageToggleProps {
   className?: string
+  size?: 'xs' | 'sm' | 'default'
 }
 
-export function LanguageToggle({ className = '' }: LanguageToggleProps) {
+export function LanguageToggle({ className = '', size = 'sm' }: LanguageToggleProps) {
   const [currentLanguage, setCurrentLanguage] = useState('es')
   const [isClient, setIsClient] = useState(false)
 
@@ -98,14 +99,15 @@ export function LanguageToggle({ className = '' }: LanguageToggleProps) {
   return (
     <Button
       variant="outline"
-      size="sm"
+      size={size}
       onClick={toggleLanguage}
       className={`
-        flex items-center gap-2 px-3 py-2 
+        flex items-center gap-2 
+        
         bg-terminal-surface border-accent-blue 
         text-text-primary hover:bg-accent-blue 
         hover:text-terminal-bg transition-all duration-300 
-        font-mono text-sm font-semibold
+        font-mono font-semibold
         ${className}
       `}
       aria-label={currentLanguage === 'es' ? 'Cambiar a inglés' : 'Switch to Spanish'}
