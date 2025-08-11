@@ -3,8 +3,11 @@
 import { useEffect, Suspense } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
 
-// Google Analytics tracking ID
-const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID
+// Google Analytics tracking ID - will be injected by layout
+const getGATrackingId = () => {
+  if (typeof window === 'undefined') return undefined
+  return document.querySelector('meta[name="ga-tracking-id"]')?.getAttribute('content')
+}
 
 // Track page views
 export function usePageView() {
@@ -12,12 +15,13 @@ export function usePageView() {
   const searchParams = useSearchParams()
 
   useEffect(() => {
-    if (GA_TRACKING_ID) {
+    const trackingId = getGATrackingId()
+    if (trackingId) {
       const url = pathname + searchParams.toString()
       
       // Send page view to Google Analytics
       if (typeof window !== 'undefined' && (window as any).gtag) {
-        ;(window as any).gtag('config', GA_TRACKING_ID, {
+        ;(window as any).gtag('config', trackingId, {
           page_path: url,
         })
       }
@@ -54,7 +58,9 @@ function PageTracker() {
 
 // Analytics component
 export function Analytics() {
-  if (!GA_TRACKING_ID) {
+  const trackingId = getGATrackingId()
+  
+  if (!trackingId) {
     return null
   }
 
@@ -65,7 +71,7 @@ export function Analytics() {
       </Suspense>
       <script
         async
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${trackingId}`}
       />
       <script
         dangerouslySetInnerHTML={{
@@ -73,7 +79,7 @@ export function Analytics() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${GA_TRACKING_ID}', {
+            gtag('config', '${trackingId}', {
               page_path: window.location.pathname,
             });
           `,

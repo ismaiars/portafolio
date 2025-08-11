@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { ExternalLink, Github } from 'lucide-react';
 import { 
   SiNextdotjs, SiReact, SiTypescript, SiTailwindcss, SiStrapi, SiNodedotjs, 
@@ -23,9 +24,11 @@ export default function Projects() {
           {/* Proyecto 1: Carpe Diem México */}
           <div className="project-card bg-terminal-surface border border-terminal-border rounded-lg overflow-hidden hover:border-accent-green transition-all duration-300 group">
             <div className="project-image relative overflow-hidden">
-              <img 
+              <Image 
                 src="/images/projects/carpediem.webp" 
                 alt="Carpe Diem México - Sitio Web Corporativo"
+                width={400}
+                height={192}
                 className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-terminal-bg/60 to-transparent"></div>
@@ -100,9 +103,11 @@ export default function Projects() {
           {/* Proyecto 2: Ópticas Kairóz */}
           <div className="project-card bg-terminal-surface border border-terminal-border rounded-lg overflow-hidden hover:border-accent-blue transition-all duration-300 group">
             <div className="project-image relative overflow-hidden">
-              <img 
+              <Image 
                 src="/images/projects/opticas-kairoz.webp" 
                 alt="Ópticas Kairóz - Plataforma E-commerce"
+                width={400}
+                height={192}
                 className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-terminal-bg/60 to-transparent"></div>
@@ -177,9 +182,11 @@ export default function Projects() {
           {/* Proyecto 3: Sistema de Inventarios */}
           <div className="project-card bg-terminal-surface border border-terminal-border rounded-lg overflow-hidden hover:border-accent-purple transition-all duration-300 group">
             <div className="project-image relative overflow-hidden">
-              <img 
+              <Image 
                 src="/images/projects/inventario.webp" 
                 alt="Sistema de Inventarios - Aplicación Corporativa"
+                width={400}
+                height={192}
                 className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-terminal-bg/60 to-transparent"></div>
