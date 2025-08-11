@@ -407,39 +407,39 @@ export default function Testimonials() {
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center gap-2 mt-4">
+          <div className="flex justify-center gap-3 mt-6">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`w-4 h-4 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? 'bg-accent-green scale-125'
-                    : 'bg-terminal-border hover:bg-accent-green/50'
+                    ? 'bg-accent-green scale-125 shadow-lg shadow-accent-green/50'
+                    : 'bg-terminal-border hover:bg-accent-green/50 border border-text-secondary/20'
                 }`}
               />
             ))}
           </div>
           
           {/* Mobile Navigation Buttons */}
-          <div className="flex justify-center gap-4 mt-4 md:hidden">
+          <div className="flex justify-center gap-4 mt-6 md:hidden">
             <Button
               variant="outline"
               size="sm"
-              className="bg-terminal-bg/80 border-terminal-border hover:bg-accent-green hover:text-terminal-bg"
+              className="bg-accent-green/10 border-accent-green/30 text-accent-green hover:bg-accent-green hover:text-terminal-bg font-medium px-4 py-2"
               onClick={() => paginate(-1)}
             >
-              <ChevronLeft className="w-4 h-4 mr-1" />
-              <span className="text-xs">Anterior</span>
+              <ChevronLeft className="w-4 h-4 mr-2" />
+              <span className="text-sm">Anterior</span>
             </Button>
             <Button
               variant="outline"
               size="sm"
-              className="bg-terminal-bg/80 border-terminal-border hover:bg-accent-green hover:text-terminal-bg"
+              className="bg-accent-green/10 border-accent-green/30 text-accent-green hover:bg-accent-green hover:text-terminal-bg font-medium px-4 py-2"
               onClick={() => paginate(1)}
             >
-              <span className="text-xs">Siguiente</span>
-              <ChevronRight className="w-4 h-4 ml-1" />
+              <span className="text-sm">Siguiente</span>
+              <ChevronRight className="w-4 h-4 ml-2" />
             </Button>
           </div>
         </div>
