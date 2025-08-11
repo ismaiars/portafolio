@@ -113,8 +113,7 @@ export function Experience() {
                 index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
               }`}
             >
-              {/* Timeline Dot */}
-              <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-accent-green rounded-full transform md:-translate-x-1/2 z-10 border-4 border-terminal-bg"></div>
+
 
               {/* Content */}
               <div className={`ml-12 md:ml-0 md:w-1/2 ${
@@ -173,12 +172,11 @@ export function Experience() {
                   </div>
 
                   {/* Achievements */}
-                  <div className="space-y-2">
+                  <div className="space-y-1">
                     <h5 className="text-sm font-semibold text-white mb-2" data-es="Logros principales:" data-en="Key achievements:">Logros principales:</h5>
                     {exp.achievements.map((achievement, i) => (
-                      <div key={i} className="flex items-start space-x-2">
-                        <div className="w-1.5 h-1.5 bg-accent-green rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-gray-400 text-sm" data-es={achievement} data-en={exp.achievementsEn[i]}>{achievement}</span>
+                      <div key={i} className="text-gray-400 text-sm leading-relaxed">
+                        <span data-es={achievement} data-en={exp.achievementsEn[i]}>{achievement}</span>
                       </div>
                     ))}
                   </div>
