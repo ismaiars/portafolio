@@ -65,20 +65,17 @@ export function Navigation() {
       >
         <div className="container mx-auto px-4 py-3 sm:py-4">
           <div className="flex items-center justify-between">
-            <motion.div
+            {/* Logo/Home Button */}
+            <motion.button
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="nav-mobile text-lg sm:text-xl font-bold text-accent-green font-mono cursor-pointer"
+              className="text-lg sm:text-xl font-bold text-accent-green font-mono"
               whileHover={{ scale: 1.05 }}
               onClick={() => handleNavClick('home')}
             >
-              <span>&lt;IS /&gt;</span>
-              {/* Language Toggle for Mobile */}
-              <div className="md:hidden">
-                <LanguageToggle size="xs" />
-              </div>
-            </motion.div>
+              Portfolio
+            </motion.button>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
@@ -113,17 +110,29 @@ export function Navigation() {
               </motion.div>
             </div>
 
-            {/* Mobile Menu Button */}
-            <motion.button
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 text-text-primary hover:text-accent-green transition-colors btn-mobile"
-              aria-label="Toggle menu"
-            >
-              {isOpen ? <X size={20} /> : <Menu size={20} />}
-            </motion.button>
+            {/* Mobile Controls */}
+            <div className="md:hidden flex items-center space-x-3">
+              {/* Language Toggle - Always Visible */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.25 }}
+              >
+                <LanguageToggle size="sm" />
+              </motion.div>
+              
+              {/* Mobile Menu Button */}
+              <motion.button
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+                onClick={() => setIsOpen(!isOpen)}
+                className="p-2 text-text-primary hover:text-accent-green transition-colors"
+                aria-label="Toggle menu"
+              >
+                {isOpen ? <X size={20} /> : <Menu size={20} />}
+              </motion.button>
+            </div>
           </div>
         </div>
       </motion.nav>
@@ -155,15 +164,7 @@ export function Navigation() {
                 </motion.button>
               ))}
               
-              {/* Language Toggle in Mobile Menu */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: navItems.length * 0.1 }}
-                className="pt-3 border-t border-accent-green/20"
-              >
-                <LanguageToggle />
-              </motion.div>
+
             </div>
           </motion.div>
         )}
