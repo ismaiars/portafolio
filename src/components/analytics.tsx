@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, Suspense } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
 
 // Declare gtag function for TypeScript
@@ -41,7 +41,8 @@ export function trackEvent(action: string, category: string, label?: string, val
   }
 }
 
-export function Analytics() {
+// Component that uses useSearchParams - needs to be wrapped in Suspense
+function AnalyticsTracker() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
 
@@ -53,6 +54,10 @@ export function Analytics() {
     }
   }, [pathname, searchParams])
 
+  return null
+}
+
+export function Analytics() {
   const trackingId = getGATrackingId()
 
   if (!trackingId) {
@@ -82,6 +87,9 @@ export function Analytics() {
           `,
         }}
       />
+      <Suspense fallback={null}>
+        <AnalyticsTracker />
+      </Suspense>
     </>
   )
 }
