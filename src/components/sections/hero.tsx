@@ -222,16 +222,7 @@ export function Hero() {
         </motion.div>
       </div>
       
-      {/* Scroll Indicator */}
-      <motion.button
-        variants={floatingVariants}
-        animate="animate"
-        onClick={handleScrollToAbout}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-accent-green hover:text-accent-blue transition-colors cursor-pointer"
-        aria-label="Scroll to about section"
-      >
-        <ChevronDown className="w-8 h-8 animate-bounce" />
-      </motion.button>
+
     </section>
   )
 }
