@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { ExternalLink, Github } from 'lucide-react';
 import { 
-  SiNextdotjs, SiReact, SiTypescript, SiTailwindcss, SiStrapi, SiNodedotjs, 
+  SiNextdotjs, SiReact, SiTypescript, SiTailwindcss, SiNodedotjs, 
   SiMongodb, SiStripe, SiVuedotjs, SiExpress, SiPostgresql, SiDocker,
   SiPython, SiFastapi, SiWordpress, SiJson
 } from 'react-icons/si';
