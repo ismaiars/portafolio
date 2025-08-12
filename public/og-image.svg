@@ -1,62 +1,88 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="1200" height="630" fill="#0a0e14"/>
-  
-  <!-- Grid pattern -->
+  <!-- Background with gradient -->
   <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e14;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#151a23;stop-opacity:1" />
+    </linearGradient>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a1f2e" stroke-width="1" opacity="0.3"/>
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a1f2e" stroke-width="1" opacity="0.2"/>
     </pattern>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
   <rect width="1200" height="630" fill="url(#grid)"/>
   
-  <!-- Terminal window -->
-  <rect x="100" y="100" width="1000" height="430" rx="12" fill="#151a23" stroke="#2d3748" stroke-width="2"/>
+  <!-- Main container with glow effect -->
+  <rect x="60" y="60" width="1080" height="510" rx="20" fill="#151a23" stroke="#64ffda" stroke-width="3" opacity="0.95" filter="url(#glow)"/>
   
-  <!-- Terminal header -->
-  <rect x="100" y="100" width="1000" height="40" rx="12" fill="#1a1f2e"/>
-  <rect x="100" y="128" width="1000" height="2" fill="#2d3748"/>
+  <!-- Header section -->
+  <rect x="60" y="60" width="1080" height="70" rx="20" fill="#1a1f2e"/>
+  <rect x="60" y="120" width="1080" height="3" fill="#64ffda"/>
   
   <!-- Terminal dots -->
-  <circle cx="130" cy="120" r="6" fill="#ff5f56"/>
-  <circle cx="150" cy="120" r="6" fill="#ffbd2e"/>
-  <circle cx="170" cy="120" r="6" fill="#27ca3f"/>
+  <circle cx="100" cy="95" r="10" fill="#ff5f56"/>
+  <circle cx="130" cy="95" r="10" fill="#ffbd2e"/>
+  <circle cx="160" cy="95" r="10" fill="#27ca3f"/>
   
   <!-- Terminal title -->
-  <text x="600" y="125" text-anchor="middle" fill="#8892b0" font-family="monospace" font-size="14">ismael-salazar-portfolio</text>
+  <text x="600" y="105" text-anchor="middle" fill="#8892b0" font-family="monospace" font-size="18" font-weight="bold">ismael-salazar-portfolio.dev</text>
   
-  <!-- Main content -->
-  <g transform="translate(150, 180)">
-    <!-- Prompt -->
-    <text x="0" y="0" fill="#64ffda" font-family="monospace" font-size="24" font-weight="bold">➜</text>
-    <text x="40" y="0" fill="#ccd6f6" font-family="monospace" font-size="24">~</text>
+  <!-- Main content area -->
+  <g transform="translate(100, 160)">
+    <!-- Prompt line -->
+    <text x="0" y="40" fill="#64ffda" font-family="monospace" font-size="32" font-weight="bold">➜</text>
+    <text x="50" y="40" fill="#ccd6f6" font-family="monospace" font-size="32">~</text>
+    <text x="90" y="40" fill="#f78c6c" font-family="monospace" font-size="28">whoami</text>
     
-    <!-- Name -->
-    <text x="0" y="50" fill="#64ffda" font-family="monospace" font-size="48" font-weight="bold">Ismael Salazar</text>
+    <!-- Name with glow effect -->
+    <text x="0" y="100" fill="#64ffda" font-family="monospace" font-size="56" font-weight="bold" filter="url(#glow)">Ismael Salazar</text>
     
     <!-- Title -->
-    <text x="0" y="90" fill="#8892b0" font-family="monospace" font-size="28">Desarrollador Web</text>
+    <text x="0" y="145" fill="#c3e88d" font-family="monospace" font-size="36">Desarrollador Web Full Stack</text>
     
-    <!-- Skills -->
-    <text x="0" y="140" fill="#ccd6f6" font-family="monospace" font-size="20">const skills = [</text>
-    <text x="40" y="170" fill="#c3e88d" font-family="monospace" font-size="18">"Node.js", "Python", "Next.js",</text>
-    <text x="40" y="195" fill="#c3e88d" font-family="monospace" font-size="18">"React", "TypeScript", "PostgreSQL"</text>
-    <text x="0" y="220" fill="#ccd6f6" font-family="monospace" font-size="20">];</text>
+    <!-- Skills section -->
+    <text x="0" y="200" fill="#ccd6f6" font-family="monospace" font-size="24">const tecnologías = {</text>
+    <text x="40" y="235" fill="#82aaff" font-family="monospace" font-size="22">frontend: ["React", "Next.js", "TypeScript"],</text>
+    <text x="40" y="265" fill="#82aaff" font-family="monospace" font-size="22">backend: ["Node.js", "Python", "FastAPI"],</text>
+    <text x="40" y="295" fill="#82aaff" font-family="monospace" font-size="22">database: ["PostgreSQL", "MongoDB"]</text>
+    <text x="0" y="330" fill="#ccd6f6" font-family="monospace" font-size="24">};</text>
     
-    <!-- Location -->
-    <text x="0" y="270" fill="#f78c6c" font-family="monospace" font-size="18">📍 México • 🌍 Remote Work</text>
-    
-    <!-- Contact -->
-    <text x="0" y="310" fill="#82aaff" font-family="monospace" font-size="18">💼 Siempre aprendiendo y mejorando</text>
+    <!-- Contact info with emojis -->
+    <text x="0" y="380" fill="#f78c6c" font-family="monospace" font-size="22">📍 México • 🌍 Trabajo Remoto</text>
+    <text x="0" y="415" fill="#ffcb6b" font-family="monospace" font-size="22">💼 Creando soluciones web modernas</text>
   </g>
   
-  <!-- Decorative elements -->
-  <g opacity="0.1">
-    <!-- Code brackets -->
-    <text x="50" y="300" fill="#64ffda" font-family="monospace" font-size="120" font-weight="bold">{</text>
-    <text x="1120" y="400" fill="#64ffda" font-family="monospace" font-size="120" font-weight="bold">}</text>
+  <!-- Right side decorative code -->
+  <g transform="translate(700, 200)" opacity="0.4">
+    <text x="0" y="0" fill="#64ffda" font-family="monospace" font-size="18">// Portfolio 2024</text>
+    <text x="0" y="30" fill="#8892b0" font-family="monospace" font-size="16">function buildAmazingApps() {</text>
+    <text x="20" y="55" fill="#c3e88d" font-family="monospace" font-size="16">return passion + code;</text>
+    <text x="0" y="80" fill="#8892b0" font-family="monospace" font-size="16">}</text>
+    
+    <text x="0" y="130" fill="#ff5370" font-family="monospace" font-size="16">class Developer {</text>
+    <text x="20" y="155" fill="#82aaff" font-family="monospace" font-size="16">constructor() {</text>
+    <text x="40" y="180" fill="#c3e88d" font-family="monospace" font-size="16">this.name = "Ismael";</text>
+    <text x="40" y="205" fill="#c3e88d" font-family="monospace" font-size="16">this.passion = "∞";</text>
+    <text x="20" y="230" fill="#82aaff" font-family="monospace" font-size="16">}</text>
+    <text x="0" y="255" fill="#ff5370" font-family="monospace" font-size="16">}</text>
   </g>
   
-  <!-- Bottom accent line -->
-  <rect x="100" y="520" width="1000" height="4" fill="#64ffda"/>
+  <!-- Decorative brackets with glow -->
+  <text x="20" y="380" fill="#64ffda" font-family="monospace" font-size="120" font-weight="bold" opacity="0.15" filter="url(#glow)">{</text>
+  <text x="1120" y="480" fill="#64ffda" font-family="monospace" font-size="120" font-weight="bold" opacity="0.15" filter="url(#glow)">}</text>
+  
+  <!-- Bottom accent with gradient -->
+  <rect x="60" y="550" width="1080" height="8" fill="#64ffda" rx="4"/>
+  
+  <!-- URL at bottom -->
+  <text x="600" y="595" text-anchor="middle" fill="#8892b0" font-family="monospace" font-size="20" font-weight="bold">ismael-salazar-iars.vercel.app</text>
 </svg>
