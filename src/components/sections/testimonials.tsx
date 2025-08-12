@@ -407,7 +407,7 @@ export default function Testimonials() {
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center gap-3 mt-6">
+          <div className="flex justify-center gap-3 mt-6 mb-4">
             {testimonials.map((_, index) => (
               <button
                 key={index}
@@ -422,7 +422,7 @@ export default function Testimonials() {
           </div>
           
           {/* Mobile Navigation Buttons */}
-          <div className="flex justify-center gap-4 mt-6 md:hidden">
+          <div className="flex justify-center gap-4 mt-8 md:hidden">
             <Button
               variant="outline"
               size="sm"
