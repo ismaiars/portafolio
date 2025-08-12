@@ -15,13 +15,13 @@ import { JsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
   title: 'Inicio',
-  description: 'Portafolio de Ismael Salazar - Desarrollador Full Stack especializado en Node.js, Python, Next.js y tecnologías modernas.',
+  description: 'Portafolio de Ismael Salazar - Desarrollador web apasionado por crear aplicaciones modernas con Node.js, Python y Next.js.',
 }
 
 const personalInfo = {
   name: 'Ismael Salazar',
-  title: 'Full Stack Developer',
-  description: 'Desarrollador Full Stack especializado en Node.js, Python, Next.js y tecnologías modernas.',
+  title: 'Desarrollador Web',
+  description: 'Desarrollador web apasionado por crear aplicaciones modernas con Node.js, Python y Next.js. Siempre aprendiendo y mejorando.',
   email: 'iarsfate@gmail.com',
   location: 'Toluca, México',
   website: 'https://ismael-salazar-iars.vercel.app',

@@ -12,24 +12,24 @@ import {
 const experiences = [
   {
     company: 'Tech Solutions Inc.',
-    position: 'Senior Full-Stack Developer',
-    positionEn: 'Senior Full-Stack Developer',
+    position: 'Desarrollador Web',
+    positionEn: 'Web Developer',
     location: 'Remote',
     locationEn: 'Remote',
-    period: '2022 - Presente',
-    periodEn: '2022 - Present',
-    description: 'Liderazgo técnico en el desarrollo de aplicaciones web escalables usando React, Node.js y AWS. Implementación de arquitecturas microservicios y mejora de performance en un 40%.',
-    descriptionEn: 'Technical leadership in developing scalable web applications using React, Node.js and AWS. Implementation of microservices architectures and 40% performance improvement.',
-    technologies: ['React', 'Node.js', 'TypeScript', 'AWS', 'Docker', 'PostgreSQL'],
+    period: '2023 - Presente',
+    periodEn: '2023 - Present',
+    description: 'Desarrollo de aplicaciones web modernas usando React, Node.js y tecnologías actuales. Colaboración en proyectos de mejora de performance y experiencia de usuario.',
+    descriptionEn: 'Development of modern web applications using React, Node.js and current technologies. Collaboration on performance improvement and user experience projects.',
+    technologies: ['React', 'Node.js', 'TypeScript', 'PostgreSQL', 'Git'],
     achievements: [
-      'Redujo el tiempo de carga de la aplicación en un 40%',
-      'Lideró un equipo de 5 desarrolladores',
-      'Implementó CI/CD pipeline completo'
+      'Contribuyó a la mejora del tiempo de carga en un 25%',
+      'Desarrolló componentes reutilizables',
+      'Implementó funcionalidades de frontend y backend'
     ],
     achievementsEn: [
-      'Reduced application load time by 40%',
-      'Led a team of 5 developers',
-      'Implemented complete CI/CD pipeline'
+      'Contributed to 25% load time improvement',
+      'Developed reusable components',
+      'Implemented frontend and backend features'
     ]
   },
   {

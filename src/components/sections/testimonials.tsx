@@ -91,7 +91,7 @@ const testimonials: Testimonial[] = [
   {
     id: 4,
     name: "Diego Martínez",
-    position: "Senior Full Stack Developer",
+    position: "Web Developer",
     company: "DevTeam Solutions",
     avatar: "/images/testimonials/diego-martinez.jpg",
     content: "Trabajar con Ismael ha sido una experiencia increíble. Su código es limpio, bien estructurado y siempre sigue las mejores prácticas. Es un desarrollador que realmente entiende la arquitectura de software y siempre está dispuesto a ayudar al equipo.",

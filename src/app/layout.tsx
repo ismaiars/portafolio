@@ -21,13 +21,14 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Ismael Salazar - Full Stack Developer',
+    default: 'Ismael Salazar - Desarrollador Web',
     template: '%s | Ismael Salazar'
   },
-  description: 'Desarrollador Full Stack especializado en Node.js, Python, Next.js y tecnologías modernas. Creando soluciones web innovadoras y eficientes.',
+  description: 'Desarrollador web apasionado por crear aplicaciones modernas con Node.js, Python y Next.js. Siempre aprendiendo y mejorando.',
   keywords: [
     'Ismael Salazar',
-    'Full Stack Developer',
+    'Desarrollador Web',
+    'Web Developer',
     'Node.js',
     'Python',
     'Next.js',
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
     'Web Development',
     'Frontend',
     'Backend',
-    'Desarrollador Web'
+    'Programador'
   ],
   authors: [{ name: 'Ismael Salazar', url: 'https://ismael-salazar-iars.vercel.app' }],
   creator: 'Ismael Salazar',
@@ -60,22 +61,22 @@ export const metadata: Metadata = {
     locale: 'es_MX',
     url: 'https://ismael-salazar-iars.vercel.app',
     siteName: 'Ismael Salazar Portfolio',
-    title: 'Ismael Salazar - Full Stack Developer',
-    description: 'Desarrollador Full Stack especializado en Node.js, Python, Next.js y tecnologías modernas.',
+    title: 'Ismael Salazar - Desarrollador Web',
+    description: 'Desarrollador web apasionado por crear aplicaciones modernas con Node.js, Python y Next.js. Siempre aprendiendo y mejorando.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.svg',
         width: 1200,
         height: 630,
-        alt: 'Ismael Salazar - Full Stack Developer',
+        alt: 'Ismael Salazar - Desarrollador Web',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ismael Salazar - Full Stack Developer',
-    description: 'Desarrollador Full Stack especializado en Node.js, Python, Next.js y tecnologías modernas.',
-    images: ['/og-image.jpg'],
+    title: 'Ismael Salazar - Desarrollador Web',
+    description: 'Desarrollador web apasionado por crear aplicaciones modernas con Node.js, Python y Next.js. Siempre aprendiendo y mejorando.',
+    images: ['/og-image.svg'],
     creator: '@ismaiars',
   },
   robots: {
@@ -98,7 +99,7 @@ export const metadata: Metadata = {
     'application-name': 'Ismael Salazar Portfolio',
     'mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-title': 'Ismael Salazar',
-    'msapplication-tooltip': 'Ismael Salazar - Full Stack Developer Portfolio',
+    'msapplication-tooltip': 'Ismael Salazar - Desarrollador Web Portfolio',
   },
 }
 

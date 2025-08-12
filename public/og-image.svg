@@ -1,0 +1,62 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0a0e14"/>
+  
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a1f2e" stroke-width="1" opacity="0.3"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Terminal window -->
+  <rect x="100" y="100" width="1000" height="430" rx="12" fill="#151a23" stroke="#2d3748" stroke-width="2"/>
+  
+  <!-- Terminal header -->
+  <rect x="100" y="100" width="1000" height="40" rx="12" fill="#1a1f2e"/>
+  <rect x="100" y="128" width="1000" height="2" fill="#2d3748"/>
+  
+  <!-- Terminal dots -->
+  <circle cx="130" cy="120" r="6" fill="#ff5f56"/>
+  <circle cx="150" cy="120" r="6" fill="#ffbd2e"/>
+  <circle cx="170" cy="120" r="6" fill="#27ca3f"/>
+  
+  <!-- Terminal title -->
+  <text x="600" y="125" text-anchor="middle" fill="#8892b0" font-family="monospace" font-size="14">ismael-salazar-portfolio</text>
+  
+  <!-- Main content -->
+  <g transform="translate(150, 180)">
+    <!-- Prompt -->
+    <text x="0" y="0" fill="#64ffda" font-family="monospace" font-size="24" font-weight="bold">➜</text>
+    <text x="40" y="0" fill="#ccd6f6" font-family="monospace" font-size="24">~</text>
+    
+    <!-- Name -->
+    <text x="0" y="50" fill="#64ffda" font-family="monospace" font-size="48" font-weight="bold">Ismael Salazar</text>
+    
+    <!-- Title -->
+    <text x="0" y="90" fill="#8892b0" font-family="monospace" font-size="28">Desarrollador Web</text>
+    
+    <!-- Skills -->
+    <text x="0" y="140" fill="#ccd6f6" font-family="monospace" font-size="20">const skills = [</text>
+    <text x="40" y="170" fill="#c3e88d" font-family="monospace" font-size="18">"Node.js", "Python", "Next.js",</text>
+    <text x="40" y="195" fill="#c3e88d" font-family="monospace" font-size="18">"React", "TypeScript", "PostgreSQL"</text>
+    <text x="0" y="220" fill="#ccd6f6" font-family="monospace" font-size="20">];</text>
+    
+    <!-- Location -->
+    <text x="0" y="270" fill="#f78c6c" font-family="monospace" font-size="18">📍 México • 🌍 Remote Work</text>
+    
+    <!-- Contact -->
+    <text x="0" y="310" fill="#82aaff" font-family="monospace" font-size="18">💼 Siempre aprendiendo y mejorando</text>
+  </g>
+  
+  <!-- Decorative elements -->
+  <g opacity="0.1">
+    <!-- Code brackets -->
+    <text x="50" y="300" fill="#64ffda" font-family="monospace" font-size="120" font-weight="bold">{</text>
+    <text x="1120" y="400" fill="#64ffda" font-family="monospace" font-size="120" font-weight="bold">}</text>
+  </g>
+  
+  <!-- Bottom accent line -->
+  <rect x="100" y="520" width="1000" height="4" fill="#64ffda"/>
+</svg>
