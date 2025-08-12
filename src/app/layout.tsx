@@ -65,11 +65,11 @@ export const metadata: Metadata = {
     description: 'Desarrollador web apasionado por crear aplicaciones modernas con Node.js, Python y Next.js. Especializado en React, TypeScript y PostgreSQL. 🚀',
     images: [
       {
-        url: 'https://ismael-salazar-iars.vercel.app/og-image.svg',
+        url: 'https://ismael-salazar-iars.vercel.app/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Ismael Salazar - Desarrollador Web Full Stack',
-        type: 'image/svg+xml',
+        type: 'image/png',
       },
     ],
   },
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Ismael Salazar - Desarrollador Web Full Stack',
     description: 'Desarrollador web apasionado por crear aplicaciones modernas con Node.js, Python y Next.js. Especializado en React, TypeScript y PostgreSQL. 🚀',
-    images: ['https://ismael-salazar-iars.vercel.app/og-image.svg'],
+    images: ['https://ismael-salazar-iars.vercel.app/og-image.png'],
     creator: '@ismaiars',
   },
   robots: {
@@ -119,11 +119,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <meta name="ga-tracking-id" content={process.env.NEXT_PUBLIC_GA_ID || ''} />
         
         {/* WhatsApp and Social Media specific meta tags */}
-        <meta property="og:image:secure_url" content="https://ismael-salazar-iars.vercel.app/og-image.svg" />
-        <meta property="og:image:type" content="image/svg+xml" />
+        <meta property="og:image:secure_url" content="https://ismael-salazar-iars.vercel.app/og-image.png" />
+        <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta name="twitter:image" content="https://ismael-salazar-iars.vercel.app/og-image.svg" />
+        <meta name="twitter:image" content="https://ismael-salazar-iars.vercel.app/og-image.png" />
         <meta property="og:image:alt" content="Ismael Salazar - Desarrollador Web Full Stack" />
         
         {/* PWA Manifest */}
