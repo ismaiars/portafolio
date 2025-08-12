@@ -362,7 +362,7 @@ export default function Testimonials() {
 
                   {/* Right Side - Metrics */}
                   {currentTestimonial.metrics && (
-                    <div className="w-full md:w-80 bg-terminal-surface border border-terminal-border rounded-lg p-4 md:p-6 mt-4 md:mt-0">
+                    <div className="hidden md:block w-full md:w-80 bg-terminal-surface border border-terminal-border rounded-lg p-4 md:p-6 mt-4 md:mt-0">
                       <h5 className="text-accent-purple font-semibold mb-3 md:mb-4 text-center text-sm md:text-base">
                         <span data-es="Resultados Obtenidos" data-en="Results Achieved">Resultados Obtenidos</span>
                       </h5>
