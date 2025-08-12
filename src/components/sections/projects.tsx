@@ -3,9 +3,8 @@
 import Image from 'next/image';
 import { ExternalLink, Github } from 'lucide-react';
 import { 
-  SiNextdotjs, SiReact, SiTypescript, SiTailwindcss, SiNodedotjs, 
-  SiMongodb, SiStripe, SiVuedotjs, SiExpress, SiPostgresql, SiDocker,
-  SiPython, SiFastapi, SiWordpress, SiJson
+  SiNextdotjs, SiReact, SiTypescript, SiTailwindcss, 
+  SiStripe, SiPython, SiFastapi, SiWordpress, SiJson
 } from 'react-icons/si';
 
 export default function Projects() {
