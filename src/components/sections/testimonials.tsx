@@ -407,22 +407,22 @@ export default function Testimonials() {
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center gap-3 mt-6 mb-4">
+          <div className="flex justify-center gap-4 mt-8 mb-8">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-4 h-4 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
+                className={`w-5 h-5 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? 'bg-accent-green scale-125 shadow-lg shadow-accent-green/50'
-                    : 'bg-terminal-border hover:bg-accent-green/50 border border-text-secondary/20'
+                    ? 'bg-accent-green scale-125 shadow-lg shadow-accent-green/50 ring-2 ring-accent-green/30'
+                    : 'bg-terminal-border hover:bg-accent-green/50 border-2 border-text-secondary/30'
                 }`}
               />
             ))}
           </div>
           
           {/* Mobile Navigation Buttons */}
-          <div className="flex justify-center gap-4 mt-8 md:hidden">
+          <div className="flex justify-center gap-4 mt-4 mb-8 md:hidden">
             <Button
               variant="outline"
               size="sm"
@@ -450,7 +450,7 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-center mt-8 md:mt-12 px-4"
+          className="text-center mt-12 md:mt-16 px-4"
         >
           <p className="text-base md:text-lg text-text-secondary mb-4 md:mb-6">
             <span data-es="¿Quieres ser el próximo en obtener resultados como estos?" data-en="Do you want to be the next to get results like these?">¿Quieres ser el próximo en obtener resultados como estos?</span>
