@@ -1,0 +1,103 @@
+<svg width="400" height="192" viewBox="0 0 400 192" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wpBgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#21759b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1e6b96;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a5d8a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="wpAccentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f7931e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="192" fill="url(#wpBgGradient)"/>
+  
+  <!-- WordPress W logo -->
+  <g transform="translate(50, 40)">
+    <circle cx="40" cy="40" r="35" fill="#ffffff" opacity="0.9"/>
+    <circle cx="40" cy="40" r="30" fill="url(#wpBgGradient)"/>
+    <path d="M 20 40 L 35 65 L 45 45 L 55 65 L 60 40 L 50 40 L 45 55 L 40 40 L 35 55 L 30 40 Z" fill="#ffffff" opacity="0.9"/>
+  </g>
+  
+  <!-- Automation gears -->
+  <g transform="translate(150, 30)">
+    <circle cx="25" cy="25" r="20" fill="none" stroke="url(#wpAccentGradient)" stroke-width="3" opacity="0.8">
+      <animateTransform attributeName="transform" type="rotate" values="0 25 25;360 25 25" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="25" cy="25" r="12" fill="none" stroke="url(#wpAccentGradient)" stroke-width="2" opacity="0.6"/>
+    
+    <!-- Small gear -->
+    <g transform="translate(45, 15)">
+      <circle cx="15" cy="15" r="12" fill="none" stroke="#ff6b35" stroke-width="2" opacity="0.7">
+        <animateTransform attributeName="transform" type="rotate" values="360 15 15;0 15 15" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="15" cy="15" r="6" fill="none" stroke="#ff6b35" stroke-width="1.5" opacity="0.5"/>
+    </g>
+  </g>
+  
+  <!-- JSON data flow -->
+  <g transform="translate(250, 50)">
+    <rect x="0" y="0" width="80" height="50" rx="5" fill="#ffffff" opacity="0.1" stroke="#ff6b35" stroke-width="1"/>
+    <text x="10" y="20" font-family="monospace" font-size="10" fill="#ffffff" opacity="0.8">{</text>
+    <text x="15" y="30" font-family="monospace" font-size="8" fill="#ff6b35" opacity="0.7">"title":</text>
+    <text x="15" y="40" font-family="monospace" font-size="8" fill="#ffffff" opacity="0.6">"page"</text>
+    <text x="10" y="50" font-family="monospace" font-size="10" fill="#ffffff" opacity="0.8">}</text>
+  </g>
+  
+  <!-- Arrow flow -->
+  <g transform="translate(180, 75)">
+    <path d="M 0 0 L 40 0 L 35 -5 M 40 0 L 35 5" stroke="#ff6b35" stroke-width="2" fill="none" opacity="0.8">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Pages generation -->
+  <g transform="translate(80, 120)">
+    <rect x="0" y="0" width="25" height="30" rx="2" fill="#ffffff" opacity="0.8" stroke="#ff6b35" stroke-width="1"/>
+    <rect x="5" y="5" width="15" height="2" fill="#21759b" opacity="0.6"/>
+    <rect x="5" y="10" width="10" height="1" fill="#21759b" opacity="0.4"/>
+    <rect x="5" y="13" width="12" height="1" fill="#21759b" opacity="0.4"/>
+    
+    <rect x="35" y="0" width="25" height="30" rx="2" fill="#ffffff" opacity="0.7" stroke="#ff6b35" stroke-width="1"/>
+    <rect x="40" y="5" width="15" height="2" fill="#21759b" opacity="0.6"/>
+    <rect x="40" y="10" width="10" height="1" fill="#21759b" opacity="0.4"/>
+    <rect x="40" y="13" width="12" height="1" fill="#21759b" opacity="0.4"/>
+    
+    <rect x="70" y="0" width="25" height="30" rx="2" fill="#ffffff" opacity="0.6" stroke="#ff6b35" stroke-width="1"/>
+    <rect x="75" y="5" width="15" height="2" fill="#21759b" opacity="0.6"/>
+    <rect x="75" y="10" width="10" height="1" fill="#21759b" opacity="0.4"/>
+    <rect x="75" y="13" width="12" height="1" fill="#21759b" opacity="0.4"/>
+  </g>
+  
+  <!-- Speed indicator -->
+  <g transform="translate(280, 120)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ff6b35" opacity="0.9">95%</text>
+    <text x="0" y="15" font-family="Arial, sans-serif" font-size="10" fill="#ffffff" opacity="0.7">FASTER</text>
+  </g>
+  
+  <!-- Python logo hint -->
+  <g transform="translate(320, 30)">
+    <circle cx="10" cy="8" r="6" fill="#3776ab" opacity="0.7"/>
+    <circle cx="10" cy="16" r="6" fill="#ffd43b" opacity="0.7"/>
+    <circle cx="8" cy="6" r="1" fill="#ffffff"/>
+    <circle cx="12" cy="18" r="1" fill="#ffffff"/>
+  </g>
+  
+  <!-- API connections -->
+  <g transform="translate(200, 130)">
+    <circle cx="0" cy="0" r="2" fill="#ff6b35" opacity="0.8">
+      <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <line x1="0" y1="0" x2="20" y2="-10" stroke="#ff6b35" stroke-width="1" opacity="0.5"/>
+    <line x1="0" y1="0" x2="20" y2="10" stroke="#ff6b35" stroke-width="1" opacity="0.5"/>
+    <line x1="0" y1="0" x2="-20" y2="0" stroke="#ff6b35" stroke-width="1" opacity="0.5"/>
+  </g>
+  
+  <!-- Title overlay -->
+  <g transform="translate(20, 175)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" opacity="0.9">WordPress Generator</text>
+    <text x="150" y="0" font-family="Arial, sans-serif" font-size="10" fill="#ff6b35" opacity="0.7">Automated Page Creation</text>
+  </g>
+</svg>

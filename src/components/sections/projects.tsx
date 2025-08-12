@@ -4,7 +4,8 @@ import Image from 'next/image';
 import { ExternalLink, Github } from 'lucide-react';
 import { 
   SiNextdotjs, SiReact, SiTypescript, SiTailwindcss, SiStrapi, SiNodedotjs, 
-  SiMongodb, SiStripe, SiVuedotjs, SiExpress, SiPostgresql, SiDocker 
+  SiMongodb, SiStripe, SiVuedotjs, SiExpress, SiPostgresql, SiDocker,
+  SiPython, SiFastapi, SiWordpress, SiJson
 } from 'react-icons/si';
 
 export default function Projects() {
@@ -61,9 +62,9 @@ export default function Projects() {
                   </div>
                 </div>
               </div>
-              <p className="text-text-secondary leading-relaxed mb-4" data-es="🎯 DESAFÍO: Transformar una empresa tradicional en líder digital de su sector con una plataforma que genere leads calificados y automatice procesos críticos de negocio." data-en="🎯 CHALLENGE: Transform a traditional company into a digital leader in its sector with a platform that generates qualified leads and automates critical business processes.">
-                🎯 DESAFÍO: Transformar una empresa tradicional en líder digital de su sector con una 
-                plataforma que genere leads calificados y automatice procesos críticos de negocio.
+              <p className="text-text-secondary leading-relaxed mb-4" data-es="🎯 DESAFÍO: Desarrollar una plataforma educativa especializada en cursos de optometría y certificaciones profesionales, con sistema de gestión de contenidos y modalidades híbridas de aprendizaje." data-en="🎯 CHALLENGE: Develop an educational platform specialized in optometry courses and professional certifications, with content management system and hybrid learning modalities.">
+                🎯 DESAFÍO: Desarrollar una plataforma educativa especializada en cursos de optometría y certificaciones profesionales, 
+                con sistema de gestión de contenidos y modalidades híbridas de aprendizaje.
               </p>
             </div>
             
@@ -74,39 +75,57 @@ export default function Projects() {
                   RESULTADOS ENTREGADOS:
                 </h4>
                 <div className="grid md:grid-cols-2 gap-3">
-                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-green/20">
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-orange/20">
                     <div className="flex items-start gap-2">
-                      <span className="text-accent-green mt-1 text-lg">🚀</span>
+                      <span className="text-accent-orange mt-1 text-lg">🔒</span>
                       <div>
-                        <div className="font-semibold text-accent-green text-sm">CMS Inteligente de Conversión</div>
-                        <div className="text-xs text-text-secondary">Gestión automatizada que aumentó leads 200%</div>
+                        <div className="font-semibold text-accent-orange text-sm" data-es="Seguridad Reforzada" data-en="Enhanced Security">Seguridad Reforzada</div>
+                        <div className="text-xs text-text-secondary" data-es="SSL, autenticación 2FA, firewall" data-en="SSL, 2FA authentication, firewall">SSL, autenticación 2FA, firewall</div>
                       </div>
                     </div>
                   </div>
                   <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-blue/20">
                     <div className="flex items-start gap-2">
-                      <span className="text-accent-blue mt-1 text-lg">📱</span>
+                      <span className="text-accent-blue mt-1 text-lg">📈</span>
                       <div>
-                        <div className="font-semibold text-accent-blue text-sm">Experiencia Mobile-First</div>
-                        <div className="text-xs text-text-secondary">Diseño que convierte en todos los dispositivos</div>
+                        <div className="font-semibold text-accent-blue text-sm" data-es="Marketing Digital" data-en="Digital Marketing">Marketing Digital</div>
+                        <div className="text-xs text-text-secondary" data-es="SEO, Google Ads, redes sociales" data-en="SEO, Google Ads, social media">SEO, Google Ads, redes sociales</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-green/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-accent-green mt-1 text-lg">🎓</span>
+                      <div>
+                        <div className="font-semibold text-accent-green text-sm" data-es="Plataforma LMS" data-en="LMS Platform">Plataforma LMS</div>
+                        <div className="text-xs text-text-secondary" data-es="Gestión completa de cursos" data-en="Complete course management">Gestión completa de cursos</div>
                       </div>
                     </div>
                   </div>
                   <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-purple/20">
                     <div className="flex items-start gap-2">
-                      <span className="text-accent-purple mt-1 text-lg">📊</span>
+                      <span className="text-accent-purple mt-1 text-lg">💳</span>
                       <div>
-                        <div className="font-semibold text-accent-purple text-sm">Analytics Avanzados</div>
-                        <div className="text-xs text-text-secondary">Tracking completo del customer journey</div>
+                        <div className="font-semibold text-accent-purple text-sm" data-es="Pagos Integrados" data-en="Integrated Payments">Pagos Integrados</div>
+                        <div className="text-xs text-text-secondary" data-es="PayPal, Stripe, transferencias" data-en="PayPal, Stripe, transfers">PayPal, Stripe, transferencias</div>
                       </div>
                     </div>
                   </div>
                   <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-orange/20">
                     <div className="flex items-start gap-2">
-                      <span className="text-accent-orange mt-1 text-lg">🔍</span>
+                      <span className="text-accent-orange mt-1 text-lg">📊</span>
                       <div>
-                        <div className="font-semibold text-accent-orange text-sm">SEO de Alto Impacto</div>
-                        <div className="text-xs text-text-secondary">Posicionamiento #1 en palabras clave objetivo</div>
+                        <div className="font-semibold text-accent-orange text-sm" data-es="Analytics Avanzado" data-en="Advanced Analytics">Analytics Avanzado</div>
+                        <div className="text-xs text-text-secondary" data-es="Tracking de conversiones y ROI" data-en="Conversion and ROI tracking">Tracking de conversiones y ROI</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-blue/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-accent-blue mt-1 text-lg">🏆</span>
+                      <div>
+                        <div className="font-semibold text-accent-blue text-sm" data-es="Certificaciones CONOCER" data-en="CONOCER Certifications">Certificaciones CONOCER</div>
+                        <div className="text-xs text-text-secondary" data-es="EC0052, EC0994, EC0301 oficiales" data-en="Official EC0052, EC0994, EC0301">EC0052, EC0994, EC0301 oficiales</div>
                       </div>
                     </div>
                   </div>
@@ -117,20 +136,20 @@ export default function Projects() {
                 <h4 className="text-accent-purple font-semibold mb-2" data-es="Tecnologías:" data-en="Technologies:">Tecnologías:</h4>
                 <div className="flex flex-wrap gap-2">
                   <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
-                    <SiNextdotjs className="text-white" />
-                    Next.js
+                    <SiWordpress className="text-blue-500" />
+                    WordPress
                   </span>
                   <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
-                    <SiTypescript className="text-blue-600" />
-                    TypeScript
+                    <SiReact className="text-cyan-400" />
+                    React
                   </span>
                   <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
-                    <SiTailwindcss className="text-cyan-400" />
-                    Tailwind CSS
+                    <span className="text-green-500">🔍</span>
+                    SEO
                   </span>
                   <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
-                    <SiStrapi className="text-purple-500" />
-                    Strapi CMS
+                    <span className="text-red-500">🔒</span>
+                    Security
                   </span>
                 </div>
               </div>
@@ -142,77 +161,86 @@ export default function Projects() {
                 </a>
               </div>
               <div className="mt-3 text-center">
-                <span className="text-xs text-accent-green font-semibold bg-accent-green/10 px-2 py-1 rounded" data-es="ROI: +300% en 6 meses" data-en="ROI: +300% in 6 months">ROI: +300% en 6 meses</span>
+                <span className="text-xs text-accent-green font-semibold bg-accent-green/10 px-2 py-1 rounded" data-es="Certificaciones oficiales CONOCER" data-en="Official CONOCER certifications">Certificaciones oficiales CONOCER</span>
               </div>
             </div>
           </div>
 
           {/* Proyecto 2: Ópticas Kairóz */}
-          <div className="project-card bg-terminal-surface border border-terminal-border rounded-lg overflow-hidden hover:border-accent-blue transition-all duration-300 group">
+          <div className="project-card bg-terminal-surface border border-terminal-border rounded-lg overflow-hidden hover:border-accent-orange transition-all duration-300 group">
             <div className="project-image relative overflow-hidden">
               <Image 
                 src="/images/projects/opticas-kairoz.webp" 
-                alt="Ópticas Kairóz - Revolución E-commerce"
+                alt="Ópticas Kairóz - E-commerce Especializado"
                 width={400}
                 height={192}
                 className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-terminal-bg/60 to-transparent"></div>
               <div className="absolute top-4 right-4">
-                <span className="bg-accent-blue text-terminal-bg px-3 py-1 rounded-full text-sm font-bold">E-commerce</span>
+                <span className="bg-accent-orange text-terminal-bg px-3 py-1 rounded-full text-sm font-bold">E-commerce</span>
               </div>
             </div>
             <div className="project-header p-6 border-b border-terminal-border">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-2xl font-bold text-accent-blue">Ópticas Kairóz</h3>
-                <span className="project-type px-3 py-1 bg-accent-blue/20 text-accent-blue rounded-full text-sm font-medium" data-es="E-commerce Premium" data-en="Premium E-commerce">
-                  E-commerce Premium
+                <h3 className="text-2xl font-bold text-accent-orange">Ópticas Kairóz</h3>
+                <span className="project-type px-3 py-1 bg-accent-orange/20 text-accent-orange rounded-full text-sm font-medium" data-es="E-commerce Especializado" data-en="Specialized E-commerce">
+                  E-commerce Especializado
                 </span>
               </div>
-              <div className="bg-gradient-to-r from-accent-blue/10 to-accent-purple/10 rounded-lg p-4 mb-4">
+              <div className="bg-gradient-to-r from-accent-orange/10 to-accent-purple/10 rounded-lg p-4 mb-4">
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div>
-                    <div className="text-lg font-bold text-accent-blue">React</div>
+                    <div className="text-lg font-bold text-accent-orange">React</div>
                     <div className="text-xs text-text-secondary">Frontend</div>
                   </div>
                   <div>
-                    <div className="text-lg font-bold text-accent-green">AR</div>
-                    <div className="text-xs text-text-secondary">Tecnología</div>
+                    <div className="text-lg font-bold text-accent-blue">Node.js</div>
+                    <div className="text-xs text-text-secondary">Backend</div>
                   </div>
                   <div>
-                    <div className="text-lg font-bold text-accent-purple">Stripe</div>
-                    <div className="text-xs text-text-secondary">Pagos</div>
+                    <div className="text-lg font-bold text-accent-green">MongoDB</div>
+                    <div className="text-xs text-text-secondary">Database</div>
                   </div>
                 </div>
               </div>
-              <p className="text-text-secondary leading-relaxed mb-4" data-es="🎯 DESAFÍO: Crear la primera experiencia de compra online premium para lentes en México, con tecnología AR y automatización completa del proceso de venta." data-en="🎯 CHALLENGE: Create the first premium online shopping experience for glasses in Mexico, with AR technology and complete sales process automation.">
-                🎯 DESAFÍO: Crear la primera experiencia de compra online premium para lentes en México, 
-                con tecnología AR y automatización completa del proceso de venta.
+              <p className="text-text-secondary leading-relaxed mb-4" data-es="🎯 DESAFÍO: Desarrollar una plataforma web profesional para servicios ópticos integrales, con sistema de citas, catálogo de productos y servicios especializados en salud visual con tecnología de punta." data-en="🎯 CHALLENGE: Develop a professional web platform for comprehensive optical services, with appointment system, product catalog and specialized visual health services with cutting-edge technology.">
+                🎯 DESAFÍO: Desarrollar una plataforma web profesional para servicios ópticos integrales, 
+                con sistema de citas, catálogo de productos y servicios especializados en salud visual con tecnología de punta.
               </p>
             </div>
             
             <div className="project-details p-6">
               <div className="mb-4">
-                <h4 className="text-accent-blue font-semibold mb-3 flex items-center gap-2" data-es="💰 IMPACTO GENERADO:" data-en="💰 GENERATED IMPACT:">
-                  <span className="text-lg">💰</span>
-                  IMPACTO GENERADO:
+                <h4 className="text-accent-orange font-semibold mb-3 flex items-center gap-2" data-es="🚀 CARACTERÍSTICAS IMPLEMENTADAS:" data-en="🚀 IMPLEMENTED FEATURES:">
+                  <span className="text-lg">🚀</span>
+                  CARACTERÍSTICAS IMPLEMENTADAS:
                 </h4>
                 <div className="grid md:grid-cols-2 gap-3">
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-orange/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-accent-orange mt-1 text-lg">🛒</span>
+                      <div>
+                        <div className="font-semibold text-accent-orange text-sm" data-es="E-commerce Completo" data-en="Complete E-commerce">E-commerce Completo</div>
+                        <div className="text-xs text-text-secondary" data-es="Carrito, pagos, inventario automático" data-en="Cart, payments, automatic inventory">Carrito, pagos, inventario automático</div>
+                      </div>
+                    </div>
+                  </div>
                   <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-blue/20">
                     <div className="flex items-start gap-2">
-                      <span className="text-accent-blue mt-1 text-lg">👓</span>
+                      <span className="text-accent-blue mt-1 text-lg">📱</span>
                       <div>
-                        <div className="font-semibold text-accent-blue text-sm" data-es="Configurador AR Revolucionario" data-en="Revolutionary AR Configurator">Configurador AR Revolucionario</div>
-                        <div className="text-xs text-text-secondary" data-es="Tecnología que aumentó conversión 40%" data-en="Technology that increased conversion 40%">Tecnología que aumentó conversión 40%</div>
+                        <div className="font-semibold text-accent-blue text-sm" data-es="App Móvil Nativa" data-en="Native Mobile App">App Móvil Nativa</div>
+                        <div className="text-xs text-text-secondary" data-es="iOS y Android optimizadas" data-en="Optimized iOS and Android">iOS y Android optimizadas</div>
                       </div>
                     </div>
                   </div>
                   <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-green/20">
                     <div className="flex items-start gap-2">
-                      <span className="text-accent-green mt-1 text-lg">🛒</span>
+                      <span className="text-accent-green mt-1 text-lg">🏆</span>
                       <div>
-                        <div className="font-semibold text-accent-green text-sm" data-es="Carrito Inteligente" data-en="Smart Cart">Carrito Inteligente</div>
-                        <div className="text-xs text-text-secondary" data-es="Abandono reducido en 65%" data-en="Abandonment reduced by 65%">Abandono reducido en 65%</div>
+                        <div className="font-semibold text-accent-green text-sm" data-es="Reconocimiento Amazon" data-en="Amazon Recognition">Reconocimiento Amazon</div>
+                        <div className="text-xs text-text-secondary" data-es="Contactados por excelencia técnica" data-en="Contacted for technical excellence">Contactados por excelencia técnica</div>
                       </div>
                     </div>
                   </div>
@@ -220,17 +248,26 @@ export default function Projects() {
                     <div className="flex items-start gap-2">
                       <span className="text-accent-purple mt-1 text-lg">📊</span>
                       <div>
-                        <div className="font-semibold text-accent-purple text-sm" data-es="Inventario Sincronizado" data-en="Synchronized Inventory">Inventario Sincronizado</div>
-                        <div className="text-xs text-text-secondary" data-es="Cero sobreventa, máxima eficiencia" data-en="Zero overselling, maximum efficiency">Cero sobreventa, máxima eficiencia</div>
+                        <div className="font-semibold text-accent-purple text-sm" data-es="Analytics Avanzado" data-en="Advanced Analytics">Analytics Avanzado</div>
+                        <div className="text-xs text-text-secondary" data-es="Google Analytics 4, heatmaps" data-en="Google Analytics 4, heatmaps">Google Analytics 4, heatmaps</div>
                       </div>
                     </div>
                   </div>
                   <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-orange/20">
                     <div className="flex items-start gap-2">
-                      <span className="text-accent-orange mt-1 text-lg">💳</span>
+                      <span className="text-accent-orange mt-1 text-lg">🔒</span>
                       <div>
-                        <div className="font-semibold text-accent-orange text-sm" data-es="Pagos Ultra-Seguros" data-en="Ultra-Secure Payments">Pagos Ultra-Seguros</div>
-                        <div className="text-xs text-text-secondary" data-es="Múltiples métodos, conversión optimizada" data-en="Multiple methods, optimized conversion">Múltiples métodos, conversión optimizada</div>
+                        <div className="font-semibold text-accent-orange text-sm" data-es="Seguridad PCI DSS" data-en="PCI DSS Security">Seguridad PCI DSS</div>
+                        <div className="text-xs text-text-secondary" data-es="Certificación para pagos seguros" data-en="Certification for secure payments">Certificación para pagos seguros</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-blue/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-accent-blue mt-1 text-lg">🚀</span>
+                      <div>
+                        <div className="font-semibold text-accent-blue text-sm" data-es="CDN Global" data-en="Global CDN">CDN Global</div>
+                        <div className="text-xs text-text-secondary" data-es="Carga rápida en todo el mundo" data-en="Fast loading worldwide">Carga rápida en todo el mundo</div>
                       </div>
                     </div>
                   </div>
@@ -241,16 +278,16 @@ export default function Projects() {
                 <h4 className="text-accent-purple font-semibold mb-2" data-es="Tecnologías:" data-en="Technologies:">Tecnologías:</h4>
                 <div className="flex flex-wrap gap-2">
                   <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
-                    <SiReact className="text-cyan-400" />
-                    React
+                    <SiWordpress className="text-blue-500" />
+                    WordPress
                   </span>
                   <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
-                    <SiNodedotjs className="text-green-500" />
-                    Node.js
+                    <span className="text-purple-500">🛒</span>
+                    WooCommerce
                   </span>
                   <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
-                    <SiMongodb className="text-green-500" />
-                    MongoDB
+                    <span className="text-green-500">🔍</span>
+                    SEO
                   </span>
                   <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
                     <SiStripe className="text-purple-500" />
@@ -260,101 +297,226 @@ export default function Projects() {
               </div>
               
               <div className="project-links flex gap-3">
-                <a href="https://opticaskairoz.com.mx/" target="_blank" rel="noopener noreferrer" className="w-full bg-accent-blue/20 hover:bg-accent-blue hover:text-terminal-bg text-accent-blue px-4 py-2 rounded text-center text-sm font-medium transition-all duration-300 flex items-center justify-center gap-2">
+                <a href="https://opticaskairoz.com" target="_blank" rel="noopener noreferrer" className="w-full bg-accent-orange/20 hover:bg-accent-orange hover:text-terminal-bg text-accent-orange px-4 py-2 rounded text-center text-sm font-medium transition-all duration-300 flex items-center justify-center gap-2">
                   <ExternalLink className="w-4 h-4" />
-                  <span data-es="Ver Plataforma Live" data-en="View Live Platform">Ver Plataforma Live</span>
+                  <span data-es="Ver Sitio Web" data-en="View Website">Ver Sitio Web</span>
                 </a>
               </div>
               <div className="mt-3 text-center">
-                <span className="text-xs text-accent-blue font-semibold bg-accent-blue/10 px-2 py-1 rounded" data-es="Primer lugar en Google México" data-en="#1 ranking on Google Mexico">Primer lugar en Google México</span>
+                <span className="text-xs text-accent-orange font-semibold bg-accent-orange/10 px-2 py-1 rounded" data-es="Reconocido por Amazon por excelencia técnica" data-en="Recognized by Amazon for technical excellence">Reconocido por Amazon por excelencia técnica</span>
               </div>
             </div>
           </div>
 
-          {/* Proyecto 3: Sistema de Inventarios */}
-          <div className="project-card bg-terminal-surface border border-terminal-border rounded-lg overflow-hidden hover:border-accent-purple transition-all duration-300 group">
+          {/* Proyecto 3: SCCA Project */}
+          <div className="project-card bg-terminal-surface border border-terminal-border rounded-lg overflow-hidden hover:border-accent-blue transition-all duration-300 group">
             <div className="project-image relative overflow-hidden">
               <Image 
-                src="/images/projects/inventario.webp" 
-                alt="Sistema de Inventarios - Automatización Empresarial"
+                src="/images/projects/scca-project.svg" 
+                alt="SCCA - Sistema de Creación de Contenido Automatizado"
                 width={400}
                 height={192}
                 className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-terminal-bg/60 to-transparent"></div>
               <div className="absolute top-4 right-4">
-                <span className="bg-accent-purple text-terminal-bg px-3 py-1 rounded-full text-sm font-bold">Sistema</span>
+                <span className="bg-accent-blue text-terminal-bg px-3 py-1 rounded-full text-sm font-bold">IA & Video</span>
               </div>
             </div>
             <div className="project-header p-6 border-b border-terminal-border">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-2xl font-bold text-accent-purple">Sistema de Inventarios</h3>
-                <span className="project-type px-3 py-1 bg-accent-purple/20 text-accent-purple rounded-full text-sm font-medium" data-es="Automatización Empresarial" data-en="Enterprise Automation">
-                  Automatización Empresarial
+                <h3 className="text-2xl font-bold text-accent-blue">SCCA Project</h3>
+                <span className="project-type px-3 py-1 bg-accent-blue/20 text-accent-blue rounded-full text-sm font-medium" data-es="Automatización IA" data-en="AI Automation">
+                  Automatización IA
                 </span>
               </div>
-              <div className="bg-gradient-to-r from-accent-purple/10 to-accent-orange/10 rounded-lg p-4 mb-4">
+              <div className="bg-gradient-to-r from-accent-blue/10 to-accent-purple/10 rounded-lg p-4 mb-4">
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div>
-                    <div className="text-lg font-bold text-accent-purple">Vue.js</div>
-                    <div className="text-xs text-text-secondary">Frontend</div>
+                    <div className="text-lg font-bold text-accent-blue">Python</div>
+                    <div className="text-xs text-text-secondary">Backend</div>
                   </div>
                   <div>
-                    <div className="text-lg font-bold text-accent-orange">API</div>
-                    <div className="text-xs text-text-secondary">REST</div>
+                    <div className="text-lg font-bold text-accent-green">Whisper</div>
+                    <div className="text-xs text-text-secondary">IA Audio</div>
                   </div>
                   <div>
-                    <div className="text-lg font-bold text-accent-green">Docker</div>
-                    <div className="text-xs text-text-secondary">Deploy</div>
+                    <div className="text-lg font-bold text-accent-purple">LLM</div>
+                    <div className="text-xs text-text-secondary">Análisis</div>
                   </div>
                 </div>
               </div>
-              <p className="text-text-secondary leading-relaxed mb-4" data-es="🎯 DESAFÍO: Eliminar el caos operativo de empresas medianas mediante un sistema que automatice completamente la gestión de inventarios y reduzca costos operativos en 50%." data-en="🎯 CHALLENGE: Eliminate operational chaos in medium-sized companies through a system that completely automates inventory management and reduces operational costs by 50%.">
-                🎯 DESAFÍO: Eliminar el caos operativo de empresas medianas mediante un sistema que automatice 
-                completamente la gestión de inventarios y reduzca costos operativos en 50%.
+              <p className="text-text-secondary leading-relaxed mb-4" data-es="🎯 DESAFÍO: Crear una aplicación web local que utiliza IA para extraer clips temáticos de videos largos de forma completamente automatizada, optimizada para CPU sin necesidad de GPU dedicada." data-en="🎯 CHALLENGE: Create a local web application that uses AI to extract thematic clips from long videos in a completely automated way, optimized for CPU without the need for dedicated GPU.">
+                🎯 DESAFÍO: Crear una aplicación web local que utiliza IA para extraer clips temáticos de videos largos 
+                de forma completamente automatizada, optimizada para CPU sin necesidad de GPU dedicada.
               </p>
             </div>
             
             <div className="project-details p-6">
               <div className="mb-4">
-                <h4 className="text-accent-purple font-semibold mb-3 flex items-center gap-2" data-es="💰 AUTOMATIZACIÓN LOGRADA:" data-en="💰 ACHIEVED AUTOMATION:">
-                  <span className="text-lg">💰</span>
-                  AUTOMATIZACIÓN LOGRADA:
+                <h4 className="text-accent-blue font-semibold mb-3 flex items-center gap-2" data-es="🚀 CARACTERÍSTICAS IMPLEMENTADAS:" data-en="🚀 IMPLEMENTED FEATURES:">
+                  <span className="text-lg">🚀</span>
+                  CARACTERÍSTICAS IMPLEMENTADAS:
+                </h4>
+                <div className="grid md:grid-cols-2 gap-3">
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-blue/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-accent-blue mt-1 text-lg">🎤</span>
+                      <div>
+                        <div className="font-semibold text-accent-blue text-sm" data-es="Transcripción Automática" data-en="Automatic Transcription">Transcripción Automática</div>
+                        <div className="text-xs text-text-secondary" data-es="Whisper.cpp optimizado para CPU" data-en="Whisper.cpp optimized for CPU">Whisper.cpp optimizado para CPU</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-green/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-accent-green mt-1 text-lg">🧠</span>
+                      <div>
+                        <div className="font-semibold text-accent-green text-sm" data-es="Análisis Inteligente" data-en="Intelligent Analysis">Análisis Inteligente</div>
+                        <div className="text-xs text-text-secondary" data-es="Modelos LLM locales (Mistral-7B)" data-en="Local LLM models (Mistral-7B)">Modelos LLM locales (Mistral-7B)</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-purple/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-accent-purple mt-1 text-lg">✂️</span>
+                      <div>
+                        <div className="font-semibold text-accent-purple text-sm" data-es="Corte Automático" data-en="Automatic Cutting">Corte Automático</div>
+                        <div className="text-xs text-text-secondary" data-es="FFmpeg con progreso en tiempo real" data-en="FFmpeg with real-time progress">FFmpeg con progreso en tiempo real</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-orange/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-accent-orange mt-1 text-lg">🎨</span>
+                      <div>
+                        <div className="font-semibold text-accent-orange text-sm" data-es="Perfiles Personalizables" data-en="Customizable Profiles">Perfiles Personalizables</div>
+                        <div className="text-xs text-text-secondary" data-es="Redes sociales, educativo, archivo" data-en="Social media, educational, archive">Redes sociales, educativo, archivo</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="technologies mb-4">
+                <h4 className="text-accent-purple font-semibold mb-2" data-es="Tecnologías:" data-en="Technologies:">Tecnologías:</h4>
+                <div className="flex flex-wrap gap-2">
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
+                    <SiPython className="text-yellow-400" />
+                    Python
+                  </span>
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
+                    <SiFastapi className="text-green-500" />
+                    FastAPI
+                  </span>
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono">
+                    Whisper.cpp
+                  </span>
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono">
+                    Mistral-7B
+                  </span>
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono">
+                    FFmpeg
+                  </span>
+                </div>
+              </div>
+              
+              <div className="project-links flex gap-3">
+                <a href="https://github.com/ismaiars/Scca_Project" target="_blank" rel="noopener noreferrer" className="w-full bg-accent-blue/20 hover:bg-accent-blue hover:text-terminal-bg text-accent-blue px-4 py-2 rounded text-center text-sm font-medium transition-all duration-300 flex items-center justify-center gap-2">
+                  <Github className="w-4 h-4" />
+                  <span data-es="Ver Código Fuente" data-en="View Source Code">Ver Código Fuente</span>
+                </a>
+              </div>
+              <div className="mt-3 text-center">
+                <span className="text-xs text-accent-blue font-semibold bg-accent-blue/10 px-2 py-1 rounded" data-es="IA local sin GPU requerida" data-en="Local AI without GPU required">IA local sin GPU requerida</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Proyecto 4: Inventario Corporativo */}
+          <div className="project-card bg-terminal-surface border border-terminal-border rounded-lg overflow-hidden hover:border-accent-purple transition-all duration-300 group">
+            <div className="project-image relative overflow-hidden">
+              <Image 
+                src="/images/projects/inventario.webp" 
+                alt="Inventario Corporativo - Sistema de Gestión de Equipos"
+                width={400}
+                height={192}
+                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-terminal-bg/60 to-transparent"></div>
+              <div className="absolute top-4 right-4">
+                <span className="bg-accent-purple text-terminal-bg px-3 py-1 rounded-full text-sm font-bold">Web App</span>
+              </div>
+            </div>
+            <div className="project-header p-6 border-b border-terminal-border">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-2xl font-bold text-accent-purple">Inventario Corporativo</h3>
+                <span className="project-type px-3 py-1 bg-accent-purple/20 text-accent-purple rounded-full text-sm font-medium" data-es="Sistema de Gestión" data-en="Management System">
+                  Sistema de Gestión
+                </span>
+              </div>
+              <div className="bg-gradient-to-r from-accent-purple/10 to-accent-orange/10 rounded-lg p-4 mb-4">
+                <div className="grid grid-cols-3 gap-4 text-center">
+                  <div>
+                    <div className="text-lg font-bold text-accent-purple">Next.js</div>
+                    <div className="text-xs text-text-secondary">Frontend</div>
+                  </div>
+                  <div>
+                    <div className="text-lg font-bold text-accent-orange">OAuth</div>
+                    <div className="text-xs text-text-secondary">Seguridad</div>
+                  </div>
+                  <div>
+                    <div className="text-lg font-bold text-accent-green">Shadcn/ui</div>
+                    <div className="text-xs text-text-secondary">UI/UX</div>
+                  </div>
+                </div>
+              </div>
+              <p className="text-text-secondary leading-relaxed mb-4" data-es="🎯 DESAFÍO: Desarrollar una aplicación web moderna para la gestión eficiente del inventario de equipos corporativos, con autenticación segura y acceso restringido solo al personal autorizado." data-en="🎯 CHALLENGE: Develop a modern web application for efficient management of corporate equipment inventory, with secure authentication and restricted access only to authorized personnel.">
+                🎯 DESAFÍO: Desarrollar una aplicación web moderna para la gestión eficiente del inventario de equipos corporativos, 
+                con autenticación segura y acceso restringido solo al personal autorizado.
+              </p>
+            </div>
+            
+            <div className="project-details p-6">
+              <div className="mb-4">
+                <h4 className="text-accent-purple font-semibold mb-3 flex items-center gap-2" data-es="🚀 CARACTERÍSTICAS IMPLEMENTADAS:" data-en="🚀 IMPLEMENTED FEATURES:">
+                  <span className="text-lg">🚀</span>
+                  CARACTERÍSTICAS IMPLEMENTADAS:
                 </h4>
                 <div className="grid md:grid-cols-2 gap-3">
                   <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-purple/20">
                     <div className="flex items-start gap-2">
                       <span className="text-accent-purple mt-1 text-lg">📊</span>
                       <div>
-                        <div className="font-semibold text-accent-purple text-sm">Dashboard Inteligente</div>
-                        <div className="text-xs text-text-secondary">Decisiones basadas en datos en tiempo real</div>
+                        <div className="font-semibold text-accent-purple text-sm" data-es="Dashboard Interactivo" data-en="Interactive Dashboard">Dashboard Interactivo</div>
+                        <div className="text-xs text-text-secondary" data-es="Estadísticas clave del inventario" data-en="Key inventory statistics">Estadísticas clave del inventario</div>
                       </div>
                     </div>
                   </div>
                   <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-orange/20">
                     <div className="flex items-start gap-2">
-                      <span className="text-accent-orange mt-1 text-lg">🏢</span>
+                      <span className="text-accent-orange mt-1 text-lg">🔐</span>
                       <div>
-                        <div className="font-semibold text-accent-orange text-sm">Multi-Almacén Sincronizado</div>
-                        <div className="text-xs text-text-secondary">Control total de múltiples ubicaciones</div>
+                        <div className="font-semibold text-accent-orange text-sm" data-es="Autenticación Google OAuth" data-en="Google OAuth Authentication">Autenticación Google OAuth</div>
+                        <div className="text-xs text-text-secondary" data-es="Acceso seguro con whitelist" data-en="Secure access with whitelist">Acceso seguro con whitelist</div>
                       </div>
                     </div>
                   </div>
                   <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-green/20">
                     <div className="flex items-start gap-2">
-                      <span className="text-accent-green mt-1 text-lg">📈</span>
+                      <span className="text-accent-green mt-1 text-lg">🔍</span>
                       <div>
-                        <div className="font-semibold text-accent-green text-sm">Reportes Automáticos</div>
-                        <div className="text-xs text-text-secondary">Insights que impulsan el crecimiento</div>
+                        <div className="font-semibold text-accent-green text-sm" data-es="Búsqueda y Filtrado" data-en="Search and Filtering">Búsqueda y Filtrado</div>
+                        <div className="text-xs text-text-secondary" data-es="Por estado, departamento y más" data-en="By status, department and more">Por estado, departamento y más</div>
                       </div>
                     </div>
                   </div>
                   <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-blue/20">
                     <div className="flex items-start gap-2">
-                      <span className="text-accent-blue mt-1 text-lg">🔗</span>
+                      <span className="text-accent-blue mt-1 text-lg">📱</span>
                       <div>
-                        <div className="font-semibold text-accent-blue text-sm">API Empresarial</div>
-                        <div className="text-xs text-text-secondary">Integración perfecta con sistemas existentes</div>
+                        <div className="font-semibold text-accent-blue text-sm" data-es="Interfaz Responsiva" data-en="Responsive Interface">Interfaz Responsiva</div>
+                        <div className="text-xs text-text-secondary" data-es="Shadcn/ui + Tailwind CSS" data-en="Shadcn/ui + Tailwind CSS">Shadcn/ui + Tailwind CSS</div>
                       </div>
                     </div>
                   </div>
@@ -365,20 +527,20 @@ export default function Projects() {
                 <h4 className="text-accent-blue font-semibold mb-2" data-es="Tecnologías:" data-en="Technologies:">Tecnologías:</h4>
                 <div className="flex flex-wrap gap-2">
                   <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
-                    <SiVuedotjs className="text-green-500" />
-                    Vue.js
+                    <SiNextdotjs className="text-white" />
+                    Next.js
                   </span>
                   <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
-                    <SiExpress className="text-gray-400" />
-                    Express
+                    <SiReact className="text-cyan-400" />
+                    React
                   </span>
                   <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
-                    <SiPostgresql className="text-blue-700" />
-                    PostgreSQL
+                    <SiTypescript className="text-blue-500" />
+                    TypeScript
                   </span>
                   <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
-                    <SiDocker className="text-blue-500" />
-                    Docker
+                    <SiTailwindcss className="text-cyan-400" />
+                    Tailwind CSS
                   </span>
                 </div>
               </div>
@@ -386,11 +548,137 @@ export default function Projects() {
               <div className="project-links flex gap-3">
                 <a href="https://github.com/ismaiars/Inventario-Corporativo" target="_blank" rel="noopener noreferrer" className="w-full bg-accent-purple/20 hover:bg-accent-purple hover:text-terminal-bg text-accent-purple px-4 py-2 rounded text-center text-sm font-medium transition-all duration-300 flex items-center justify-center gap-2">
                   <Github className="w-4 h-4" />
-                  <span data-es="Ver Arquitectura" data-en="View Architecture">Ver Arquitectura</span>
+                  <span data-es="Ver Código Fuente" data-en="View Source Code">Ver Código Fuente</span>
                 </a>
               </div>
               <div className="mt-3 text-center">
-                <span className="text-xs text-accent-purple font-semibold bg-accent-purple/10 px-2 py-1 rounded" data-es="Implementado en 15+ empresas" data-en="Implemented in 15+ companies">Implementado en 15+ empresas</span>
+                <span className="text-xs text-accent-purple font-semibold bg-accent-purple/10 px-2 py-1 rounded" data-es="Autenticación OAuth 2.0 integrada" data-en="OAuth 2.0 authentication integrated">Autenticación OAuth 2.0 integrada</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Proyecto 5: Sistema de Generación de Páginas WP */}
+          <div className="project-card bg-terminal-surface border border-terminal-border rounded-lg overflow-hidden hover:border-accent-green transition-all duration-300 group">
+            <div className="project-image relative overflow-hidden">
+              <Image 
+                src="/images/projects/wordpress-generator.svg" 
+                alt="Sistema de Generación de Páginas WP - Automatización WordPress"
+                width={400}
+                height={192}
+                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-terminal-bg/60 to-transparent"></div>
+              <div className="absolute top-4 right-4">
+                <span className="bg-accent-green text-terminal-bg px-3 py-1 rounded-full text-sm font-bold">Automatización</span>
+              </div>
+            </div>
+            <div className="project-header p-6 border-b border-terminal-border">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-2xl font-bold text-accent-green">Sistema de Generación de Páginas WP</h3>
+                <span className="project-type px-3 py-1 bg-accent-green/20 text-accent-green rounded-full text-sm font-medium" data-es="Automatización Web" data-en="Web Automation">
+                  Automatización Web
+                </span>
+              </div>
+              <div className="bg-gradient-to-r from-accent-green/10 to-accent-blue/10 rounded-lg p-4 mb-4">
+                <div className="grid grid-cols-3 gap-4 text-center">
+                  <div>
+                    <div className="text-lg font-bold text-accent-green">Python</div>
+                    <div className="text-xs text-text-secondary">Backend</div>
+                  </div>
+                  <div>
+                    <div className="text-lg font-bold text-accent-blue">WordPress</div>
+                    <div className="text-xs text-text-secondary">CMS</div>
+                  </div>
+                  <div>
+                    <div className="text-lg font-bold text-accent-orange">API REST</div>
+                    <div className="text-xs text-text-secondary">Integración</div>
+                  </div>
+                </div>
+              </div>
+              <p className="text-text-secondary leading-relaxed mb-4" data-es="🎯 DESAFÍO: Automatizar la creación masiva de páginas en WordPress para Ópticas Kairóz, reduciendo el tiempo de desarrollo de horas a minutos mediante scripts inteligentes y plantillas dinámicas." data-en="🎯 CHALLENGE: Automate massive WordPress page creation for Ópticas Kairóz, reducing development time from hours to minutes through intelligent scripts and dynamic templates.">
+                🎯 DESAFÍO: Automatizar la creación masiva de páginas en WordPress para Ópticas Kairóz, 
+                reduciendo el tiempo de desarrollo de horas a minutos mediante scripts inteligentes y plantillas dinámicas.
+              </p>
+            </div>
+            
+            <div className="project-details p-6">
+              <div className="mb-4">
+                <h4 className="text-accent-green font-semibold mb-3 flex items-center gap-2" data-es="🚀 CARACTERÍSTICAS IMPLEMENTADAS:" data-en="🚀 IMPLEMENTED FEATURES:">
+                  <span className="text-lg">🚀</span>
+                  CARACTERÍSTICAS IMPLEMENTADAS:
+                </h4>
+                <div className="grid md:grid-cols-2 gap-3">
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-green/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-accent-green mt-1 text-lg">⚡</span>
+                      <div>
+                        <div className="font-semibold text-accent-green text-sm" data-es="Generación Automática" data-en="Automatic Generation">Generación Automática</div>
+                        <div className="text-xs text-text-secondary" data-es="Páginas desde plantillas JSON" data-en="Pages from JSON templates">Páginas desde plantillas JSON</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-blue/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-accent-blue mt-1 text-lg">🔗</span>
+                      <div>
+                        <div className="font-semibold text-accent-blue text-sm" data-es="Integración WordPress API" data-en="WordPress API Integration">Integración WordPress API</div>
+                        <div className="text-xs text-text-secondary" data-es="REST API nativa" data-en="Native REST API">REST API nativa</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-orange/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-accent-orange mt-1 text-lg">📋</span>
+                      <div>
+                        <div className="font-semibold text-accent-orange text-sm" data-es="Plantillas Dinámicas" data-en="Dynamic Templates">Plantillas Dinámicas</div>
+                        <div className="text-xs text-text-secondary" data-es="Configurables por JSON" data-en="Configurable via JSON">Configurables por JSON</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-purple/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-accent-purple mt-1 text-lg">📊</span>
+                      <div>
+                        <div className="font-semibold text-accent-purple text-sm" data-es="Logging Detallado" data-en="Detailed Logging">Logging Detallado</div>
+                        <div className="text-xs text-text-secondary" data-es="Seguimiento de procesos" data-en="Process tracking">Seguimiento de procesos</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="technologies mb-4">
+                <h4 className="text-accent-green font-semibold mb-2" data-es="Tecnologías:" data-en="Technologies:">Tecnologías:</h4>
+                <div className="flex flex-wrap gap-2">
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
+                    <SiPython className="text-yellow-400" />
+                    Python
+                  </span>
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
+                    <SiWordpress className="text-blue-600" />
+                    WordPress API
+                  </span>
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
+                    <SiJson className="text-yellow-500" />
+                    JSON
+                  </span>
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono">
+                    REST API
+                  </span>
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono">
+                    Requests
+                  </span>
+                </div>
+              </div>
+              
+              <div className="project-links flex gap-3">
+                <a href="https://github.com/ismaiars/Sistema_De_Generacion_Paginas_WP" target="_blank" rel="noopener noreferrer" className="w-full bg-accent-green/20 hover:bg-accent-green hover:text-terminal-bg text-accent-green px-4 py-2 rounded text-center text-sm font-medium transition-all duration-300 flex items-center justify-center gap-2">
+                  <Github className="w-4 h-4" />
+                  <span data-es="Ver Código Fuente" data-en="View Source Code">Ver Código Fuente</span>
+                </a>
+              </div>
+              <div className="mt-3 text-center">
+                <span className="text-xs text-accent-green font-semibold bg-accent-green/10 px-2 py-1 rounded" data-es="Automatización 95% más rápida" data-en="95% faster automation">Automatización 95% más rápida</span>
               </div>
             </div>
           </div>
