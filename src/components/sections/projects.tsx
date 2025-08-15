@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { ExternalLink, Github } from 'lucide-react';
 import { 
   SiNextdotjs, SiReact, SiTypescript, SiTailwindcss, 
-  SiStripe, SiPython, SiFastapi, SiWordpress, SiJson
+  SiStripe, SiPython, SiFastapi, SiWordpress, SiJson, SiDocker
 } from 'react-icons/si';
 
 export default function Projects() {
@@ -678,6 +678,308 @@ export default function Projects() {
               </div>
               <div className="mt-3 text-center">
                 <span className="text-xs text-accent-green font-semibold bg-accent-green/10 px-2 py-1 rounded" data-es="Automatización 95% más rápida" data-en="95% faster automation">Automatización 95% más rápida</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Proyecto 6: ForenseCTL */}
+          <div className="project-card bg-terminal-surface border border-terminal-border rounded-lg overflow-hidden hover:border-accent-orange transition-all duration-300 group">
+            <div className="project-image relative overflow-hidden">
+              <Image 
+                src="/images/projects/forensectl.svg" 
+                alt="ForenseCTL - Sistema de Análisis Forense Digital Multiplataforma"
+                width={400}
+                height={192}
+                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-terminal-bg/60 to-transparent"></div>
+              <div className="absolute top-4 right-4">
+                <span className="bg-accent-orange text-terminal-bg px-3 py-1 rounded-full text-sm font-bold">Ciberseguridad</span>
+              </div>
+            </div>
+            <div className="project-header p-6 border-b border-terminal-border">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-2xl font-bold text-accent-orange">ForenseCTL</h3>
+                <span className="project-type px-3 py-1 bg-accent-orange/20 text-accent-orange rounded-full text-sm font-medium" data-es="Análisis Forense Digital" data-en="Digital Forensic Analysis">
+                  Análisis Forense Digital
+                </span>
+              </div>
+              <div className="bg-gradient-to-r from-accent-orange/10 to-accent-red/10 rounded-lg p-4 mb-4">
+                <div className="grid grid-cols-3 gap-4 text-center">
+                  <div>
+                    <div className="text-lg font-bold text-accent-orange">Python</div>
+                    <div className="text-xs text-text-secondary">Core</div>
+                  </div>
+                  <div>
+                    <div className="text-lg font-bold text-accent-red">Multiplataforma</div>
+                    <div className="text-xs text-text-secondary">Windows/Linux</div>
+                  </div>
+                  <div>
+                    <div className="text-lg font-bold text-accent-purple">DFIR</div>
+                    <div className="text-xs text-text-secondary">Forense</div>
+                  </div>
+                </div>
+              </div>
+              <p className="text-text-secondary leading-relaxed mb-4" data-es="🎯 DESAFÍO: Desarrollar un sistema completo de análisis forense digital multiplataforma para profesionales de ciberseguridad, equipos DFIR y analistas forenses, proporcionando un ciclo completo de investigación: recopilación → análisis → reporte → cadena de custodia." data-en="🎯 CHALLENGE: Develop a complete multiplatform digital forensic analysis system for cybersecurity professionals, DFIR teams and forensic analysts, providing a complete investigation cycle: collection → analysis → reporting → chain of custody.">
+                🎯 DESAFÍO: Desarrollar un sistema completo de análisis forense digital multiplataforma para profesionales de ciberseguridad, 
+                equipos DFIR y analistas forenses, proporcionando un ciclo completo de investigación: recopilación → análisis → reporte → cadena de custodia.
+              </p>
+            </div>
+            
+            <div className="project-details p-6">
+              <div className="mb-4">
+                <h4 className="text-accent-orange font-semibold mb-3 flex items-center gap-2" data-es="🚀 CARACTERÍSTICAS IMPLEMENTADAS:" data-en="🚀 IMPLEMENTED FEATURES:">
+                  <span className="text-lg">🚀</span>
+                  CARACTERÍSTICAS IMPLEMENTADAS:
+                </h4>
+                <div className="grid md:grid-cols-2 gap-3">
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-orange/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-accent-orange mt-1 text-lg">🔍</span>
+                      <div>
+                        <div className="font-semibold text-accent-orange text-sm" data-es="Recopilación Automática" data-en="Automatic Collection">Recopilación Automática</div>
+                        <div className="text-xs text-text-secondary" data-es="Artefactos del sistema en tiempo real" data-en="Real-time system artifacts">Artefactos del sistema en tiempo real</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-red/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-accent-red mt-1 text-lg">🌐</span>
+                      <div>
+                        <div className="font-semibold text-accent-red text-sm" data-es="Multiplataforma" data-en="Multiplatform">Multiplataforma</div>
+                        <div className="text-xs text-text-secondary" data-es="Windows (ejecutable) y Linux (script)" data-en="Windows (executable) and Linux (script)">Windows (ejecutable) y Linux (script)</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-purple/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-accent-purple mt-1 text-lg">📄</span>
+                      <div>
+                        <div className="font-semibold text-accent-purple text-sm" data-es="Reportes Profesionales" data-en="Professional Reports">Reportes Profesionales</div>
+                        <div className="text-xs text-text-secondary" data-es="HTML y JSON con diseño técnico" data-en="HTML and JSON with technical design">HTML y JSON con diseño técnico</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-blue/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-accent-blue mt-1 text-lg">🔗</span>
+                      <div>
+                        <div className="font-semibold text-accent-blue text-sm" data-es="Cadena de Custodia" data-en="Chain of Custody">Cadena de Custodia</div>
+                        <div className="text-xs text-text-secondary" data-es="Registro automático de acciones" data-en="Automatic action logging">Registro automático de acciones</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-green/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-accent-green mt-1 text-lg">⚡</span>
+                      <div>
+                        <div className="font-semibold text-accent-green text-sm" data-es="Sin Instalaciones Complejas" data-en="No Complex Installations">Sin Instalaciones Complejas</div>
+                        <div className="text-xs text-text-secondary" data-es="Ejecutable único o script directo" data-en="Single executable or direct script">Ejecutable único o script directo</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-orange/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-accent-orange mt-1 text-lg">🛡️</span>
+                      <div>
+                        <div className="font-semibold text-accent-orange text-sm" data-es="Análisis Forense Integral" data-en="Comprehensive Forensic Analysis">Análisis Forense Integral</div>
+                        <div className="text-xs text-text-secondary" data-es="Sistema, procesos, red y logs" data-en="System, processes, network and logs">Sistema, procesos, red y logs</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="technologies mb-4">
+                <h4 className="text-accent-purple font-semibold mb-2" data-es="Tecnologías:" data-en="Technologies:">Tecnologías:</h4>
+                <div className="flex flex-wrap gap-2">
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
+                    <SiPython className="text-yellow-400" />
+                    Python
+                  </span>
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono">
+                    Windows API
+                  </span>
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono">
+                    Linux Forensics
+                  </span>
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
+                    <span className="text-red-500">🔒</span>
+                    DFIR
+                  </span>
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono">
+                    Cybersecurity
+                  </span>
+                </div>
+              </div>
+              
+              <div className="project-links flex gap-3">
+                <a href="https://github.com/ismaiars/ForenseCTL" target="_blank" rel="noopener noreferrer" className="w-full bg-accent-orange/20 hover:bg-accent-orange hover:text-terminal-bg text-accent-orange px-4 py-2 rounded text-center text-sm font-medium transition-all duration-300 flex items-center justify-center gap-2">
+                  <Github className="w-4 h-4" />
+                  <span data-es="Ver Código Fuente" data-en="View Source Code">Ver Código Fuente</span>
+                </a>
+              </div>
+              <div className="mt-3 text-center">
+                <span className="text-xs text-accent-orange font-semibold bg-accent-orange/10 px-2 py-1 rounded" data-es="Sistema profesional para equipos DFIR" data-en="Professional system for DFIR teams">Sistema profesional para equipos DFIR</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Proyecto 7: SIEM OpenSource PyMES */}
+          <div className="project-card bg-terminal-surface border border-terminal-border rounded-lg overflow-hidden hover:border-accent-blue transition-all duration-300 group">
+            <div className="project-image relative overflow-hidden">
+              <Image
+                src="/images/projects/siem.svg"
+                alt="SIEM OpenSource PyMES - Sistema de Gestión de Información y Eventos de Seguridad"
+                width={400}
+                height={192}
+                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+            
+            <div className="project-header p-6 border-b border-terminal-border">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-2xl font-bold text-accent-blue">SIEM OpenSource PyMES</h3>
+                <span className="project-type px-3 py-1 bg-accent-blue/20 text-accent-blue rounded-full text-sm font-medium" data-es="Sistema SIEM" data-en="SIEM System">
+                  Sistema SIEM
+                </span>
+              </div>
+              <div className="bg-gradient-to-r from-accent-blue/10 to-accent-purple/10 rounded-lg p-4 mb-4">
+                <div className="grid grid-cols-3 gap-4 text-center">
+                  <div>
+                    <div className="text-lg font-bold text-accent-blue">Elasticsearch</div>
+                    <div className="text-xs text-text-secondary">Motor</div>
+                  </div>
+                  <div>
+                    <div className="text-lg font-bold text-accent-purple">Kibana</div>
+                    <div className="text-xs text-text-secondary">Dashboard</div>
+                  </div>
+                  <div>
+                    <div className="text-lg font-bold text-accent-green">Docker</div>
+                    <div className="text-xs text-text-secondary">Deploy</div>
+                  </div>
+                </div>
+              </div>
+              <p className="text-text-secondary leading-relaxed mb-4" data-es="🎯 DESAFÍO: Desarrollar una solución SIEM completa y accesible para PyMES, integrando herramientas de código abierto líderes en la industria en una plataforma unificada para monitoreo de seguridad empresarial sin la complejidad de soluciones comerciales." data-en="🎯 CHALLENGE: Develop a complete and accessible SIEM solution for SMEs, integrating industry-leading open source tools into a unified platform for enterprise security monitoring without the complexity of commercial solutions.">
+                🎯 DESAFÍO: Desarrollar una solución SIEM completa y accesible para PyMES, integrando herramientas de código abierto líderes 
+                en la industria en una plataforma unificada para monitoreo de seguridad empresarial sin la complejidad de soluciones comerciales.
+              </p>
+            </div>
+            
+            <div className="project-details p-6">
+              <div className="mb-4">
+                <h4 className="text-accent-blue font-semibold mb-3 flex items-center gap-2" data-es="🚀 CARACTERÍSTICAS IMPLEMENTADAS:" data-en="🚀 IMPLEMENTED FEATURES:">
+                  <span className="text-lg">🚀</span>
+                  CARACTERÍSTICAS IMPLEMENTADAS:
+                </h4>
+                <div className="grid md:grid-cols-2 gap-3">
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-blue/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-accent-blue mt-1 text-lg">👁️</span>
+                      <div>
+                        <div className="font-semibold text-accent-blue text-sm" data-es="Monitoreo en Tiempo Real" data-en="Real-time Monitoring">Monitoreo en Tiempo Real</div>
+                        <div className="text-xs text-text-secondary" data-es="Supervisión continua de logs y eventos" data-en="Continuous log and event monitoring">Supervisión continua de logs y eventos</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-purple/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-accent-purple mt-1 text-lg">🤖</span>
+                      <div>
+                        <div className="font-semibold text-accent-purple text-sm" data-es="Detección de Amenazas" data-en="Threat Detection">Detección de Amenazas</div>
+                        <div className="text-xs text-text-secondary" data-es="ML para anomalías e inteligencia" data-en="ML for anomalies and intelligence">ML para anomalías e inteligencia</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-green/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-accent-green mt-1 text-lg">📊</span>
+                      <div>
+                        <div className="font-semibold text-accent-green text-sm" data-es="Dashboards Integrales" data-en="Comprehensive Dashboards">Dashboards Integrales</div>
+                        <div className="text-xs text-text-secondary" data-es="Visualizaciones preconfiguradas" data-en="Pre-configured visualizations">Visualizaciones preconfiguradas</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-orange/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-accent-orange mt-1 text-lg">🗄️</span>
+                      <div>
+                        <div className="font-semibold text-accent-orange text-sm" data-es="Recolección Multi-fuente" data-en="Multi-source Collection">Recolección Multi-fuente</div>
+                        <div className="text-xs text-text-secondary" data-es="Syslog, Windows Events, dispositivos" data-en="Syslog, Windows Events, devices">Syslog, Windows Events, dispositivos</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-red/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-accent-red mt-1 text-lg">⚡</span>
+                      <div>
+                        <div className="font-semibold text-accent-red text-sm" data-es="Respuesta Automatizada" data-en="Automated Response">Respuesta Automatizada</div>
+                        <div className="text-xs text-text-secondary" data-es="Respuestas configurables a incidentes" data-en="Configurable incident responses">Respuestas configurables a incidentes</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-terminal-bg/50 rounded-lg p-3 border border-accent-blue/20">
+                    <div className="flex items-start gap-2">
+                      <span className="text-accent-blue mt-1 text-lg">📋</span>
+                      <div>
+                        <div className="font-semibold text-accent-blue text-sm" data-es="Reportes de Cumplimiento" data-en="Compliance Reports">Reportes de Cumplimiento</div>
+                        <div className="text-xs text-text-secondary" data-es="GDPR, HIPAA, PCI DSS, SOX, ISO 27001" data-en="GDPR, HIPAA, PCI DSS, SOX, ISO 27001">GDPR, HIPAA, PCI DSS, SOX, ISO 27001</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="technologies mb-4">
+                <h4 className="text-accent-purple font-semibold mb-2" data-es="Tecnologías:" data-en="Technologies:">Tecnologías:</h4>
+                <div className="flex flex-wrap gap-2">
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
+                    <span className="text-yellow-400">🔍</span>
+                    Elasticsearch
+                  </span>
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
+                    <span className="text-purple-400">📊</span>
+                    Kibana
+                  </span>
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
+                    <span className="text-green-400">🔄</span>
+                    Logstash
+                  </span>
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
+                    <SiDocker className="text-blue-400" />
+                    Docker
+                  </span>
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
+                    <span className="text-orange-400">📈</span>
+                    Grafana
+                  </span>
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono flex items-center gap-1">
+                    <span className="text-red-400">🎯</span>
+                    Prometheus
+                  </span>
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono">
+                    PostgreSQL
+                  </span>
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono">
+                    Redis
+                  </span>
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono">
+                    Wazuh
+                  </span>
+                  <span className="tech-tag px-2 py-1 bg-terminal-border text-text-primary rounded text-xs font-mono">
+                    Suricata
+                  </span>
+                </div>
+              </div>
+              
+              <div className="project-links flex gap-3">
+                <a href="https://github.com/ismaiars/SIEM" target="_blank" rel="noopener noreferrer" className="w-full bg-accent-blue/20 hover:bg-accent-blue hover:text-terminal-bg text-accent-blue px-4 py-2 rounded text-center text-sm font-medium transition-all duration-300 flex items-center justify-center gap-2">
+                  <Github className="w-4 h-4" />
+                  <span data-es="Ver Código Fuente" data-en="View Source Code">Ver Código Fuente</span>
+                </a>
+              </div>
+              <div className="mt-3 text-center">
+                <span className="text-xs text-accent-blue font-semibold bg-accent-blue/10 px-2 py-1 rounded" data-es="Solución empresarial para PyMES" data-en="Enterprise solution for SMEs">Solución empresarial para PyMES</span>
               </div>
             </div>
           </div>
