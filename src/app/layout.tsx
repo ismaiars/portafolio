@@ -129,6 +129,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
         {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/icons/icon-192x192.svg" />
+        
+        {/* Cache busting meta tags */}
+        <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta httpEquiv="Pragma" content="no-cache" />
+        <meta httpEquiv="Expires" content="0" />
+        <meta name="cache-control" content="no-cache" />
+        <meta name="expires" content="0" />
+        <meta name="pragma" content="no-cache" />
         <script
           dangerouslySetInnerHTML={{
             __html: `

@@ -1,6 +1,6 @@
 {
   "name": "ismael-salazar-portfolio",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Modern portfolio built with Next.js 14, TypeScript, and Tailwind CSS",
   "private": true,
   "scripts": {
@@ -16,6 +16,7 @@
     "test:ci": "jest --ci --coverage --watchAll=false",
     "test:update": "jest --updateSnapshot",
     "test:debug": "jest --detectOpenHandles --forceExit",
+    "cache-bust": "echo 'Cache busted at:' && date",
     "prepare": "husky install"
   },
   "dependencies": {
