@@ -26,7 +26,7 @@ const personalInfo = {
   location: 'Toluca, México',
   website: 'https://ismael-salazar-iars.vercel.app',
   avatar: '/images/avatar.jpg',
-  resume: '/docs/cv_ismael_salazar.pdf'
+  resume: '/CV_Ismael_Ramirez_Salazar_QR_Final.pdf'
 }
 
 export default function HomePage() {

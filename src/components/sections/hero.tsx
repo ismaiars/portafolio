@@ -75,8 +75,8 @@ export function Hero() {
     
     // Trigger CV download
     const link = document.createElement('a')
-    link.href = '/docs/cv_ismael_salazar.pdf'
-    link.download = 'cv_ismael_salazar.pdf'
+    link.href = '/CV_Ismael_Ramirez_Salazar_QR_Final.pdf'
+    link.download = 'CV_Ismael_Ramirez_Salazar_QR_Final.pdf'
     link.click()
   }
 
@@ -172,7 +172,7 @@ export function Hero() {
               size="lg"
             >
               <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:animate-bounce" />
-              <span className="text-sm sm:text-base" data-es="💼 Ver Mi Trabajo" data-en="💼 See My Work">💼 Ver Mi Trabajo</span>
+              <span className="text-sm sm:text-base" data-es="📄 Descargar CV" data-en="📄 Download CV">📄 Descargar CV</span>
             </Button>
             
             <Button
