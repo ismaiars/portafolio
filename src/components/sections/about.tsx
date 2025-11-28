@@ -1,15 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { 
-  SiJavascript, SiHtml5, SiCss3, SiTailwindcss, SiMysql, SiPostgresql, SiPython,
-  SiNextdotjs, SiReact, SiTypescript, SiBootstrap, SiPhp, SiExpress, SiSpring, SiMongodb,
-  SiSqlite, SiGit, SiDocker, SiApache, SiNginx, SiFigma, SiSwagger, SiAngular, SiVuedotjs,
-  SiNuxtdotjs, SiDjango, SiFastapi, SiIonic, SiVercel, SiPostman,
-  SiWordpress, SiNodedotjs, SiRedis, SiJest, SiArduino
-} from 'react-icons/si';
-import { FaMobile, FaGraduationCap, FaVideo, FaLink } from 'react-icons/fa';
-import { VscTerminalBash } from 'react-icons/vsc';
+import { premiumSpecialties, masteredTechnologies, developingTechnologies, certifications } from '@/data/skills';
 
 const terminalCommands = [
   {
@@ -76,7 +68,7 @@ export default function About() {
   useEffect(() => {
     const currentCmd = terminalCommands[currentCommandIndex];
     const currentResponse = currentCmd.response[currentLanguage as keyof typeof currentCmd.response];
-    
+
     if (isTypingCommand) {
       if (displayedCommand.length < currentCmd.command.length) {
         const timer = setTimeout(() => {
@@ -119,13 +111,13 @@ export default function About() {
         <p className="text-xl text-center mb-12 text-text-secondary max-w-3xl mx-auto" data-es="El desarrollador que convierte tu visión en resultados medibles" data-en="The developer who turns your vision into measurable results">
           El desarrollador que convierte tu visión en resultados medibles
         </p>
-        
+
         <div className="about-me-content-box max-w-6xl mx-auto">
           <div className="mb-8 text-text-secondary text-lg leading-relaxed">
             <p className="mb-6" data-es="No soy solo otro desarrollador. Soy tu aliado estratégico en el mundo digital. En mis 2+ años de experiencia, he ayudado a empresas como la tuya a:" data-en="I'm not just another developer. I'm your strategic ally in the digital world. In my 2+ years of experience, I've helped companies like yours to:">
               No soy solo otro desarrollador. Soy tu aliado estratégico en el mundo digital. En mis 2+ años de experiencia, he ayudado a empresas como la tuya a:
             </p>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mb-6">
               <div className="bg-terminal-surface/30 rounded-lg p-3 md:p-4 border border-accent-green/20">
                 <div className="flex items-center gap-2 md:gap-3 mb-2">
@@ -135,7 +127,7 @@ export default function About() {
                   </span>
                 </div>
               </div>
-              
+
               <div className="bg-terminal-surface/30 rounded-lg p-3 md:p-4 border border-accent-blue/20">
                 <div className="flex items-center gap-2 md:gap-3 mb-2">
                   <span className="text-xl md:text-2xl">⚡</span>
@@ -144,7 +136,7 @@ export default function About() {
                   </span>
                 </div>
               </div>
-              
+
               <div className="bg-terminal-surface/30 rounded-lg p-3 md:p-4 border border-accent-purple/20">
                 <div className="flex items-center gap-2 md:gap-3 mb-2">
                   <span className="text-xl md:text-2xl">🚀</span>
@@ -153,7 +145,7 @@ export default function About() {
                   </span>
                 </div>
               </div>
-              
+
               <div className="bg-terminal-surface/30 rounded-lg p-3 md:p-4 border border-accent-orange/20">
                 <div className="flex items-center gap-2 md:gap-3 mb-2">
                   <span className="text-xl md:text-2xl">💡</span>
@@ -163,12 +155,12 @@ export default function About() {
                 </div>
               </div>
             </div>
-            
+
             <p className="text-center text-xl font-medium" data-es="Mi enfoque no es solo escribir código, sino entender tu negocio y crear soluciones que generen ROI real." data-en="My approach isn't just writing code, but understanding your business and creating solutions that generate real ROI.">
               Mi enfoque no es solo escribir código, sino entender tu negocio y crear soluciones que generen ROI real.
             </p>
           </div>
-          
+
           {/* Unique Value Proposition */}
           <div className="bg-gradient-to-r from-accent-green/10 to-accent-blue/10 border border-accent-green/30 rounded-lg p-6 mb-8">
             <div className="flex items-center gap-3 mb-3">
@@ -217,23 +209,7 @@ export default function About() {
               <span data-es="ESPECIALIDADES PREMIUM" data-en="PREMIUM SPECIALTIES">ESPECIALIDADES PREMIUM</span>
             </h4>
             <div className="skills-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 md:gap-3 lg:gap-4 mb-8">
-              {[
-                { name: 'HTML5', icon: <SiHtml5 className="text-orange-500" /> },
-                { name: 'CSS3', icon: <SiCss3 className="text-blue-500" /> },
-                { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" /> },
-                { name: 'TailwindCSS', icon: <SiTailwindcss className="text-cyan-400" /> },
-                { name: 'Node.js', icon: <SiNodedotjs className="text-green-500" /> },
-                { name: 'Python', icon: <SiPython className="text-blue-400" /> },
-                { name: 'Java', icon: <span className="text-red-500 font-bold">☕</span> },
-                { name: 'MySQL', icon: <SiMysql className="text-blue-600" /> },
-                { name: 'WordPress', icon: <SiWordpress className="text-blue-600" /> },
-                { name: 'Moodle', icon: <FaGraduationCap className="text-orange-500" /> },
-                { name: 'n8n', icon: <FaLink className="text-purple-500" /> },
-                { name: 'Postman', icon: <SiPostman className="text-orange-500" /> },
-                { name: 'Shell Script', icon: <VscTerminalBash className="text-green-400" /> },
-                { name: 'Arduino', icon: <SiArduino className="text-teal-500" /> },
-                { name: 'CCTV', icon: <FaVideo className="text-red-500" /> }
-              ].map((skill) => (
+              {premiumSpecialties.map((skill) => (
                 <div key={skill.name} className="skill-item bg-terminal-surface/60 border border-terminal-border rounded-lg p-2 md:p-3 hover:border-accent-green/50 transition-colors flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
                   <span className="text-lg md:text-xl">{skill.icon}</span>
                   <span className="text-text-primary text-xs md:text-sm font-medium text-center sm:text-left">{skill.name}</span>
@@ -247,23 +223,7 @@ export default function About() {
               <span data-es="TECNOLOGÍAS DOMINADAS" data-en="MASTERED TECHNOLOGIES">TECNOLOGÍAS DOMINADAS</span>
             </h4>
             <div className="skills-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 md:gap-3 lg:gap-4 mb-8">
-              {[
-                { name: 'Next.js', icon: <SiNextdotjs className="text-white" /> },
-                { name: 'React', icon: <SiReact className="text-cyan-400" /> },
-                { name: 'TypeScript', icon: <SiTypescript className="text-blue-600" /> },
-                { name: 'Bootstrap', icon: <SiBootstrap className="text-purple-600" /> },
-                { name: 'PHP', icon: <SiPhp className="text-indigo-500" /> },
-                { name: 'Express.js', icon: <SiExpress className="text-gray-400" /> },
-                { name: 'Spring', icon: <SiSpring className="text-green-500" /> },
-                { name: 'MongoDB', icon: <SiMongodb className="text-green-500" /> },
-                { name: 'SQLite', icon: <SiSqlite className="text-blue-400" /> },
-                { name: 'Git', icon: <SiGit className="text-orange-500" /> },
-                { name: 'Docker', icon: <SiDocker className="text-blue-500" /> },
-                { name: 'Apache', icon: <SiApache className="text-red-600" /> },
-                { name: 'Nginx', icon: <SiNginx className="text-green-500" /> },
-                { name: 'Figma', icon: <SiFigma className="text-purple-500" /> },
-                { name: 'Swagger', icon: <SiSwagger className="text-green-500" /> }
-              ].map((skill) => (
+              {masteredTechnologies.map((skill) => (
                 <div key={skill.name} className="skill-item bg-terminal-surface/60 border border-terminal-border rounded-lg p-2 md:p-3 hover:border-accent-blue/50 transition-colors flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
                   <span className="text-lg md:text-xl">{skill.icon}</span>
                   <span className="text-text-primary text-xs md:text-sm font-medium text-center sm:text-left">{skill.name}</span>
@@ -277,20 +237,7 @@ export default function About() {
               <span data-es="TECNOLOGÍAS EN DESARROLLO" data-en="DEVELOPING TECHNOLOGIES">TECNOLOGÍAS EN DESARROLLO</span>
             </h4>
             <div className="skills-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 md:gap-3 lg:gap-4 mb-8">
-              {[
-                { name: 'Angular', icon: <SiAngular className="text-red-600" /> },
-                { name: 'Vue.js', icon: <SiVuedotjs className="text-green-500" /> },
-                { name: 'Nuxt', icon: <SiNuxtdotjs className="text-green-400" /> },
-                { name: 'Django', icon: <SiDjango className="text-green-600" /> },
-                { name: 'FastAPI', icon: <SiFastapi className="text-teal-500" /> },
-                { name: 'Ionic', icon: <SiIonic className="text-blue-500" /> },
-                { name: 'React Native', icon: <FaMobile className="text-cyan-400" /> },
-                { name: 'AWS', icon: <span className="text-orange-400 font-bold">☁️</span> },
-                { name: 'Vercel', icon: <SiVercel className="text-white" /> },
-                { name: 'PostgreSQL', icon: <SiPostgresql className="text-blue-700" /> },
-                { name: 'Redis', icon: <SiRedis className="text-red-500" /> },
-                { name: 'Jest', icon: <SiJest className="text-red-600" /> }
-              ].map((skill) => (
+              {developingTechnologies.map((skill) => (
                 <div key={skill.name} className="skill-item bg-terminal-surface/60 border border-terminal-border rounded-lg p-2 md:p-3 hover:border-accent-purple/50 transition-colors flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
                   <span className="text-lg md:text-xl">{skill.icon}</span>
                   <span className="text-text-primary text-xs md:text-sm font-medium text-center sm:text-left">{skill.name}</span>
@@ -306,22 +253,12 @@ export default function About() {
               <h3 className="certifications-title text-lg md:text-xl lg:text-2xl font-bold text-accent-green" data-es="Certificaciones y Formación Continua" data-en="Certifications and Continuous Training">Certificaciones y Formación Continua</h3>
             </div>
             <ul className="certifications-list space-y-2 md:space-y-3">
-              <li className="text-text-secondary flex items-start md:items-center gap-2 md:gap-3 bg-terminal-surface/30 rounded-lg p-2 md:p-3">
-                <span className="text-accent-green text-lg md:text-xl flex-shrink-0 mt-0.5 md:mt-0">🎓</span>
-                <span className="font-medium text-sm md:text-base" data-es="Oracle Next Education - Desarrollo Backend Avanzado (Alura LATAM)" data-en="Oracle Next Education - Advanced Backend Development (Alura LATAM)">Oracle Next Education - Desarrollo Backend Avanzado (Alura LATAM)</span>
-              </li>
-              <li className="text-text-secondary flex items-start md:items-center gap-2 md:gap-3 bg-terminal-surface/30 rounded-lg p-2 md:p-3">
-                <span className="text-accent-green text-lg md:text-xl flex-shrink-0 mt-0.5 md:mt-0">🎓</span>
-                <span className="font-medium text-sm md:text-base" data-es="Oracle Next Education - Arquitectura de Bases de Datos (Alura LATAM)" data-en="Oracle Next Education - Database Architecture (Alura LATAM)">Oracle Next Education - Arquitectura de Bases de Datos (Alura LATAM)</span>
-              </li>
-              <li className="text-text-secondary flex items-start md:items-center gap-2 md:gap-3 bg-terminal-surface/30 rounded-lg p-2 md:p-3">
-                <span className="text-accent-green text-lg md:text-xl flex-shrink-0 mt-0.5 md:mt-0">🎓</span>
-                <span className="font-medium text-sm md:text-base" data-es="Postman Student Expert - Integración de APIs (Postman)" data-en="Postman Student Expert - API Integration (Postman)">Postman Student Expert - Integración de APIs (Postman)</span>
-              </li>
-              <li className="text-text-secondary flex items-start md:items-center gap-2 md:gap-3 bg-terminal-surface/30 rounded-lg p-2 md:p-3">
-                <span className="text-accent-green text-lg md:text-xl flex-shrink-0 mt-0.5 md:mt-0">📚</span>
-                <span className="font-medium text-sm md:text-base" data-es="+50 horas de formación continua anual en nuevas tecnologías" data-en="+50 hours of continuous annual training in new technologies">+50 horas de formación continua anual en nuevas tecnologías</span>
-              </li>
+              {certifications.map((cert, index) => (
+                <li key={index} className="text-text-secondary flex items-start md:items-center gap-2 md:gap-3 bg-terminal-surface/30 rounded-lg p-2 md:p-3">
+                  <span className="text-accent-green text-lg md:text-xl flex-shrink-0 mt-0.5 md:mt-0">{cert.icon}</span>
+                  <span className="font-medium text-sm md:text-base" data-es={cert.text.es} data-en={cert.text.en}>{cert.text.es}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
