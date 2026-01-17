@@ -72,11 +72,11 @@ export function Hero() {
   const handleDownloadCV = () => {
     // Track CV download event
     trackEvent('download', 'engagement', 'CV Download', 1)
-    
+
     // Trigger CV download
     const link = document.createElement('a')
-    link.href = '/CV_Ismael_Ramirez_Salazar_QR_Final.pdf'
-    link.download = 'CV_Ismael_Ramirez_Salazar_QR_Final.pdf'
+    link.href = '/CV_Ismael_Ramirez_Salazar.pdf'
+    link.download = 'CV_Ismael_Ramirez_Salazar.pdf'
     link.click()
   }
 
@@ -94,10 +94,10 @@ export function Hero() {
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-terminal-bg via-terminal-surface to-terminal-bg" />
       <ParticleBackground />
-      
+
       {/* Grid Pattern */}
       <div className="absolute inset-0 bg-terminal-grid opacity-20" />
-      
+
       {/* Content */}
       <div className="relative z-10 container-custom text-center mt-8 sm:mt-0">
         <motion.div
@@ -115,7 +115,7 @@ export function Hero() {
               Transformo Ideas en
             </p>
           </motion.div>
-          
+
           {/* Role with Typewriter Effect */}
           <motion.div variants={itemVariants} className="h-16 md:h-20">
             <TypewriterEffect
@@ -128,9 +128,9 @@ export function Hero() {
               loop={true}
             />
           </motion.div>
-          
+
           {/* Description */}
-          <motion.p 
+          <motion.p
             variants={itemVariants}
             className="text-lg md:text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed"
           >
@@ -138,9 +138,9 @@ export function Hero() {
               Desarrollo soluciones web que no solo se ven increíbles, sino que generan resultados reales: más ventas, mejor eficiencia y crecimiento sostenible para tu negocio.
             </span>
           </motion.p>
-          
+
           {/* Guarantee */}
-          <motion.div 
+          <motion.div
             variants={itemVariants}
             className="bg-terminal-surface/50 border border-accent-green/30 rounded-lg p-4 max-w-2xl mx-auto"
           >
@@ -150,9 +150,9 @@ export function Hero() {
               </span>
             </p>
           </motion.div>
-          
+
           {/* CTA Buttons */}
-          <motion.div 
+          <motion.div
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4"
           >
@@ -164,7 +164,7 @@ export function Hero() {
               <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               <span className="text-sm sm:text-base" data-es="📞 Hablemos de tu Proyecto" data-en="📞 Let's Talk About Your Project">📞 Hablemos de tu Proyecto</span>
             </Button>
-            
+
             <Button
               onClick={handleDownloadCV}
               variant="outline"
@@ -174,16 +174,16 @@ export function Hero() {
               <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:animate-bounce" />
               <span className="text-sm sm:text-base" data-es="📄 Descargar CV" data-en="📄 Download CV">📄 Descargar CV</span>
             </Button>
-            
+
             <Button
               asChild
               variant="ghost"
               size="lg"
               className="text-text-secondary hover:text-accent-green transition-colors btn-mobile"
             >
-              <a 
-                href="https://github.com/ismaiars" 
-                target="_blank" 
+              <a
+                href="https://github.com/ismaiars"
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Ver perfil de GitHub"
                 onClick={handleGithubClick}
@@ -192,9 +192,9 @@ export function Hero() {
               </a>
             </Button>
           </motion.div>
-          
+
           {/* Stats */}
-          <motion.div 
+          <motion.div
             variants={itemVariants}
             className="stats-mobile grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 mt-12 sm:mt-16 max-w-4xl mx-auto px-4"
           >
@@ -206,7 +206,7 @@ export function Hero() {
                 Años Creando Soluciones
               </div>
             </div>
-            
+
             <div className="text-center bg-terminal-surface/30 rounded-lg p-3 sm:p-4 border border-accent-blue/20">
               <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent-blue mb-1 sm:mb-2">
                 15+
@@ -215,7 +215,7 @@ export function Hero() {
                 Proyectos Exitosos Entregados
               </div>
             </div>
-            
+
             <div className="text-center bg-terminal-surface/30 rounded-lg p-3 sm:p-4 border border-accent-purple/20">
               <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent-purple mb-1 sm:mb-2">
                 300%+
@@ -224,7 +224,7 @@ export function Hero() {
                 Promedio Aumento Conversiones
               </div>
             </div>
-            
+
             <div className="text-center bg-terminal-surface/30 rounded-lg p-3 sm:p-4 border border-accent-orange/20">
               <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent-orange mb-1 sm:mb-2">
                 99.9%
@@ -236,7 +236,7 @@ export function Hero() {
           </motion.div>
         </motion.div>
       </div>
-      
+
 
     </section>
   )
