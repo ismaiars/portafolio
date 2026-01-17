@@ -9,7 +9,7 @@ import { useScrollTo } from '@/hooks/use-scroll-to'
 const navItems = [
   { id: 'home', label: 'Inicio', labelEn: 'Home', icon: Home },
   { id: 'about', label: 'Sobre Mí', labelEn: 'About Me', icon: User },
-  { id: 'timeline', label: 'Experiencia', labelEn: 'Experience', icon: Briefcase },
+  { id: 'experience', label: 'Experiencia', labelEn: 'Experience', icon: Briefcase },
   { id: 'projects', label: 'Proyectos', labelEn: 'Projects', icon: FolderOpen },
   { id: 'testimonials', label: 'Testimonios', labelEn: 'Testimonials', icon: MessageSquare },
   { id: 'contacto', label: 'Contacto', labelEn: 'Contact', icon: Mail }
@@ -88,18 +88,17 @@ export function Navigation() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 * index }}
                     onClick={() => handleNavClick(item.id)}
-                    className={`flex items-center space-x-2 px-3 py-2 rounded-md transition-colors ${
-                      activeSection === item.id
+                    className={`flex items-center space-x-2 px-3 py-2 rounded-md transition-colors ${activeSection === item.id
                         ? 'text-accent-green bg-accent-green/10'
                         : 'text-gray-300 hover:text-accent-green hover:bg-accent-green/5'
-                    }`}
+                      }`}
                   >
                     <Icon className="w-4 h-4" />
                     <span className="font-mono text-sm" data-es={item.label} data-en={item.labelEn}>{item.label}</span>
                   </motion.button>
                 )
               })}
-              
+
               {/* Language Toggle */}
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
@@ -120,7 +119,7 @@ export function Navigation() {
               >
                 <LanguageToggle size="sm" />
               </motion.div>
-              
+
               {/* Mobile Menu Button */}
               <motion.button
                 initial={{ opacity: 0 }}
@@ -154,16 +153,15 @@ export function Navigation() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => handleNavClick(item.id)}
-                  className={`btn-mobile block w-full text-left px-4 py-3 rounded-lg transition-all duration-200 ${
-                    activeSection === item.id
+                  className={`btn-mobile block w-full text-left px-4 py-3 rounded-lg transition-all duration-200 ${activeSection === item.id
                       ? 'bg-accent-green/20 text-accent-green border border-accent-green/30'
                       : 'text-text-secondary hover:text-accent-green hover:bg-accent-green/10'
-                  }`}
+                    }`}
                 >
                   <span className="font-mono text-sm">{item.label}</span>
                 </motion.button>
               ))}
-              
+
 
             </div>
           </motion.div>

@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import { Hero } from '@/components/sections/hero'
 import About from '@/components/sections/about'
 import Methodology from '@/components/sections/methodology'
-import Timeline from '@/components/sections/timeline'
+import { Experience } from '@/components/sections/experience'
 import Projects from '@/components/sections/projects'
 import Testimonials from '@/components/sections/testimonials'
 import Contact from '@/components/sections/contact'
@@ -33,10 +33,10 @@ export default function HomePage() {
   return (
     <>
       <JsonLd data={personalInfo} />
-      
+
       {/* Navigation */}
       <Navigation />
-      
+
       {/* Main Content */}
       <main className="relative">
         <Suspense fallback={<LoadingSpinner />}>
@@ -44,42 +44,42 @@ export default function HomePage() {
           <section id="home" className="min-h-screen">
             <Hero />
           </section>
-          
+
           {/* About Section */}
           <section id="about" className="py-12 md:py-20">
             <About />
           </section>
-          
+
           {/* Methodology Section */}
           <section id="methodology" className="py-12 md:py-20">
             <Methodology />
           </section>
-          
-          {/* Timeline Section */}
-          <section id="timeline" className="py-12 md:py-20">
-            <Timeline />
+
+          {/* Experience Section */}
+          <section id="experience" className="py-12 md:py-20">
+            <Experience />
           </section>
-          
+
           {/* Projects Section */}
           <section id="projects" className="py-12 md:py-20">
             <Projects />
           </section>
-          
+
           {/* Testimonials Section */}
           <section id="testimonials" className="py-12 md:py-20">
             <Testimonials />
           </section>
-          
+
           {/* Contact Section */}
           <section id="contact" className="py-12 md:py-20">
             <Contact />
           </section>
         </Suspense>
       </main>
-      
+
       {/* Footer */}
       <Footer />
-      
+
       {/* Scroll to Top Button */}
       <ScrollToTop />
     </>
