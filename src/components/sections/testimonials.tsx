@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Star, Quote, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { OmpPrompt } from '@/components/ui/omp-prompt';
 import { trackEvent } from '@/components/analytics';
 
 interface Testimonial {
@@ -45,9 +46,9 @@ const testimonials: Testimonial[] = [
     linkedinUrl: "https://linkedin.com/in/mara-rodriguez-ceo",
     companyUrl: "https://carpediemmexico.com.mx",
     metrics: [
-      { label: "Crecimiento empresarial", labelEn: "Business Growth", value: "+250%", improvement: "liderazgo técnico", improvementEn: "technical leadership" },
-      { label: "Proyectos entregados", labelEn: "Projects Delivered", value: "100%", improvement: "en tiempo y forma", improvementEn: "on time and budget" },
-      { label: "Satisfacción del cliente", labelEn: "Client Satisfaction", value: "98%", improvement: "calidad excepcional", improvementEn: "exceptional quality" }
+      { label: "Plataformas clave", labelEn: "Core Platforms", value: "Moodle & WP", improvement: "mantenimiento continuo", improvementEn: "ongoing maintenance" },
+      { label: "Entregas", labelEn: "Deliveries", value: "A tiempo", improvement: "proyectos completos", improvementEn: "end-to-end projects" },
+      { label: "Soporte", labelEn: "Support", value: "Directo", improvement: "atención a usuarios", improvementEn: "direct user support" }
     ]
   },
   {
@@ -64,9 +65,9 @@ const testimonials: Testimonial[] = [
     type: "colleague",
     linkedinUrl: "https://linkedin.com/in/noe-resindez-frontend",
     metrics: [
-      { label: "Habilidades técnicas", labelEn: "Technical Skills", value: "+300%", improvement: "mentoría constante", improvementEn: "constant mentoring" },
-      { label: "Velocidad de desarrollo", labelEn: "Development Speed", value: "+150%", improvement: "mejores prácticas", improvementEn: "best practices" },
-      { label: "Calidad de código", labelEn: "Code Quality", value: "A+", improvement: "estándares altos", improvementEn: "high standards" }
+      { label: "Stack principal", labelEn: "Core Stack", value: "React / Next", improvement: "mentoría práctica", improvementEn: "hands-on mentoring" },
+      { label: "Flujo de trabajo", labelEn: "Workflow", value: "Git & PRs", improvement: "revisión de código", improvementEn: "code reviews" },
+      { label: "Enfoque", labelEn: "Focus", value: "Código limpio", improvement: "componentes reutilizables", improvementEn: "reusable components" }
     ]
   },
   {
@@ -83,9 +84,9 @@ const testimonials: Testimonial[] = [
     type: "colleague",
     linkedinUrl: "https://linkedin.com/in/javier-flores-backend",
     metrics: [
-      { label: "Performance de APIs", labelEn: "API Performance", value: "+200%", improvement: "optimización avanzada", improvementEn: "advanced optimization" },
-      { label: "Tiempo de respuesta", labelEn: "Response Time", value: "-60%", improvement: "arquitectura mejorada", improvementEn: "improved architecture" },
-      { label: "Escalabilidad", labelEn: "Scalability", value: "+400%", improvement: "diseño robusto", improvementEn: "robust design" }
+      { label: "Arquitectura", labelEn: "Architecture", value: "Node.js / APIs", improvement: "endpoints ordenados", improvementEn: "structured endpoints" },
+      { label: "Base de datos", labelEn: "Database", value: "SQL / NoSQL", improvement: "consultas optimizadas", improvementEn: "optimized queries" },
+      { label: "Colaboración", labelEn: "Collaboration", value: "Pair Dev", improvement: "documentación clara", improvementEn: "clear documentation" }
     ]
   },
   {
@@ -102,9 +103,9 @@ const testimonials: Testimonial[] = [
     type: "colleague",
     linkedinUrl: "https://linkedin.com/in/jose-miguel-rodriguez-dev",
     metrics: [
-      { label: "Proyectos exitosos", labelEn: "Successful Projects", value: "100%", improvement: "colaboración efectiva", improvementEn: "effective collaboration" },
-      { label: "Tiempo de entrega", labelEn: "Delivery Time", value: "-30%", improvement: "eficiencia mejorada", improvementEn: "improved efficiency" },
-      { label: "Satisfacción del cliente", labelEn: "Client Satisfaction", value: "95%", improvement: "calidad garantizada", improvementEn: "guaranteed quality" }
+      { label: "Entregas", labelEn: "Deliveries", value: "100%", improvement: "alcance cumplido", improvementEn: "scope fulfilled" },
+      { label: "Integración", labelEn: "Integration", value: "Full-Stack", improvement: "frontend + backend", improvementEn: "frontend + backend" },
+      { label: "Comunicación", labelEn: "Communication", value: "Continua", improvement: "seguimiento semanal", improvementEn: "weekly follow-up" }
     ]
   },
   {
@@ -121,9 +122,9 @@ const testimonials: Testimonial[] = [
     type: "colleague",
     linkedinUrl: "https://linkedin.com/in/larisa-soto-ux",
     metrics: [
-      { label: "Fidelidad al diseño", labelEn: "Design Fidelity", value: "99%", improvement: "implementación precisa", improvementEn: "precise implementation" },
-      { label: "Experiencia de usuario", labelEn: "User Experience", value: "+180%", improvement: "interfaces intuitivas", improvementEn: "intuitive interfaces" },
-      { label: "Tiempo de desarrollo", labelEn: "Development Time", value: "-40%", improvement: "comunicación efectiva", improvementEn: "effective communication" }
+      { label: "Fidelidad visual", labelEn: "Visual Fidelity", value: "Pixel-ready", improvement: "respeto al diseño", improvementEn: "true to design" },
+      { label: "Adaptabilidad", labelEn: "Responsiveness", value: "Mobile-first", improvement: "vistas responsivas", improvementEn: "responsive views" },
+      { label: "Iteración", labelEn: "Iteration", value: "Ágil", improvement: "ajustes rápidos", improvementEn: "fast refinements" }
     ]
   }
 ];
@@ -223,25 +224,29 @@ export default function Testimonials() {
   }
 
   return (
-    <section id="testimonials" className="py-12 md:py-20 bg-terminal-surface relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-terminal-grid opacity-10" />
-      
-      <div className="container mx-auto px-4 relative">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-accent-green mb-4">
-            <span data-es="Lo Que Dicen Mis Clientes y Compañeros" data-en="What My Clients and Colleagues Say">Lo Que Dicen Mis Clientes y Compañeros</span>
-          </h2>
-          <p className="text-text-secondary text-lg max-w-3xl mx-auto">
-            <span data-es="La satisfacción de mis clientes y la confianza de mis compañeros son mi mayor logro. Aquí tienes testimonios reales de empresarios y desarrolladores que han trabajado conmigo." data-en="The satisfaction of my clients and the trust of my colleagues are my greatest achievement. Here are real testimonials from entrepreneurs and developers who have worked with me.">La satisfacción de mis clientes y la confianza de mis compañeros son mi mayor logro. Aquí tienes testimonios reales de empresarios y desarrolladores que han trabajado conmigo.</span>
-          </p>
-        </motion.div>
+    <section id="testimonials" className="py-12 md:py-20 bg-[#090b10] relative overflow-hidden">
+      <div className="container mx-auto px-4 max-w-6xl relative">
+        <div className="mb-12 space-y-3">
+          <OmpPrompt
+            path="~/portafolio/testimonios"
+            branch="main"
+            tag="reviews"
+            command="cat ./resenas.log"
+            execTime="5ms"
+          />
+          <div className="pl-2 sm:pl-4 border-l-2 border-[#262e40]">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white font-mono">
+              <span data-es="Lo que dicen clientes y compañeros" data-en="What clients & teammates say">
+                Lo que dicen clientes y compañeros
+              </span>
+            </h2>
+            <p className="text-sm sm:text-base text-[#94a3b8] mt-1 max-w-3xl">
+              <span data-es="Experiencias reales de personas con las que he colaborado en proyectos y equipos." data-en="Real feedback from people I've collaborated with across projects and teams.">
+                Experiencias reales de personas con las que he colaborado en proyectos y equipos.
+              </span>
+            </p>
+          </div>
+        </div>
 
         <div className="max-w-6xl mx-auto px-4">
           {/* Main Testimonial Card */}

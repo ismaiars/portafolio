@@ -3,7 +3,6 @@ import { Inter, JetBrains_Mono } from 'next/font/google'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import { Analytics } from '@/components/analytics'
 import { SkipNav } from '@/components/skip-nav'
-import PWAManager from '@/components/pwa'
 import { cn } from '@/lib/utils'
 import './globals.css'
 
@@ -126,10 +125,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <meta name="twitter:image" content="https://ismael-salazar-iars.vercel.app/og-image.png" />
         <meta property="og:image:alt" content="Ismael Salazar - Desarrollador Web" />
         
-        {/* PWA Manifest */}
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/icons/icon-192x192.svg" />
-        
         {/* Cache busting meta tags */}
         <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
         <meta httpEquiv="Pragma" content="no-cache" />
@@ -169,7 +164,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <div id="main-content" className="flex-1">{children}</div>
           </div>
           <Analytics />
-          <PWAManager />
         </ThemeProvider>
       </body>
     </html>

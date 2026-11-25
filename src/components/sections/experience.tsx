@@ -2,13 +2,38 @@
 
 import { motion } from 'framer-motion'
 import { MapPin } from 'lucide-react'
+import { OmpPrompt } from '@/components/ui/omp-prompt'
 import {
   SiReact, SiNodedotjs, SiTypescript, SiDocker, SiPostgresql,
   SiVuedotjs, SiPython, SiDjango, SiMysql, SiRedis, SiJavascript, SiSass,
-  SiWebpack, SiJest, SiWordpress, SiLinux, SiSupabase, SiN8N
+  SiWebpack, SiJest, SiWordpress, SiLinux, SiSupabase, SiN8N, SiOdoo
 } from 'react-icons/si'
 
 const experiences = [
+  {
+    company: 'Toluca Jet Center',
+    position: 'Desarrollador y Soporte de Sistemas',
+    positionEn: 'Systems & Software Developer',
+    location: 'Toluca, México (Presencial)',
+    locationEn: 'Toluca, Mexico (On-site)',
+    period: 'Febrero 2026 – Actualidad',
+    periodEn: 'February 2026 – Present',
+    description: 'Desarrollo de herramientas internas, automatización de flujos operativos y soporte tecnológico para la operación diaria.',
+    descriptionEn: 'Development of internal tools, operational workflow automation, and ongoing technical support for daily operations.',
+    technologies: ['Python', 'Odoo', 'JavaScript', 'PostgreSQL', 'Soporte TI'],
+    achievements: [
+      'Desarrollo y personalización de módulos y herramientas internas para agilizar procesos operativos',
+      'Automatización de reportes, validaciones y tareas administrativas repetitivas',
+      'Soporte técnico directo al equipo y mantenimiento continuo de infraestructura y sistemas',
+      'Integración de flujos de datos entre áreas para reducir errores manuales y ahorrar tiempo'
+    ],
+    achievementsEn: [
+      'Development and customization of internal modules and tools to streamline operational processes',
+      'Automation of reports, validations, and repetitive administrative tasks',
+      'Direct technical support to staff and ongoing maintenance of systems and infrastructure',
+      'Cross-team data workflow integration to reduce manual errors and save time'
+    ]
+  },
   {
     company: 'Carpe Diem México',
     position: 'Coordinador de Sistemas',
@@ -103,22 +128,25 @@ export function Experience() {
       {/* Background decoration */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent-green/5 via-transparent to-transparent opacity-50" />
 
-      <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-            <span data-es="Mi" data-en="My">Mi</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-green to-emerald-400" data-es="Experiencia" data-en="Experience">Experiencia</span>
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-accent-green to-transparent mx-auto mb-8 rounded-full"></div>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed" data-es="Un recorrido profesional enfocado en crear soluciones tecnológicas innovadoras" data-en="A professional journey focused on creating innovative technological solutions">
-            Un recorrido profesional enfocado en crear soluciones tecnológicas innovadoras
-          </p>
-        </motion.div>
+      <div className="container mx-auto px-4 max-w-6xl relative z-10">
+        <div className="mb-14 space-y-3">
+          <OmpPrompt
+            path="~/portafolio/experiencia"
+            branch="main"
+            tag="git-log"
+            command="git log --graph --stat --career"
+            execTime="9ms"
+          />
+          <div className="pl-2 sm:pl-4 border-l-2 border-[#262e40]">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white font-mono">
+              <span data-es="Mi " data-en="My ">Mi </span>
+              <span className="text-[#00ff9c]" data-es="Experiencia" data-en="Experience">Experiencia</span>
+            </h2>
+            <p className="text-sm sm:text-base text-[#94a3b8] mt-1" data-es="Un recorrido profesional enfocado en crear soluciones tecnológicas innovadoras" data-en="A professional journey focused on creating innovative technological solutions">
+              Un recorrido profesional enfocado en crear soluciones tecnológicas innovadoras
+            </p>
+          </div>
+        </div>
 
         <div className="relative">
           {/* Timeline Line with Gradient */}
@@ -189,11 +217,13 @@ export function Experience() {
                             'Linux': <SiLinux className="text-yellow-500" />,
                             'Supabase': <SiSupabase className="text-green-400" />,
                             'n8n': <SiN8N className="text-red-500" />,
+                            'Odoo': <SiOdoo className="text-[#a855f7]" />,
                             'Moodle': <span className="text-orange-500 font-bold">🎓</span>,
                             'Hardware': <span className="text-gray-400 font-bold">🖥️</span>,
                             'Redes': <span className="text-blue-400 font-bold">🔌</span>,
                             'Videovigilancia': <span className="text-red-400 font-bold">📹</span>,
                             'Soporte': <span className="text-green-400 font-bold">🛠️</span>,
+                            'Soporte TI': <span className="text-green-400 font-bold">🛠️</span>,
                             'Software Dev': <span className="text-cyan-400 font-bold">💻</span>,
                             'Next.js': <span className="text-white font-bold">N</span>
                           };

@@ -3,7 +3,7 @@ import {
     SiNextdotjs, SiReact, SiTypescript, SiBootstrap, SiPhp, SiExpress, SiSpring, SiMongodb,
     SiSqlite, SiGit, SiDocker, SiApache, SiNginx, SiFigma, SiSwagger, SiAngular, SiVuedotjs,
     SiNuxtdotjs, SiDjango, SiFastapi, SiIonic, SiVercel, SiPostman,
-    SiWordpress, SiNodedotjs, SiRedis, SiJest, SiArduino
+    SiWordpress, SiNodedotjs, SiRedis, SiJest, SiArduino, SiOdoo
 } from 'react-icons/si';
 import { FaMobile, FaGraduationCap, FaVideo, FaLink } from 'react-icons/fa';
 import { VscTerminalBash } from 'react-icons/vsc';
@@ -38,6 +38,7 @@ export const premiumSpecialties: Skill[] = [
     { name: 'TailwindCSS', icon: <SiTailwindcss className="text-cyan-400" /> },
     { name: 'Node.js', icon: <SiNodedotjs className="text-green-500" /> },
     { name: 'Python', icon: <SiPython className="text-blue-400" /> },
+    { name: 'Odoo', icon: <SiOdoo className="text-[#a855f7]" /> },
     { name: 'Java', icon: <span className="text-red-500 font-bold">☕</span> },
 { name: 'MySQL', icon: <SiMysql className="text-blue-600" /> },
 { name: 'WordPress', icon: <SiWordpress className="text-blue-600" /> },

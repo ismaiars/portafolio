@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
+import { OmpPrompt } from '@/components/ui/omp-prompt';
 import { trackEvent } from '@/components/analytics';
 
 interface FormData {
@@ -128,19 +129,25 @@ export default function Contact() {
     }
   };
   return (
-    <section id="contacto" className="section-animate py-8 md:py-16 bg-terminal-surface">
-      <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 text-accent-green" data-es="¿Hablamos de tu Proyecto?" data-en="Let's Talk About Your Project?">
-          ¿Hablamos de tu Proyecto?
-        </h2>
-        <p className="text-base md:text-lg lg:text-xl text-center mb-6 md:mb-8 text-text-secondary max-w-3xl mx-auto" data-es="Respuesta rápida | Análisis personalizado | Solo 3 proyectos disponibles este mes" data-en="Quick response | Personalized analysis | Only 3 projects available this month">
-          Respuesta rápida | Análisis personalizado | Solo 3 proyectos disponibles este mes
-        </p>
-        <p className="contact-intro text-center text-text-secondary text-lg leading-relaxed mb-12 max-w-4xl mx-auto" data-es="Si has llegado hasta aquí, es porque tienes una idea o proyecto en mente. Me especializo en crear soluciones digitales que transforman negocios y generan resultados reales. Cuéntame sobre tu visión y trabajemos juntos para hacerla realidad." data-en="If you've made it this far, it's because you have an idea or project in mind. I specialize in creating digital solutions that transform businesses and generate real results. Tell me about your vision and let's work together to make it a reality.">
-          Si has llegado hasta aquí, es porque tienes una idea o proyecto en mente. Me especializo en 
-          crear soluciones digitales que transforman negocios y generan resultados reales. 
-          Cuéntame sobre tu visión y trabajemos juntos para hacerla realidad.
-        </p>
+    <section id="contacto" className="section-animate py-8 md:py-16 bg-[#090b10]">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <div className="mb-10 space-y-3">
+          <OmpPrompt
+            path="~/portafolio/contacto"
+            branch="main"
+            tag="ssh"
+            command="ssh ismael@toluca.dev"
+            execTime="3ms"
+          />
+          <div className="pl-2 sm:pl-4 border-l-2 border-[#262e40]">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white font-mono" data-es="¿Platicamos sobre tu proyecto?" data-en="Want to chat about your project?">
+              ¿Platicamos sobre tu proyecto?
+            </h2>
+            <p className="text-sm sm:text-base text-[#94a3b8] mt-1 max-w-3xl" data-es="Si tienes una idea en mente, necesitas ayuda con un sistema o simplemente quieres saludar, escríbeme con toda confianza y vemos cómo te puedo apoyar." data-en="If you have an idea in mind, need help with a system, or just want to say hi, feel free to reach out and we'll see how I can help.">
+              Si tienes una idea en mente, necesitas ayuda con un sistema o simplemente quieres saludar, escríbeme con toda confianza y vemos cómo te puedo apoyar.
+            </p>
+          </div>
+        </div>
 
         <div className="contact-container max-w-4xl mx-auto">
           <div className="contact-terminal form-mobile bg-terminal-bg border border-terminal-border rounded-lg overflow-hidden shadow-2xl">
@@ -162,10 +169,9 @@ export default function Contact() {
                     <div className="flex items-start gap-4">
                       <span className="prompt text-accent-green font-mono text-xl mt-1">➜</span>
                       <div className="command-content flex-1">
-                        <h4 className="text-xl font-bold text-accent-green mb-2" data-es="Contacto Directo VIP" data-en="VIP Direct Contact">Contacto Directo VIP</h4>
-                        <p className="text-text-secondary mb-2" data-es="Línea directa para clientes serios. Respuesta garantizada en menos de 2 horas durante días laborales. Prioridad máxima para proyectos de alto impacto." data-en="Direct line for serious clients. Guaranteed response in less than 2 hours during business days. Maximum priority for high-impact projects.">
-                          Línea directa para clientes serios. Respuesta garantizada en menos de 2 horas 
-                          durante días laborales. Prioridad máxima para proyectos de alto impacto.
+                        <h4 className="text-xl font-bold text-accent-green mb-2 font-mono" data-es="Correo Directo" data-en="Direct Email">Correo Directo</h4>
+                        <p className="text-text-secondary mb-2 text-sm sm:text-base" data-es="¿Prefieres escribirme directo por correo? Normalmente respondo el mismo día en horario laboral." data-en="Prefer sending a direct email? I usually reply the same day during business hours.">
+                          ¿Prefieres escribirme directo por correo? Normalmente respondo el mismo día en horario laboral.
                         </p>
                         <a href="mailto:iarsfate@gmail.com" 
                            className="inline-flex items-center gap-2 text-accent-blue hover:text-accent-green transition-colors">
@@ -182,10 +188,9 @@ export default function Contact() {
                     <div className="flex items-start gap-4">
                       <span className="prompt text-accent-blue font-mono text-xl mt-1">➜</span>
                       <div className="command-content flex-1">
-                        <h4 className="text-xl font-bold text-accent-blue mb-2" data-es="Casos de Éxito en Vivo" data-en="Live Success Stories">Casos de Éxito en Vivo</h4>
-                        <p className="text-text-secondary mb-4" data-es="Sígueme para ver actualizaciones en tiempo real de proyectos exitosos, estrategias que generan resultados y testimonios de clientes satisfechos con ROI comprobado." data-en="Follow me for real-time updates on successful projects, strategies that generate results and testimonials from satisfied clients with proven ROI.">
-                          Sígueme para ver actualizaciones en tiempo real de proyectos exitosos, 
-                          estrategias que generan resultados y testimonios de clientes satisfechos con ROI comprobado.
+                        <h4 className="text-xl font-bold text-accent-blue mb-2 font-mono" data-es="Redes y Código" data-en="Social & Code">Redes y Código</h4>
+                        <p className="text-text-secondary mb-4 text-sm sm:text-base" data-es="Puedes ver mis repositorios en GitHub o conectar conmigo en LinkedIn para charlar sobre desarrollo, automatización o nuevas ideas." data-en="Feel free to check out my GitHub repositories or connect with me on LinkedIn to chat about dev, automation, or new ideas.">
+                          Puedes ver mis repositorios en GitHub o conectar conmigo en LinkedIn para charlar sobre desarrollo, automatización o nuevas ideas.
                         </p>
                         <div className="social-links flex gap-4">
                           <a href="https://github.com/ismaiars" target="_blank" rel="noopener noreferrer" 
@@ -211,10 +216,9 @@ export default function Contact() {
                     <div className="flex items-start gap-4">
                       <span className="prompt text-accent-purple font-mono text-xl mt-1">➜</span>
                       <div className="command-content flex-1">
-                        <h4 className="text-xl font-bold text-accent-purple mb-2" data-es="Cobertura Global" data-en="Global Coverage">Cobertura Global</h4>
-                        <p className="text-text-secondary" data-es="Basado en México con clientes en 15+ países. Trabajo en tu zona horaria para máxima eficiencia. Disponibilidad 24/7 para proyectos críticos y soporte post-lanzamiento." data-en="Based in Mexico with clients in 15+ countries. I work in your time zone for maximum efficiency. 24/7 availability for critical projects and post-launch support.">
-                          Basado en México con clientes en 15+ países. Trabajo en tu zona horaria para máxima eficiencia. 
-                          Disponibilidad 24/7 para proyectos críticos y soporte post-lanzamiento.
+                        <h4 className="text-xl font-bold text-accent-purple mb-2 font-mono" data-es="Ubicación y Modalidad" data-en="Location & Availability">Ubicación y Modalidad</h4>
+                        <p className="text-text-secondary text-sm sm:text-base" data-es="Estoy en Toluca, México, y trabajo tanto de forma presencial como remota colaborando con equipos y clientes de distintos lugares." data-en="Based in Toluca, Mexico, working both on-site and remotely with teams and clients from different places.">
+                          Estoy en Toluca, México, y trabajo tanto de forma presencial como remota colaborando con equipos y clientes de distintos lugares.
                         </p>
                         <div className="flex items-center gap-2 mt-2 text-accent-purple">
                           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -234,11 +238,11 @@ export default function Contact() {
                     <div className="flex items-start gap-4">
                       <span className="prompt text-accent-orange font-mono text-xl mt-1">➜</span>
                       <div className="command-content flex-1">
-                        <h4 className="text-xl font-bold text-accent-orange mb-2" data-es="Envíame un Mensaje" data-en="Send Me a Message">Envíame un Mensaje</h4>
-                         <div className="bg-gradient-to-r from-accent-orange/10 to-accent-green/10 rounded-lg p-3 mb-4">
-                           <div className="flex items-center gap-2 text-accent-orange text-sm font-semibold">
-                             <span>💡</span>
-                             <span data-es="Disponibilidad limitada: Solo 3 proyectos este mes" data-en="Limited availability: Only 3 projects this month">Disponibilidad limitada: Solo 3 proyectos este mes</span>
+                        <h4 className="text-xl font-bold text-accent-orange mb-2 font-mono" data-es="Envíame un Mensaje" data-en="Send Me a Message">Envíame un Mensaje</h4>
+                         <div className="bg-gradient-to-r from-accent-orange/10 to-accent-green/10 rounded-lg p-3 mb-4 border border-accent-green/20">
+                           <div className="flex items-center gap-2 text-accent-green text-sm font-medium">
+                             <span>☕</span>
+                             <span data-es="Cuéntame qué necesitas y te respondo pronto" data-en="Tell me what you need and I'll reply soon">Cuéntame qué necesitas y te respondo pronto</span>
                            </div>
                          </div>
                         {/* Mensaje de estado */}

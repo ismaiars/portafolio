@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronUp } from 'lucide-react'
-import { Button } from './button'
 import { useScrollToTop } from '@/hooks/use-scroll-to'
 
 export function ScrollToTop() {
@@ -17,40 +16,31 @@ export function ScrollToTop() {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
-        setIsVisible(true)
-      } else {
-        setIsVisible(false)
-      }
+      setIsVisible(window.pageYOffset > 300)
     }
 
-    window.addEventListener('scroll', toggleVisibility)
+    window.addEventListener('scroll', toggleVisibility, { passive: true })
     return () => window.removeEventListener('scroll', toggleVisibility)
   }, [])
 
-  if (!isMounted) {
-    return null
-  }
+  if (!isMounted) return null
 
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+        <motion.button
+          type="button"
+          onClick={scrollToTop}
+          initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
-          className="fixed bottom-8 right-8 z-50"
+          exit={{ opacity: 0, scale: 0.85 }}
+          whileHover={{ scale: 1.06 }}
+          whileTap={{ scale: 0.94 }}
+          aria-label="Scroll to top"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#151a26]/90 backdrop-blur-md border border-[#262e40] hover:border-[#00ff9c] text-[#00ff9c] shadow-lg flex items-center justify-center transition-colors"
         >
-          <Button
-            onClick={scrollToTop}
-            size="icon"
-            variant="terminal"
-            className="rounded-full shadow-glow-md hover:shadow-glow-lg transition-all duration-300"
-            aria-label="Scroll to top"
-          >
-            <ChevronUp className="w-5 h-5" />
-          </Button>
-        </motion.div>
+          <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5" />
+        </motion.button>
       )}
     </AnimatePresence>
   )
